@@ -1,0 +1,37 @@
+body {
+    background-color: var(--gre);
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    
+
+}
+
+.header {
+    background-color: #36393dca ;
+    //backdrop-filter: blur(10px);    
+    color: var(--whi);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    height: 8vh;
+    width: 100vw;
+    //border-bottom: 2px solid var(--oran);
+    box-shadow: 0px -5px 20px 0px #000000fa;
+
+        .header_right {
+            display: flex;
+        }
+    }
+
+.content {
+    background-color: var(--gre);
+    color: var(--whi);
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    height: 8vh;
+    width: 100vw;
+}
