@@ -13,6 +13,7 @@ func main() {
 	http.Handle("/dist/", http.StripPrefix("/dist/", http.FileServer(http.Dir("./dist"))))
 	http.HandleFunc("/", page.Index)
 	http.HandleFunc("/login", page.LoginFunc)
+	http.HandleFunc("/signup", page.SignUpFunc)
 	port := "8080"
 	fmt.Println("Startup Server on port " + port)
 	err := http.ListenAndServe(":"+port, nil)
