@@ -7,14 +7,15 @@ import (
 	"net/http"
 )
 
-func LoginFunc(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("./templates/html/login.html"))
+func Signup(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("./templates/html/signup.html"))
 
 	switch r.Method {
 	case "GET":
 	case "POST":
 		username := r.FormValue("username")
 		password := r.FormValue("password")
+
 		if password != "" && username != "" {
 			id := requetes_sql.Verifuser(username, password)
 			if id != 0 {

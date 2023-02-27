@@ -5,7 +5,6 @@ import (
 	page "forum/page"
 	"log"
 	"net/http"
-
 )
 
 func main() {
@@ -13,6 +12,7 @@ func main() {
 	http.Handle("/dist/", http.StripPrefix("/dist/", http.FileServer(http.Dir("./dist"))))
 	http.HandleFunc("/", page.Index)
 	http.HandleFunc("/login", page.LoginFunc)
+	http.HandleFunc("/signup", page.Signup)
 	port := "8080"
 	fmt.Println("Startup Server on port " + port)
 	err := http.ListenAndServe(":"+port, nil)
