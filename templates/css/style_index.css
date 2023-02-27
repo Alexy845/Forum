@@ -23,22 +23,31 @@ body {
   margin: 40px;
 }
 .header .header_right {
-  padding: 30px;
-  position: relative;
+  padding-right: 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
 }
 .header .header_right a {
-  margin: 15px;
+  background-color: rgba(254, 85, 38, 0.9019607843);
+  color: #ececec;
+  border-radius: 12px;
+  height: 5vh;
+  width: 14vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.2156862745);
 }
 .header .header_right a:hover {
-  color: #FE5626;
-  padding: 5px;
-  box-shadow: 0 0 0.2px 0 #000000;
+  color: #ffffff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.334);
   transition: 0.2s;
-  font-size: 18px;
+  font-size: 17px;
+  background-color: #fe5526;
 }
 .header .header_middle {
   position: fixed;
