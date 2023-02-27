@@ -5,7 +5,6 @@ import (
 	page "forum/page"
 	"log"
 	"net/http"
-
 )
 
 func main() {
