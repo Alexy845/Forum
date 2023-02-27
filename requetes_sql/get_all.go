@@ -1,7 +1,6 @@
 package requetes_sql
 
 import (
-	"database/sql"
 	"forum/structs"
 	_ "github.com/mattn/go-sqlite3"
 	"log"
@@ -12,12 +11,7 @@ func Getall() []structs.User {
 	if err != nil {
 		log.Fatal(err)
 	}
-	defer func(req *sql.Rows) {
-		err := req.Close()
-		if err != nil {
-
-		}
-	}(req)
+	defer req.Close()
 	users := []structs.User{}
 	for req.Next() {
 		user := structs.User{}
