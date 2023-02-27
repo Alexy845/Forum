@@ -6,6 +6,6 @@ import (
 )
 
 func Open() *sql.DB {
-	var sqliteDatabase, _ = sql.Open("sqlite3", "./DB_Base.sqlite") // Open the created SQLite File
+	var sqliteDatabase, _ = sql.Open("sqlite3", "./DB_Base.sqlite")
 	return sqliteDatabase
 }
