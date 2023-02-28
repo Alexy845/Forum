@@ -21,13 +21,12 @@
 </div>
 <div class="content">
     <div class="content_top">
-        <div class="title">
-            {{ range .Posts}}
-                <h2>{{ .Titre }}</h2>
-                <p>{{ .Contenu }}</p>
-                    <p> {{ .Auteur.Username }}</p>
-            {{ end }}
-        </div>
+        <h2>Do You want to write new Post {{ .User.Username }} ?</h2>
+        <form action="/writing" method="post">
+            <input type="text" name="Title" placeholder="Title" class="title" autocomplete="off">
+            <input type="text" name="Content" placeholder="Content" class="content" autocomplete="off">
+            <input type="submit" value="Submit" class="submit">
+        </form>
     </div>
     <div class="content_bot">
     </div>

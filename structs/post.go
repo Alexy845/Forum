@@ -4,7 +4,7 @@ import uuid "github.com/satori/go.uuid"
 
 type Post struct {
 	Id      uuid.UUID
-	Auteur  uuid.UUID
+	Auteur  User
 	Titre   string
 	Contenu string
 	Date    string

@@ -13,6 +13,8 @@ func main() {
 	http.HandleFunc("/", page.Index)
 	http.HandleFunc("/login", page.LoginFunc)
 	http.HandleFunc("/signup", page.Signup)
+	http.HandleFunc("/write", page.Write)
+	http.HandleFunc("/writing", page.Writing)
 	port := "8080"
 	fmt.Println("Startup Server on port " + port)
 	err := http.ListenAndServe(":"+port, nil)

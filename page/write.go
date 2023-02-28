@@ -9,17 +9,19 @@ import (
 	"net/http"
 )
 
-func Index(w http.ResponseWriter, r *http.Request) {
-	t, _ := template.ParseFiles("templates/html/index.html")
-	cookie, err := r.Cookie("session")
+func Write(w http.ResponseWriter, r *http.Request) {
+	tmp, err := template.ParseFiles("templates/html/writePost.html")
 	if err != nil {
 		log.Fatal(err)
 	}
 
+	cookie, err := r.Cookie("session")
+	if err != nil {
+		log.Fatal(err)
+	}
 	id := uuid.Must(uuid.FromString(cookie.Value))
-	structs.Datas.Posts = requetes_sql.GetAllPosts()
 	structs.Datas.User = requetes_sql.GetUser(id)
-	err = t.Execute(w, structs.Datas)
+	err = tmp.Execute(w, structs.Datas)
 	if err != nil {
 		log.Fatal(err)
 	}
