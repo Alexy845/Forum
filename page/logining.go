@@ -5,13 +5,10 @@ import (
 	"forum/cookies"
 	"forum/requetes_sql"
 	uuid "github.com/satori/go.uuid"
-	"html/template"
-	"log"
 	"net/http"
 )
 
-func LoginFunc(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("./templates/html/login.html"))
+func Logining(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 	case "POST":
@@ -21,15 +18,11 @@ func LoginFunc(w http.ResponseWriter, r *http.Request) {
 			id := requetes_sql.Verifuser(username, password)
 			if id != uuid.Nil {
 				http.SetCookie(w, cookies.CreateCookie(id))
-				CurrentUser := requetes_sql.GetUser(id)
-				fmt.Println(CurrentUser)
+				http.Redirect(w, r, "/", http.StatusSeeOther)
 			} else {
 				fmt.Println("Erreur de connexion")
 			}
 		}
-	}
-	err := tmpl.Execute(w, nil)
-	if err != nil {
-		log.Fatal(err)
+		http.Redirect(w, r, "/login", http.StatusSeeOther)
 	}
 }

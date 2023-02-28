@@ -16,16 +16,27 @@
         <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
     </div>
     <div class="header_right">
-        <a href="/login">Connexion</a>
+        {{ if eq .Connected false }}
+            <a href="/login">Connexion</a>
+        {{ else }}
+            <a href="/profile"><img src="/templates/image/profil.jpg"></a>
+        {{ end }}
     </div>
 </div>
 <div class="content">
     <div class="content_top">
+        {{ if eq .Connected false }}
+            <p>Vous n'êtes pas connecté</p>
+        {{ else }}
+            <p>Bonjour {{ .User.Username }}</p>
+            <a href="/write">Voulez-vous écrire un nouveau poste ?</a>
+            <a href="/logout">Déconnexion</a>
+        {{ end }}
         <div class="title">
             {{ range .Posts}}
                 <h2>{{ .Titre }}</h2>
                 <p>{{ .Contenu }}</p>
-                    <p> {{ .Auteur.Username }}</p>
+                <p> {{ .Auteur.Username }}</p>
             {{ end }}
         </div>
     </div>
