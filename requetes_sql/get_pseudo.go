@@ -10,6 +10,9 @@ func GetPseudo(id int) string {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	pseudo := ""
+	err = req.Scan(&pseudo)
 	defer func(req *sql.Rows) {
 		err := req.Close()
 		if err != nil {
@@ -17,7 +20,5 @@ func GetPseudo(id int) string {
 		}
 	}(req)
 	req.Next()
-	pseudo := ""
-	err = req.Scan(&pseudo)
 	return pseudo
 }

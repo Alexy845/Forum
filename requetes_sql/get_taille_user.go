@@ -10,14 +10,15 @@ func GetTailleUser() int {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	req.Next()
+	taille := 0
+	err = req.Scan(&taille)
 	defer func(req *sql.Rows) {
 		err := req.Close()
 		if err != nil {
 			log.Fatal(err)
 		}
 	}(req)
-	req.Next()
-	taille := 0
-	err = req.Scan(&taille)
 	return taille
 }

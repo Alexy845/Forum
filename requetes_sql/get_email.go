@@ -10,14 +10,15 @@ func Getemail(id int) string {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	req.Next()
+	email := ""
+	err = req.Scan(&email)
 	defer func(req *sql.Rows) {
 		err := req.Close()
 		if err != nil {
 			log.Fatal(err)
 		}
 	}(req)
-	req.Next()
-	email := ""
-	err = req.Scan(&email)
 	return email
 }
