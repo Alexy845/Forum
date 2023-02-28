@@ -1,0 +1,139 @@
+
+body{
+    display: flex;
+    background-color: #0D1321;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .container{
+        display: flex;
+        background-color: #0D1321;
+        width: 50%;
+        height: 100%;
+
+        
+        .leftbox{
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+            background-color: gray;
+
+
+            form {
+                margin: 4.7vw;
+                background-color: red;
+                opacity: 0.98;
+                padding: 18px 45px;
+                border-radius: 20px;
+                min-width: 300px;
+                max-width: 300px;
+                max-height: 28pc;
+                display: flex;
+                flex-direction: column; 
+            }
+
+            h1 {
+                text-align:center;
+                padding: 15px;
+            }
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                margin-top: 14px;
+
+                input[type="username"],
+                input[type="password"] {
+                    padding: 15px;
+                    border:none;
+                    border-radius: 5px;
+                    background-color: #0d132140;
+                    outline:none;
+                    margin-bottom: 1.4vw;
+                    opacity: 0.5;
+                    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+
+
+                    &::placeholder {
+                        color: #000000;
+                    }
+                    &:hover{
+                        opacity: 0.65;
+                    }
+                    &:focus{
+                        opacity: 0.68;
+                        border-style: solid;
+                        border-width: 1.5px;
+                        border-color: #46474733;
+                    }
+                }
+            }
+            
+            button {
+                padding: 13px 30px;
+                border-radius: 5px;
+                margin: 1vw;
+                border:none;
+                font-size: 15px;
+                color: #ffffffc3;
+                background-color: #28B67E;
+                outline:none;
+                cursor:pointer;
+                box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+            }
+        }
+
+        .rightbox{
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+            background-color: brown;
+
+            form {
+                margin: 4.7vw;
+                background-color: #0D1321;
+                opacity: 0.98;
+                padding: 18px 45px;
+                border-radius: 20px;
+                min-width: 300px;
+                max-width: 300px;
+                max-height: 28pc;
+                display: flex;
+                flex-direction: column; 
+            }
+
+
+            .inscription {
+                font-size: 14px;
+                margin-bottom: 20px;
+                color: #878787;
+                padding: 5px;
+            }  
+            button {
+                padding: 13px 30px;
+                border-radius: 5px;
+                margin: 1vw;
+                border:none;
+                font-size: 15px;
+                color: #ffffffc3;
+                background-color: #28B67E;
+                outline:none;
+                cursor:pointer;
+                box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+            }
+        }
+    .back {
+        cursor: pointer;
+        height: 60px;
+        width: 60px;
+        border-radius: 100px;
+        margin: 80px -9px;
+        position: initial;
+    }
+    }
+
+}
+
+
