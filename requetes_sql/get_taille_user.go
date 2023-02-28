@@ -2,12 +2,14 @@ package requetes_sql
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 )
 
 func GetTailleUser() int {
 	req, err := DB.Query("SELECT count(*) FROM User")
 	if err != nil {
+		fmt.Println("GetTailleUser1")
 		log.Fatal(err)
 	}
 
@@ -17,6 +19,7 @@ func GetTailleUser() int {
 	defer func(req *sql.Rows) {
 		err := req.Close()
 		if err != nil {
+			fmt.Println("GetTailleUser2")
 			log.Fatal(err)
 		}
 	}(req)

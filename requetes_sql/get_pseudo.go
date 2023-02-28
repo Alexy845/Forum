@@ -2,12 +2,14 @@ package requetes_sql
 
 import (
 	"database/sql"
+	"fmt"
 	"log"
 )
 
 func GetPseudo(id int) string {
 	req, err := DB.Query("SELECT Pseudo FROM User")
 	if err != nil {
+		fmt.Println("GetPseudo1")
 		log.Fatal(err)
 	}
 
@@ -16,6 +18,7 @@ func GetPseudo(id int) string {
 	defer func(req *sql.Rows) {
 		err := req.Close()
 		if err != nil {
+			fmt.Println("GetPseudo2")
 			log.Fatal(err)
 		}
 	}(req)

@@ -24,16 +24,10 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		if password != confirmpassword {
 			fmt.Println("Les mots de passe ne correspondent pas")
 		} else {
-			for i := 0; i < requetes_sql.GetTailleUser(); i++ {
-				if requetes_sql.Getemail(i) == email {
-					fmt.Println("Cette adresse email est déjà utilisée")
-					break
-				} else if requetes_sql.GetUser(i).Username == username {
-					fmt.Println("Ce pseudo est déjà utilisé")
-					break
-				} else {
-					requetes_sql.AddUser(username, firstname, lastname, password, email)
-				}
+			if requetes_sql.IfUserExist(email, username, firstname, lastname, password) {
+				fmt.Println("L'utilisateur existe déjà")
+			} else {
+				requetes_sql.AddUser(username, firstname, lastname, password, email)
 			}
 		}
 	}

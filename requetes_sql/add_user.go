@@ -1,7 +1,7 @@
 package requetes_sql
 
 import (
-	"database/sql"
+	"fmt"
 	"forum/fonctions"
 	"log"
 	"strconv"
@@ -9,14 +9,15 @@ import (
 )
 
 func AddUser(pseudo string, prenom string, nom string, mdp string, email string) {
-	req, err := DB.Query("INSERT INTO User (Id, Pseudo, Prenom, Nom, Date_membre, MDP, Email) values (?, ?, ?, ?, ?, ?, ?)"+strconv.Itoa(GetTailleUser()+1), pseudo, prenom, nom, time.Now(), fonctions.Hash(mdp), email)
+	sqL := "INSERT INTO User (Id, Pseudo, Prenom, Nom, Date_membre, MDP, Email) values (?, ?, ?, ?, ?, ?, ?)"
+	req, err := DB.Prepare(sqL)
 	if err != nil {
+		fmt.Println("AddUser1")
 		log.Fatal(err)
 	}
-	defer func(req *sql.Rows) {
-		err := req.Close()
-		if err != nil {
-			log.Fatal(err)
-		}
-	}(req)
+	_, err = req.Exec(strconv.Itoa(GetTailleUser()+1), pseudo, prenom, nom, time.Now().Format("2006-01-02 15:04:05"), fonctions.Hash(mdp), email)
+	if err != nil {
+		fmt.Println("AddUser2")
+		log.Fatal(err)
+	}
 }
