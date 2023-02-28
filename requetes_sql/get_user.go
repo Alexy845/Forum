@@ -4,10 +4,11 @@ import (
 	"database/sql"
 	"fmt"
 	"forum/structs"
+	uuid "github.com/satori/go.uuid"
 	"log"
 )
 
-func GetUser(id int) structs.User {
+func GetUser(id uuid.UUID) structs.User {
 	req, err := DB.Query("SELECT id, pseudo, prenom, nom, date_membre, mdp, email FROM User where Id = ?", id)
 	if err != nil {
 		fmt.Println("GetUser1")

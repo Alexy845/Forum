@@ -1,12 +1,15 @@
 package requetes_sql
 
-import "forum/fonctions"
+import (
+	"forum/hash"
+	uuid "github.com/satori/go.uuid"
+)
 
-func Verifuser(username string, password string) int {
-	for _, user := range Getall() {
-		if user.Username == username && fonctions.CompareHash(user.Password, password) {
+func Verifuser(username string, password string) uuid.UUID {
+	for _, user := range GetallUsers() {
+		if user.Username == username && hash.CompareHash(user.Password, password) {
 			return user.Id
 		}
 	}
-	return 0
+	return uuid.Nil
 }
