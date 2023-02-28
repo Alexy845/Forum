@@ -13,7 +13,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	t, _ := template.ParseFiles("templates/html/index.html")
 	cookie, err := r.Cookie("session")
 	if err != nil {
-		return
+		log.Fatal(err)
 	}
 
 	id := uuid.Must(uuid.FromString(cookie.Value))
