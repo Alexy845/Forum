@@ -16,7 +16,7 @@
 
 <body>
     <div class="header" oneclick="window.location.href='index.html'">
-        <h2>Forum</h2>
+        <h2><a href="/">Forum</a></h2>
         <div class="header_middle">
             <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
         </div>
@@ -37,14 +37,15 @@
     </div>
     <div class="rightbox">
       <form action="/signup" method="post">
-          <h1>You don’t have an account?</h1>
-          <h2>It is fast, free, and will allow you to reserve your nickname on the forums, so that no one else than you can use it...</h2>
-          <button type="submit">Create an account</button>
+          <h2> You don’t have an account ? </h2>
+          <p>It is fast, free, and will allow you to reserve your nickname on the forums, so that no one else than you can use it...</p>
+          <div class="form-group">
+            <input type="submit" name="submit" value="Create an account" class="btn">
+          </div>
+          <!--<button type="submit" name="submit">Create an account</button>-->
     </div>
   </div>
-  <div class="back">
-    <a href="/"><i class="bx bx-arrow-back"></i></a>
-  </div>
+
 
 </body>
 </html>
