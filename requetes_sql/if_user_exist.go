@@ -5,7 +5,7 @@ import (
 )
 
 func IfUserExist(email string, username string, firstname string, lastname string, password string) bool {
-	for i := 0; i < GetTailleUser(); i++ {
+	for _, i := range AllId() {
 		if Getemail(i) == email {
 			fmt.Println("Cette adresse email est déjà utilisée")
 			return true

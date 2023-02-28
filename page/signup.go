@@ -2,6 +2,7 @@ package page
 
 import (
 	"fmt"
+	"forum/cookies"
 	"forum/requetes_sql"
 	"html/template"
 	"log"
@@ -27,7 +28,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 			if requetes_sql.IfUserExist(email, username, firstname, lastname, password) {
 				fmt.Println("L'utilisateur existe déjà")
 			} else {
-				requetes_sql.AddUser(username, firstname, lastname, password, email)
+				http.SetCookie(w, cookies.CreateCookie(requetes_sql.AddUser(username, firstname, lastname, password, email)))
 			}
 		}
 	}
