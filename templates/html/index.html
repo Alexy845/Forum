@@ -17,6 +17,13 @@
     </div>
     <div class="header_right">
         {{ if eq .Connected false }}
+
+    <div class="header" oneclick="window.location.href='index.html'">
+        <h2><a href="/">Forum</a></h2>
+        <div class="header_middle">
+            <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+        </div>
+        <div class="header_right">
             <a href="/login">Connexion</a>
         {{ else }}
             <a href="/profile"><img src="/templates/image/profil.jpg"></a>

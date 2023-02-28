@@ -5,25 +5,31 @@ body{
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
 
     .container{
+        margin-top: 10vh;
         display: flex;
-        background-color: #0D1321;
-        width: 50%;
+        background-color: #36393d;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
         height: 100%;
+
 
         
         .leftbox{
+            background-color: blue;
             display: flex;
             flex-direction: row;
             cursor: pointer;
-            background-color: gray;
+
 
 
             form {
-                margin: 4.7vw;
                 background-color: red;
+                margin: 4.7vw;
                 opacity: 0.98;
                 padding: 18px 45px;
                 border-radius: 20px;
@@ -32,10 +38,11 @@ body{
                 max-height: 28pc;
                 display: flex;
                 flex-direction: column; 
+                border-right: 1px solid #000000;
             }
 
             h1 {
-                text-align:center;
+                
                 padding: 15px;
             }
 
@@ -49,7 +56,7 @@ body{
                     padding: 15px;
                     border:none;
                     border-radius: 5px;
-                    background-color: #0d132140;
+                    background-color: gray;
                     outline:none;
                     margin-bottom: 1.4vw;
                     opacity: 0.5;
@@ -78,7 +85,7 @@ body{
                 border:none;
                 font-size: 15px;
                 color: #ffffffc3;
-                background-color: #28B67E;
+                background-color: green;
                 outline:none;
                 cursor:pointer;
                 box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
@@ -86,14 +93,14 @@ body{
         }
 
         .rightbox{
+            background-color: brown;
             display: flex;
             flex-direction: row;
             cursor: pointer;
-            background-color: brown;
 
             form {
-                margin: 4.7vw;
-                background-color: #0D1321;
+                background-color: red;
+                margin: 8vw;
                 opacity: 0.98;
                 padding: 18px 45px;
                 border-radius: 20px;
@@ -111,29 +118,23 @@ body{
                 color: #878787;
                 padding: 5px;
             }  
-            button {
-                padding: 13px 30px;
+
+            input.btn{
+                margin-left: 0;
+                margin-top: 1.4vw;
+                float: left;
+                padding: 7px 15px;
                 border-radius: 5px;
-                margin: 1vw;
                 border:none;
                 font-size: 15px;
                 color: #ffffffc3;
-                background-color: #28B67E;
+                background-color: green;
                 outline:none;
                 cursor:pointer;
                 box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
             }
         }
-    .back {
-        cursor: pointer;
-        height: 60px;
-        width: 60px;
-        border-radius: 100px;
-        margin: 80px -9px;
-        position: initial;
     }
-    }
-
 }
 
 
