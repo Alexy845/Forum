@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"forum/requetes_sql"
 	"html/template"
+	"log"
 	"net/http"
 )
 
@@ -15,16 +16,23 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	case "POST":
 		username := r.FormValue("username")
 		password := r.FormValue("password")
+		email := r.FormValue("email")
+		firstname := r.FormValue("firstname")
+		lastname := r.FormValue("lastname")
+		confirmpassword := r.FormValue("confirmpassword")
 
-		if password != "" && username != "" {
-			id := requetes_sql.Verifuser(username, password)
-			if id != 0 {
-				CurrentUser := requetes_sql.GetUser(id)
-				fmt.Println(CurrentUser)
+		if password != confirmpassword {
+			fmt.Println("Les mots de passe ne correspondent pas")
+		} else {
+			if requetes_sql.IfUserExist(email, username, firstname, lastname, password) {
+				fmt.Println("L'utilisateur existe déjà")
 			} else {
-				fmt.Println("Erreur de connexion")
+				requetes_sql.AddUser(username, firstname, lastname, password, email)
 			}
 		}
 	}
-	tmpl.Execute(w, nil)
+	err := tmpl.Execute(w, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 }

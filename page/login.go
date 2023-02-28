@@ -9,7 +9,6 @@ import (
 
 func LoginFunc(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("./templates/html/login.html"))
-
 	switch r.Method {
 	case "GET":
 	case "POST":

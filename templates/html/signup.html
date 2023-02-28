@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
 </head>
-
 <body>
   <div class="header" oneclick="window.location.href='index.html'">
     <h2>Forum</h2>
@@ -28,34 +26,25 @@
 
   <div class="container">
     <div class="leftbox">
-      <img src="/server/images/icons/gplogo.png" alt="">
-
+        <img src="/server/images/icons/gplogo.png" alt="">
+        <h1>Forum</h1>
     </div>
-  </div>
-
-    <form method="post">
-      
-      <h1>Sign up</h1>  
-
-      <div class="inputs">
-            
-        <input name="firstname" type="firstname" class="textInputBox" placeholder="First Name" >
-        <input name="lastname" type="lastname" class="textInputBox" placeholder="Last Name" >
-        <input name="username" type="username" class="textInputBox" placeholder="Username" >
-        <input name="email" type="email" class="textInputBox" placeholder="Email">
-        <input name="password" type="password" class="textInputBox" placeholder="Password">
-        <input name="confirmpassword" type="confirmpassword" class="textInputBox" placeholder="Confirm Password">
-
-          
-      </div>
-      <button type="submit">Sign up</button>
-      <p class="inscription"> Already member ? <a href="/login"> <span>Log In</span> </a>. </p>
-
+    <form action="/signup" method="post">
+        <h1>Sign up</h1>
+        <div class="inputs">
+            <input name="firstname" type="firstname" class="textInputBox" placeholder="First Name">
+            <input name="lastname" type="lastname" class="textInputBox" placeholder="Last Name">
+            <input name="username" type="username" class="textInputBox" placeholder="Username">
+            <input name="email" type="email" class="textInputBox" placeholder="Email">
+            <input name="password" type="password" class="textInputBox" placeholder="Password">
+            <input name="confirmpassword" type="password" class="textInputBox" placeholder="Confirm Password">
+        </div>
+        <button type="submit">Sign up</button>
+        <p class="inscription"> Already member ? <a href="/login"> <span>Log In</span> </a>. </p>
     </form>
-  </div>
-  <div class="back">
+</div>
+<div class="back">
     <a href="/"><i class="bx bx-arrow-back"></i></a>
-  </div>
-  
+</div>
 </body>
 </html>
