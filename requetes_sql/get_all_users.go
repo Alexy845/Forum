@@ -8,7 +8,7 @@ import (
 	"log"
 )
 
-func Getall() []structs.User {
+func GetallUsers() []structs.User {
 	req, err := DB.Query("SELECT id, pseudo, prenom, nom, date_membre, mdp, email FROM User")
 	if err != nil {
 		fmt.Println("Getall1")

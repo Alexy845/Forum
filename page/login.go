@@ -2,8 +2,11 @@ package page
 
 import (
 	"fmt"
+	"forum/cookies"
 	"forum/requetes_sql"
+	uuid "github.com/satori/go.uuid"
 	"html/template"
+	"log"
 	"net/http"
 )
 
@@ -16,7 +19,8 @@ func LoginFunc(w http.ResponseWriter, r *http.Request) {
 		password := r.FormValue("password")
 		if password != "" && username != "" {
 			id := requetes_sql.Verifuser(username, password)
-			if id != 0 {
+			if id != uuid.Nil {
+				http.SetCookie(w, cookies.CreateCookie(id))
 				CurrentUser := requetes_sql.GetUser(id)
 				fmt.Println(CurrentUser)
 			} else {
@@ -24,5 +28,8 @@ func LoginFunc(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-	tmpl.Execute(w, nil)
+	err := tmpl.Execute(w, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
