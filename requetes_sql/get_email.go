@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-func Getemail(id uuid.UUID) string {
+func GetEmail(id uuid.UUID) string {
 	req, err := DB.Query("SELECT email FROM User where Id = ?", id)
 	if err != nil {
 		fmt.Println("Getemail1")

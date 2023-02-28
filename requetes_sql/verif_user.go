@@ -1,13 +1,13 @@
 package requetes_sql
 
 import (
-	"forum/fonctions"
+	"forum/hash"
 	uuid "github.com/satori/go.uuid"
 )
 
 func Verifuser(username string, password string) uuid.UUID {
-	for _, user := range Getall() {
-		if user.Username == username && fonctions.CompareHash(user.Password, password) {
+	for _, user := range GetallUsers() {
+		if user.Username == username && hash.CompareHash(user.Password, password) {
 			return user.Id
 		}
 	}
