@@ -11,10 +11,6 @@
     <title>Forum</title>
 </head>
 <body>
-<div class="header" oneclick="window.location.href='index.html'">
-    <div class="header_middle">
-        <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
-    </div>
     <div class="header" oneclick="window.location.href='index.html'">
         <h2><a href="/">Forum</a></h2>
         <div class="header_middle">
@@ -22,9 +18,16 @@
         </div>
         <div class="header_right">
             {{ if eq .Connected false }}
+            <div class="login">
                 <a href="/login">Connexion</a>
+            </div>
             {{ else }}
+            <div class="logout">
+            <a href="/logout">Déconnexion</a>
+            </div>
+            <div class="profil">
                 <a href="/profile"><img src="/templates/image/profil.jpg"></a>
+            </div>
             {{ end }}
         </div>
     </div>
@@ -41,9 +44,10 @@
             {{ if eq .Connected false }}
                 <p>Vous n'êtes pas connecté</p>
             {{ else }}
-                <p>Bonjour {{ .User.Username }}</p>
+                <div class="hi">
+                    <p>Bonjour {{ .User.Username }}</p>
+                </div>
                 <div class="new_discution" ><a href="/write"><i class='bx bxs-conversation'></i>New discution</a></div>
-                <a href="/logout">Déconnexion</a>
             {{ end }}
             <div class="title">
                 {{ range .Posts}}
@@ -58,6 +62,5 @@
             <div class="cb_right"></div>
         </div>
     </div>
-</div>
 </body>
 </html>
