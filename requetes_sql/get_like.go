@@ -7,17 +7,21 @@ import (
 	"log"
 )
 
-func GetPost(id uuid.UUID) structs.Post {
-	req, err := DB.Query("SELECT Id, Auteur, Contenu, Titre, Date, Likes FROM Posts where Id = ?", id)
+func GetLike() structs.Like {
+	req, err := DB.Query("SELECT Id, User, Post FROM Like")
 	if err != nil {
 		log.Fatal()
 	}
-	post := structs.Post{}
+	like := structs.Like{}
 	for req.Next() {
-		err = req.Scan(&post.Id, &post.Auteur, &post.Contenu, &post.Titre, &post.Date, &post.Likes)
+		user := uuid.UUID{}
+		post := uuid.UUID{}
+		err = req.Scan(&like.Id, &user, &post)
 		if err != nil {
 			log.Fatal(err)
 		}
+		like.User = GetUser(user)
+		like.Post = GetPost(post)
 	}
 	defer func(req *sql.Rows) {
 		err := req.Close()
@@ -25,5 +29,5 @@ func GetPost(id uuid.UUID) structs.Post {
 			log.Fatal(err)
 		}
 	}(req)
-	return post
+	return like
 }

@@ -8,23 +8,25 @@ import (
 	"log"
 )
 
-func GetAllPosts() []structs.Post {
-	req, err := DB.Query("SELECT Id, Auteur, Contenu, Titre, Date, Likes FROM Posts")
+func GetAllLike() []structs.Like {
+	req, err := DB.Query("SELECT Id, User, Post FROM Like")
 	if err != nil {
 		fmt.Println("Getall1")
 		log.Fatal(err)
 	}
-	posts := []structs.Post{}
+	likes := []structs.Like{}
 	for req.Next() {
-		post := structs.Post{}
-		auteur := uuid.UUID{}
-		err = req.Scan(&post.Id, &auteur, &post.Contenu, &post.Titre, &post.Date, &post.Likes)
+		like := structs.Like{}
+		user := uuid.UUID{}
+		post := uuid.UUID{}
+		err = req.Scan(&like.Id, &user, &post)
 		if err != nil {
 			fmt.Println("Getall2")
 			log.Fatal(err)
 		}
-		post.Auteur = GetUser(auteur)
-		posts = append(posts, post)
+		like.User = GetUser(user)
+		like.Post = GetPost(post)
+		likes = append(likes, like)
 	}
 	defer func(req *sql.Rows) {
 		err := req.Close()
@@ -33,5 +35,5 @@ func GetAllPosts() []structs.Post {
 			log.Fatal(err)
 		}
 	}(req)
-	return posts
+	return likes
 }
