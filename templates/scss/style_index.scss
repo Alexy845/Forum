@@ -25,6 +25,11 @@ body {
     
         h2 {
             margin: 40px;
+            font-size: 30px;
+
+            :hover {
+                color: #ffffff;
+                transition: 0.2s;}
         }
 
         .header_right {
@@ -124,7 +129,7 @@ body {
 
                 &:hover {
                     box-shadow: 0 0 0.2px 0 #000000;
-                    background-color: var(--silv);
+                    background-color: #ececec6b;
 
                     &::placeholder {
                         color: var(--gre);
@@ -210,9 +215,23 @@ body {
         display: flex;
         align-items: center;
         flex-direction: row;
-        margin: 20px 60px auto 60px;
+        margin: 20px auto;
         height: 15vh;
         width: 90vw;
+
+        .not_connected {
+            margin: 0 0 0 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+
+            h1 {
+                font-size: 30px;
+                font-weight: 600;
+                margin: 0;
+            }
+        }
 
         .hi {
             margin: 0 0 0 60px;

@@ -1,0 +1,10 @@
+body {
+  display: flex;
+  background-color: #0D1321;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style_profile.css.map */

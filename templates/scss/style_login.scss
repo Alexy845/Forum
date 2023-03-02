@@ -1,16 +1,14 @@
 
 body{
     display: flex;
-    background-color: #0D1321;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
 
     .container{
-        margin-top: 10vh;
+        margin-top: 15vh;
         display: flex;
-        background-color: #36393d;
         justify-content: center;
         flex-direction: row;
         flex-wrap: wrap;
@@ -20,25 +18,20 @@ body{
 
         
         .leftbox{
-            background-color: blue;
             display: flex;
             flex-direction: row;
-            cursor: pointer;
-
-
+            
 
             form {
-                background-color: red;
+                background-color: #36393d8d;
                 margin: 4.7vw;
                 opacity: 0.98;
                 padding: 18px 45px;
-                border-radius: 20px;
                 min-width: 300px;
                 max-width: 300px;
                 max-height: 28pc;
                 display: flex;
                 flex-direction: column; 
-                border-right: 1px solid #000000;
             }
 
             h1 {
@@ -56,7 +49,7 @@ body{
                     padding: 15px;
                     border:none;
                     border-radius: 5px;
-                    background-color: gray;
+                    background-color: #bfbebd1d;
                     outline:none;
                     margin-bottom: 1.4vw;
                     opacity: 0.5;
@@ -64,16 +57,30 @@ body{
 
 
                     &::placeholder {
-                        color: #000000;
+                        color: var(--silv);
+                        padding: 10px;
                     }
-                    &:hover{
-                        opacity: 0.65;
+
+                    &:hover {
+                        box-shadow: 0 0 0.2px 0 #000000;
+                        background-color: #ececec6b;
+    
+                        &::placeholder {
+                            color: var(--gre);
+                        }
                     }
-                    &:focus{
-                        opacity: 0.68;
-                        border-style: solid;
-                        border-width: 1.5px;
-                        border-color: #46474733;
+
+                    &:focus {
+                        box-shadow: 0 0 0.2px 0 #000000;
+                        background-color: var(--silv);
+                        color: var(--ony);
+                        padding: 7px;
+                        outline: none;
+    
+                        &::placeholder {
+                            color: var(--gre);
+                            overflow: hidden;
+                        }
                     }
                 }
             }
@@ -93,17 +100,15 @@ body{
         }
 
         .rightbox{
-            background-color: brown;
             display: flex;
             flex-direction: row;
-            cursor: pointer;
+            border-left: 1px solid rgba(255,255,255,0.1);
 
             form {
-                background-color: red;
+                background-color: #36393d8d;
                 margin: 8vw;
                 opacity: 0.98;
                 padding: 18px 45px;
-                border-radius: 20px;
                 min-width: 300px;
                 max-width: 300px;
                 max-height: 28pc;

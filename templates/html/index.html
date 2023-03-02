@@ -42,7 +42,9 @@
     <div class="content">
         <div class="content_top">
             {{ if eq .Connected false }}
-                <p>Vous n'êtes pas connecté</p>
+                <div class="not_connected">
+                    <p>Vous n'êtes pas connecté</p>
+                </div>
             {{ else }}
                 <div class="hi">
                     <p>Bonjour {{ .User.Username }}</p>
