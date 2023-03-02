@@ -3,6 +3,7 @@ body {
   display: flex;
   overflow: hidden;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .header {
@@ -12,12 +13,14 @@ body {
   flex-direction: column;
   align-items: center;
   height: 9vh;
-  width: 100vw;
+  width: 100%;
   box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.33);
   justify-content: space-around;
   align-content: space-between;
   flex-wrap: wrap;
-  position: relative;
+  position: absolute;
+  top: 0;
+  padding: 0 auto;
 }
 .header h2 {
   margin: 40px;
@@ -29,10 +32,33 @@ body {
   flex-wrap: nowrap;
   align-items: center;
 }
-.header .header_right a {
+.header .header_right .logout a {
   background-color: rgba(254, 85, 38, 0.9019607843);
   color: #ececec;
-  border-radius: 18px;
+  border-radius: 20px;
+  height: 5.5vh;
+  width: 16vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 30px 0 30px;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.2156862745);
+  font-size: 14px;
+  padding: 0 auto;
+  transition: 0.2s;
+}
+.header .header_right .logout a:hover {
+  color: #ffffff;
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.334);
+  transition: 0.1s;
+  font-size: 14.8px;
+  background-color: #fe5526;
+}
+.header .header_right .login a {
+  background-color: rgba(254, 85, 38, 0.9019607843);
+  color: #ececec;
+  border-radius: 20px;
   height: 5.5vh;
   width: 16vh;
   display: flex;
@@ -43,15 +69,29 @@ body {
   box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.2156862745);
   font-size: 14px;
 }
-.header .header_right a:hover {
+.header .header_right .login a:hover {
   color: #ffffff;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.334);
   transition: 0.1s;
   font-size: 14.8px;
   background-color: #fe5526;
 }
+.header .header_right .profil {
+  display: flex;
+}
+.header .header_right .profil a img {
+  padding: 0 auto;
+  border-radius: 50%;
+  height: 6vh;
+  width: 6vh;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.2156862745);
+}
+.header .header_right .profil a img:hover {
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.435);
+  transition: 0.2s;
+}
 .header .header_middle {
-  position: fixed;
+  position: inherit;
 }
 .header .header_middle .search {
   border: 1px solid rgba(73, 78, 81, 0.616);
@@ -92,16 +132,19 @@ body {
   color: var(--whi);
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  padding: 1vh;
   height: 3.5vh;
   width: 100vw;
   text-align: center;
+  position: relative;
+  margin-top: 9vh;
 }
 .navbar .catbar {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
 }
 .navbar .catbar .cat {
   margin: auto;
@@ -126,9 +169,26 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin: 20px auto auto auto;
+  margin: 20px 60px auto 60px;
   height: 15vh;
   width: 90vw;
+}
+.content .content_top .hi {
+  margin: 0 0 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.content .content_top .hi h1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin: 0;
+}
+.content .content_top .hi h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
 }
 .content .content_top .new_discution {
   height: 5vh;
@@ -177,8 +237,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin: 25px 54px auto auto;
-  height: 40vw;
+  margin: 25px 50px auto auto;
+  height: 30vw;
   width: 65vw;
   position: relative;
 }
@@ -189,9 +249,9 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin: auto auto auto 54px;
+  margin: auto auto auto 60px;
   padding: auto;
-  height: 40vw;
+  height: 30vw;
   width: 22vw;
   position: absolute;
 }
