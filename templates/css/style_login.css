@@ -1,15 +1,13 @@
 body {
   display: flex;
-  background-color: #0D1321;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
 body .container {
-  margin-top: 10vh;
+  margin-top: 15vh;
   display: flex;
-  background-color: #36393d;
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
@@ -17,23 +15,19 @@ body .container {
   height: 100%;
 }
 body .container .leftbox {
-  background-color: blue;
   display: flex;
   flex-direction: row;
-  cursor: pointer;
 }
 body .container .leftbox form {
-  background-color: red;
+  background-color: rgba(54, 57, 61, 0.5529411765);
   margin: 4.7vw;
   opacity: 0.98;
   padding: 18px 45px;
-  border-radius: 20px;
   min-width: 300px;
   max-width: 300px;
   max-height: 28pc;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #000000;
 }
 body .container .leftbox h1 {
   padding: 15px;
@@ -48,7 +42,7 @@ body .container .leftbox .inputs input[type=password] {
   padding: 15px;
   border: none;
   border-radius: 5px;
-  background-color: gray;
+  background-color: rgba(191, 190, 189, 0.1137254902);
   outline: none;
   margin-bottom: 1.4vw;
   opacity: 0.5;
@@ -56,18 +50,30 @@ body .container .leftbox .inputs input[type=password] {
 }
 body .container .leftbox .inputs input[type=username]::placeholder,
 body .container .leftbox .inputs input[type=password]::placeholder {
-  color: #000000;
+  color: var(--silv);
+  padding: 10px;
 }
 body .container .leftbox .inputs input[type=username]:hover,
 body .container .leftbox .inputs input[type=password]:hover {
-  opacity: 0.65;
+  box-shadow: 0 0 0.2px 0 #000000;
+  background-color: rgba(236, 236, 236, 0.4196078431);
+}
+body .container .leftbox .inputs input[type=username]:hover::placeholder,
+body .container .leftbox .inputs input[type=password]:hover::placeholder {
+  color: var(--gre);
 }
 body .container .leftbox .inputs input[type=username]:focus,
 body .container .leftbox .inputs input[type=password]:focus {
-  opacity: 0.68;
-  border-style: solid;
-  border-width: 1.5px;
-  border-color: rgba(70, 71, 71, 0.2);
+  box-shadow: 0 0 0.2px 0 #000000;
+  background-color: var(--silv);
+  color: var(--ony);
+  padding: 7px;
+  outline: none;
+}
+body .container .leftbox .inputs input[type=username]:focus::placeholder,
+body .container .leftbox .inputs input[type=password]:focus::placeholder {
+  color: var(--gre);
+  overflow: hidden;
 }
 body .container .leftbox button {
   padding: 13px 30px;
@@ -82,17 +88,15 @@ body .container .leftbox button {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 body .container .rightbox {
-  background-color: brown;
   display: flex;
   flex-direction: row;
-  cursor: pointer;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 body .container .rightbox form {
-  background-color: red;
+  background-color: rgba(54, 57, 61, 0.5529411765);
   margin: 8vw;
   opacity: 0.98;
   padding: 18px 45px;
-  border-radius: 20px;
   min-width: 300px;
   max-width: 300px;
   max-height: 28pc;
