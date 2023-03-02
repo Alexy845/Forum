@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="templates/css/style.css">
-        <link rel="stylesheet" href="templates/css/style_profile.css">
-        <link rel="stylesheet" href="templates/css/style_scrollbar.css">
-    </head>
-    <body>
-        <div class="header" oneclick="window.location.href='index.html'">
-            <h2><a href="/">Forum</a></h2>
-            <div class="header_middle">
-                <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="templates/css/style_profile.css">
+    <link rel="stylesheet" href="templates/css/style_scrollbar.css">
+</head>
+<body>
+<div class="header" oneclick="window.location.href='index.html'">
+    <h2><a href="/">Forum</a></h2>
+    <div class="header_middle">
+        <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+    </div>
+    <div class="header_right">
+        {{ if eq .Connected false }}
+            <div class="not_connected">
+                <p>Vous n'êtes pas connecté</p>
             </div>
-            <div class="header_right">
-                {{ if eq .Connected false }}
-                <div class="login">
-                    <a href="/login">Connexion</a>
-                </div>
-                {{ else }}
-                <div class="logout">
-                <a href="/logout">Déconnexion</a>
-                </div>
-                <div class="profil">
-                    <a href="/profile"><img src="/templates/image/profil.jpg"></a>
-                </div>
-                {{ end }}
+        {{ else }}
+            <div class="hi">
+                <p>Bonjour {{ .User.FirstName }}</p>
             </div>
-        </div>
-
-
-    </body>
+                <img src="/templates/image/profil.jpg">
+        {{ end }}
+    </div>
+</div>
+</body>
 </html>

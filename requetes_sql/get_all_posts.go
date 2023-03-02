@@ -9,7 +9,7 @@ import (
 )
 
 func GetAllPosts() []structs.Post {
-	req, err := DB.Query("SELECT Id, Auteur, Contenu, Titre, Date FROM Posts")
+	req, err := DB.Query("SELECT Id, Auteur, Contenu, Titre, Date, Likes FROM Posts")
 	if err != nil {
 		fmt.Println("Getall1")
 		log.Fatal(err)
@@ -18,7 +18,7 @@ func GetAllPosts() []structs.Post {
 	for req.Next() {
 		post := structs.Post{}
 		auteur := uuid.UUID{}
-		err = req.Scan(&post.Id, &auteur, &post.Contenu, &post.Titre, &post.Date)
+		err = req.Scan(&post.Id, &auteur, &post.Contenu, &post.Titre, &post.Date, &post.Likes)
 		if err != nil {
 			fmt.Println("Getall2")
 			log.Fatal(err)

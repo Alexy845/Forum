@@ -8,4 +8,5 @@ type Post struct {
 	Titre   string
 	Contenu string
 	Date    string
+	Likes   int
 }

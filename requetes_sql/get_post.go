@@ -8,13 +8,13 @@ import (
 )
 
 func GetPost(id uuid.UUID) structs.Post {
-	req, err := DB.Query("SELECT Id, Auteur, Contenu, Titre, Date FROM Posts where Id = ?", id)
+	req, err := DB.Query("SELECT Id, Auteur, Contenu, Titre, Date, Likes FROM Posts where Id = ?", id)
 	if err != nil {
 		log.Fatal()
 	}
 	post := structs.Post{}
 	for req.Next() {
-		err = req.Scan(&post.Id, &post.Auteur, &post.Contenu, &post.Titre, &post.Date)
+		err = req.Scan(&post.Id, &post.Auteur, &post.Contenu, &post.Titre, &post.Date, &post.Likes)
 		if err != nil {
 			log.Fatal(err)
 		}
