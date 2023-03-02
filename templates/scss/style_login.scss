@@ -8,29 +8,30 @@ body{
 
     .container{
         background-color: #36393d8d;
-        margin-top: 15vh;
+        margin-top: 20vh;
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 100%;
+        height: 65vh;
         justify-content: center;
         flex-wrap: nowrap;
-
+        width: 92vw;
 
         
         .leftbox{    
             display: flex;
-
+            width: 70vh;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             form {
-                margin: 4.7vw;
                 opacity: 0.98;
-                padding: 18px 45px;
-                min-width: 300px;
-                max-width: 300px;
-                max-height: 28pc;
                 display: flex;
-                flex-direction: column; 
+                flex-direction: column;
+                width: 45vh;
+                height: 45vh;
             }
 
             h1 {
@@ -105,16 +106,22 @@ body{
 
         .rightbox{
             border-left: 1px solid rgba(255,255,255,0.1);
+            width: 60vh;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .text{
+                width: 50vh;
+            }
 
             form {
-                margin: 8vw;
                 opacity: 0.98;
-                padding: 18px 45px;
-                min-width: 310px;
-                max-width: 310px;
-                max-height: 28pc;
                 display: flex;
                 flex-direction: column; 
+                width: 45vh;
+                height: 30vh;
             }
 
 

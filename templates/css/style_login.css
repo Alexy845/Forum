@@ -7,26 +7,29 @@ body {
 }
 body .container {
   background-color: rgba(54, 57, 61, 0.5529411765);
-  margin-top: 15vh;
+  margin-top: 20vh;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100%;
+  height: 65vh;
   justify-content: center;
   flex-wrap: nowrap;
+  width: 92vw;
 }
 body .container .leftbox {
   display: flex;
+  width: 70vh;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 body .container .leftbox form {
-  margin: 4.7vw;
   opacity: 0.98;
-  padding: 18px 45px;
-  min-width: 300px;
-  max-width: 300px;
-  max-height: 28pc;
   display: flex;
   flex-direction: column;
+  width: 45vh;
+  height: 45vh;
 }
 body .container .leftbox h1 {
   padding: 15px;
@@ -89,16 +92,21 @@ body .container .leftbox button {
 }
 body .container .rightbox {
   border-left: 1px solid rgba(255, 255, 255, 0.1);
+  width: 60vh;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container .rightbox .text {
+  width: 50vh;
 }
 body .container .rightbox form {
-  margin: 8vw;
   opacity: 0.98;
-  padding: 18px 45px;
-  min-width: 310px;
-  max-width: 310px;
-  max-height: 28pc;
   display: flex;
   flex-direction: column;
+  width: 45vh;
+  height: 30vh;
 }
 body .container .rightbox input.btn {
   display: flex;

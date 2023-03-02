@@ -1,0 +1,85 @@
+body {
+  display: flex;
+  background-color: #0D1321;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+body form {
+  margin: 1.5vw;
+  background-color: #36393d;
+  opacity: 0.98;
+  padding: 35px 45px;
+  min-width: 350px;
+  max-width: 300px;
+  max-height: 36pc;
+  display: flex;
+  flex-direction: column;
+}
+
+body h1 {
+  padding: 15px;
+}
+
+body .inputs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+}
+
+body .inputs input[type=firstname],
+body .inputs input[type=lastname],
+body .inputs input[type=username],
+body .inputs input[type=email],
+body .inputs input[type=password] {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: gray;
+  outline: none;
+  margin-bottom: 1.4vw;
+  opacity: 0.5;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+body .inputs input[type=firstname]::placeholder,
+body .inputs input[type=lastname]::placeholder,
+body .inputs input[type=username]::placeholder,
+body .inputs input[type=email]::placeholder,
+body .inputs input[type=password]::placeholder {
+  color: #000000;
+}
+
+body .inputs input[type=firstname]:hover,
+body .inputs input[type=lastname]:hover,
+body .inputs input[type=username]:hover,
+body .inputs input[type=email]:hover,
+body .inputs input[type=password]:hover {
+  opacity: 0.65;
+}
+
+body .inputs input[type=firstname]:focus,
+body .inputs input[type=lastname]:focus,
+body .inputs input[type=username]:focus,
+body .inputs input[type=email]:focus,
+body .inputs input[type=password]:focus {
+  opacity: 0.68;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: rgba(70, 71, 71, 0.2);
+}
+
+body button {
+  padding: 13px 30px;
+  border-radius: 5px;
+  margin: 1vw;
+  border: none;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7647058824);
+  background-color: green;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}

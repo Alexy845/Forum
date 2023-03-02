@@ -4,26 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="templates/css/signup.css">
+    <link rel="stylesheet" href="templates/css/style_signup.css">
     <link rel="stylesheet" href="templates/css/style_scrollbar.css">
     <link rel="stylesheet" href="templates/css/style.css">
     <link rel="stylesheet" href="templates/css/style_index.css">
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum</title>
 </head>
 <body>
-<div class="header" oneclick="window.location.href='index.html'">
-    <h2><a href="/">Forum</a></h2>
-    <div class="header_middle">
-        <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
-    </div>
-    <div class="header_right">
-        <a href="/login">Connexion</a>
-    </div>
-</div>
-<div class="container">
-    <div class="leftbox">
+    <div class="header" oneclick="window.location.href='index.html'">
+        <h2><a href="/">Forum</a></h2>
+        <div class="header_middle">
+            <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+        </div>
+        <div class="header_right">
+            <div class="login">
+                <a href="/login">Connexion</a>
+            </div>
+        </div>
+      </div>
     <form action="/signup" method="post">
         <h1>Sign up</h1>
         <div class="inputs">
@@ -37,7 +36,5 @@
         <button type="submit">Sign up</button>
         <p class="inscription"> Already member ? <a href="/login"> <span>Log In</span> </a>. </p>
     </form>
-    </div>
-
 </body>
 </html>
