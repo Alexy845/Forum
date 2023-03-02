@@ -1,0 +1,79 @@
+body {
+    display: flex;
+    background-color: #0D1321;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+
+    form {
+        margin: 1.5vw;
+        background-color: #36393d;
+
+        opacity: 0.98;
+        padding: 35px 45px;
+        min-width: 350px;
+        max-width: 300px;
+        max-height: 36pc;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    h1 {
+
+        padding: 15px;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        margin-top: 14px;
+
+
+        input[type="firstname"],
+        input[type="lastname"],
+        input[type="username"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: gray;
+            outline: none;
+            margin-bottom: 1.4vw;
+            opacity: 0.5;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+
+
+            &::placeholder {
+                color: #000000;
+            }
+
+            &:hover {
+                opacity: 0.65;
+            }
+
+            &:focus {
+                opacity: 0.68;
+                border-style: solid;
+                border-width: 1.5px;
+                border-color: #46474733;
+            }
+        }
+    }
+
+    button {
+        padding: 13px 30px;
+        border-radius: 5px;
+        margin: 1vw;
+        border: none;
+        font-size: 15px;
+        color: #ffffffc3;
+        background-color: green;
+        outline: none;
+        cursor: pointer;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    }
+}
