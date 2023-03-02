@@ -1,8 +1,7 @@
 body{
+    background-color: var(--gre);
     display: flex;
-    background-color: #0D1321;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    overflow-y: auto;
 }

@@ -19,11 +19,11 @@
     <div class="header_right">
         {{ if eq .Connected false }}
             <div class="login">
-                <a href="/login">Connexion</a>
+                <a href="/login"><strong>Connection</strong></a>
             </div>
         {{ else }}
             <div class="logout">
-                <a href="/logout">Déconnexion</a>
+                <a href="/logout"><strong>Logout</strong></a>
             </div>
             <div class="profil">
                 <a href="/profile"><img src="/templates/image/profil.jpg"></a>

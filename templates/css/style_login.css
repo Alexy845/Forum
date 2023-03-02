@@ -84,11 +84,14 @@ body .container .leftbox button {
   border: none;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.7647058824);
-  background-color: rgba(37, 175, 2, 0.855);
+  background-color: rgba(37, 175, 2, 0.699);
   outline: none;
   cursor: pointer;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   justify-content: center;
+}
+body .container .leftbox button:hover {
+  background-color: rgba(37, 175, 2, 0.855);
 }
 body .container .rightbox {
   border-left: 1px solid rgba(255, 255, 255, 0.1);
@@ -117,12 +120,15 @@ body .container .rightbox input.btn {
   border: none;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.7647058824);
-  background-color: var(--oran);
+  background-color: rgba(254, 85, 38, 0.8117647059);
   outline: none;
   cursor: pointer;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   margin: 20px auto;
   justify-content: center;
+}
+body .container .rightbox input.btn:hover {
+  background-color: #fe5526;
 }
 
 /*# sourceMappingURL=style_login.css.map */
