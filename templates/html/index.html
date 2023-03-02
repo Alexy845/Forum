@@ -30,36 +30,38 @@
             </div>
         {{ end }}
     </div>
-    <div class="navbar">
-        <div class="catbar">
-            <div class="cat"><a href="/">Category 1</a></div>
-            <div class="cat"><a href="/">Category 2</a></div>
-            <div class="cat"><a href="/">Category 3</a></div>
-        </div>
+</div>
+
+<div class="navbar">
+    <div class="catbar">
+        <div class="cat"><a href="/">Category 1</a></div>
+        <div class="cat"><a href="/">Category 2</a></div>
+        <div class="cat"><a href="/">Category 3</a></div>
     </div>
-    <div class="content">
-        <div class="content_top">
-            {{ if eq .Connected false }}
-                <div class="not_connected">
-                    <p>Vous n'êtes pas connecté</p>
-                </div>
-            {{ else }}
-                <div class="hi">
-                    <p>Bonjour {{ .User.Username }}</p>
-                </div>
-                <div class="new_discution"><a href="/write"><i class='bx bxs-conversation'></i>New discution</a></div>
-            {{ end }}
+</div>
+<div class="content">
+    <div class="content_top">
+        {{ if eq .Connected false }}
+            <div class="not_connected">
+                <p>Vous n'êtes pas connecté</p>
+            </div>
+        {{ else }}
+            <div class="hi">
+                <p>Bonjour {{ .User.Username }}</p>
+            </div>
+            <div class="new_discution" ><a href="/write"><i class='bx bxs-conversation'></i>New discution</a></div>
+        {{ end }}
+    </div>
+    <div class="content_bot">
+        <div class="cb_left"></div>
+        <div class="cb_right">
+            {{ range .Posts}}
             <div class="title">
-                {{ range .Posts}}
                     <h2>{{ .Titre }}</h2>
                     <p>{{ .Contenu }}</p>
                     <p> {{ .Auteur.Username }}</p>
-                {{ end }}
             </div>
-        </div>
-        <div class="content_bot">
-            <div class="cb_left"></div>
-            <div class="cb_right"></div>
+            {{ end }}
         </div>
     </div>
 </div>
