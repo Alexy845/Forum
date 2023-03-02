@@ -4,10 +4,9 @@ body {
     overflow: hidden;
     flex-direction: column;
     overflow-y: auto;
-
 }
 
-.header {
+.header {    
     background-color: rgba(54, 57, 61, 0.7921568627);
     color: var(--whi);
     display: flex;
@@ -29,7 +28,9 @@ body {
 
             :hover {
                 color: #ffffff;
-                transition: 0.2s;}
+                transition: 0.2s;
+            }
+
         }
 
         .header_right {
@@ -40,6 +41,7 @@ body {
             align-items: center;
 
             .logout {
+
                 a {
                     background-color: #fe5526e6;
                     color: #ececec;
@@ -62,8 +64,10 @@ body {
                         transition: 0.1s;
                         font-size: 14.8px;
                         background-color: #fe5526;
-                    }    
+                    }
+
                 }
+
             }
 
             .login {
@@ -87,16 +91,16 @@ body {
                         transition: 0.1s;
                         font-size: 14.8px;
                         background-color: #fe5526;
-                    }    
+                    }
+
                 }
+
             }
-            
 
             .profil {
                 display: flex;
 
                 a {
-
                     img {
                         padding: 0 auto;
                         border-radius: 50%;
@@ -108,11 +112,15 @@ body {
                             box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.435);
                             transition: 0.2s;
                         }
+
                     }
+
                 }
+
             }
 
         }
+
         .header_middle {
             position: inherit;
             
@@ -160,8 +168,6 @@ body {
 
     }
 
-
-
 .navbar {
     background-color: #ececec35;
     color: var(--whi);
@@ -193,6 +199,7 @@ body {
             color: var(--whi);
 
             a {
+
                 &:hover {
                     border-bottom: 2.3px solid #fe5526db;
                     line-height: 3.2vh;
@@ -231,6 +238,7 @@ body {
                 font-weight: 600;
                 margin: 0;
             }
+
         }
 
         .hi {
@@ -251,6 +259,7 @@ body {
                 font-weight: 400;
                 margin: 0;
             }
+
         }
 
         .new_discution {
@@ -284,6 +293,7 @@ body {
                     color: #fe5526;
                     transition: 0.2s;
                 }
+
             }
 
             i {
@@ -296,8 +306,11 @@ body {
                     color: #fe5526;
                     transition: 0.2s;
                 }
+
             }
+
         }
+
     }
 
     .content_bot {
@@ -328,5 +341,7 @@ body {
             width: 22vw;
             position: absolute;
         }
+
     }
+    
 }
