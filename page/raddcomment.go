@@ -1,9 +1,11 @@
 package page
 
 import (
+	"fmt"
 	"forum/requetes_sql"
 	"forum/structs"
 	uuid "github.com/satori/go.uuid"
+	"log"
 	"net/http"
 )
 
@@ -13,7 +15,17 @@ func RAddComment(w http.ResponseWriter, r *http.Request) {
 		id := uuid.Must(uuid.FromString(cookie.Value))
 		structs.Datas.User = requetes_sql.GetUser(id)
 		structs.Datas.Connected = true
-		requetes_sql.AddComment(structs.Datas.User.Id, uuid.FromStringOrNil(r.URL.Query().Get("PostID")), r.FormValue("Content"))
+		postid, err := uuid.FromString(r.FormValue("post"))
+		if err != nil {
+			log.Fatal(err)
+		}
+		requetes_sql.AddComment(structs.Datas.User.Id, postid, r.FormValue("Comment"))
 	}
-	http.Redirect(w, r, "/content?id="+r.URL.Query().Get("id"), http.StatusSeeOther)
+	postid, err := uuid.FromString(r.FormValue("post"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	url := "/content?id=" + postid.String()
+	fmt.Println(url)
+	http.Redirect(w, r, url, http.StatusSeeOther)
 }
