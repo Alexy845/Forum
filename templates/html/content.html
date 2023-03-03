@@ -41,33 +41,24 @@
 </div>
 <div class="content">
     <div class="content_top">
-        {{ if eq .Connected false }}
-            <div class="not_connected">
-                <p>Vous n'êtes pas connecté</p>
-            </div>
-        {{ else }}
-            <div class="hi">
-                <p>Bonjour {{ .User.Username }}</p>
-            </div>
-            <div class="new_discution" ><a href="/write"><i class='bx bxs-conversation'></i>New discution</a></div>
-        {{ end }}
+        <h2>{{ .Post.Titre}}</h2>
     </div>
     <div class="content_bot">
         <div class="cb_left"></div>
         <div class="cb_right">
             {{ range .Posts}}
-            <div class="post">
-                <div class="title">
-                    <h2>{{ .Titre }}</h2>
+                <div class="post">
+                    <div class="title">
+                        <h2>{{ .Titre }}</h2>
+                    </div>
+                    <div class="autor">
+                        <p>{{ .Auteur.Username }}</p>
+                    </div>
+                    <div class="date">
+                        <p> {{ .Date }}</p>
+                    </div>
+                    <a href="/content?id={{ .Id }}"></a>
                 </div>
-                <div class="autor">
-                    <p>{{ .Auteur.Username }}</p>
-                </div>
-                <div class="date">
-                    <p> {{ .Date }}</p>
-                </div>
-                <a href="/content?id={{ .Id }}"></a>
-            </div>
             {{ end }}
         </div>
     </div>
