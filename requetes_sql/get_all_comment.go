@@ -7,8 +7,8 @@ import (
 	"log"
 )
 
-func GetAllComment() []structs.Comment {
-	req, err := DB.Query("SELECT * FROM Comments")
+func GetAllComment(id uuid.UUID) []structs.Comment {
+	req, err := DB.Query("SELECT * FROM Comments where Post = ?", id)
 	if err != nil {
 		log.Fatal(err)
 	}

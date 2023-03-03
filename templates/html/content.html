@@ -44,23 +44,41 @@
         <h2>{{ .Post.Titre}}</h2>
     </div>
     <div class="content_bot">
-        <div class="cb_left"></div>
-        <div class="cb_right">
-            {{ range .Posts}}
-                <div class="post">
-                    <div class="title">
-                        <h2>{{ .Titre }}</h2>
-                    </div>
-                    <div class="autor">
-                        <p>{{ .Auteur.Username }}</p>
-                    </div>
-                    <div class="date">
-                        <p> {{ .Date }}</p>
-                    </div>
-                    <a href="/content?id={{ .Id }}"></a>
+        <div class="cb_left">
+            <div class="post">
+                <div class="content">
+                    <h2>{{ .Post.Contenu }}</h2>
                 </div>
-            {{ end }}
+                <div class="autor">
+                    <p>{{ .Post.Auteur.Username }}</p>
+                </div>
+                <div class="date">
+                    <p> {{ .Post.Date }}</p>
+                </div>
+            </div>
         </div>
+        <div class="cb_right">
+            <div class="comments">
+                {{ range .Comments }}
+                    <div class="comment">
+                        <div class="content">
+                            <h2>{{ .Contenu }}</h2>
+                        </div>
+                        <div class="autor">
+                            <p>{{ .Auteur.Username }}</p>
+                        </div>
+                        <div class="date">
+                            <p> {{ .Date }}</p>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+        <form action="/addcomment" method="post">
+            <input type="text" autocomplete="false" name="Comment">
+            <input type="hidden" name="PostID" value="{{ .Post.Id }}">
+            <input type="submit" value="Envoyer">
+        </form>
     </div>
 </div>
 </body>
