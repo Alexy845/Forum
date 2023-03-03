@@ -7,23 +7,23 @@ import (
 	"log"
 )
 
-func GetAllLike() []structs.Like {
-	req, err := DB.Query("SELECT Id, User, Post FROM Like")
+func GetAllComment() []structs.Comment {
+	req, err := DB.Query("SELECT * FROM Comments")
 	if err != nil {
 		log.Fatal(err)
 	}
-	likes := []structs.Like{}
+	comments := []structs.Comment{}
 	for req.Next() {
-		like := structs.Like{}
+		comment := structs.Comment{}
 		user := uuid.UUID{}
 		post := uuid.UUID{}
-		err = req.Scan(&like.Id, &user, &post)
+		err = req.Scan(&comment.Id, &user, &post, &comment.Contenu, &comment.Date)
 		if err != nil {
 			log.Fatal(err)
 		}
-		like.User = GetUser(user)
-		like.Post = GetPost(post)
-		likes = append(likes, like)
+		comment.Auteur = GetUser(user)
+		comment.Post = GetPost(post)
+		comments = append(comments, comment)
 	}
 	defer func(req *sql.Rows) {
 		err := req.Close()
@@ -31,5 +31,5 @@ func GetAllLike() []structs.Like {
 			log.Fatal(err)
 		}
 	}(req)
-	return likes
+	return comments
 }
