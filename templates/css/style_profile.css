@@ -1,10 +1,20 @@
 body {
+  background-color: var(--gre);
   display: flex;
-  background-color: #0D1321;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.user {
+  background-color: var(--ony);
+  width: 82%;
+  min-height: 40vw;
+  height: auto;
+  display: inline;
+  margin: 14vh auto 10vh auto;
+  display: inline-block;
+  white-space: normal;
 }
 
 /*# sourceMappingURL=style_profile.css.map */

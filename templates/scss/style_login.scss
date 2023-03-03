@@ -2,9 +2,11 @@
 body{
     display: flex;
     justify-content: center;
-    flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: auto;
 
     .container{
         background-color: #36393d8d;
@@ -42,6 +44,8 @@ body{
             .inputs {
                 display: flex;
                 flex-direction: column;
+                height: auto;
+                width: auto;
                 margin-top: 14px;
 
                 input[type="username"],
@@ -117,7 +121,10 @@ body{
             justify-content: center;
 
             .text{
-                width: 50vh;
+                display: flex;
+                flex-direction: column;
+                height: auto;
+                width: auto;
             }
 
             form {

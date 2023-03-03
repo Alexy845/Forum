@@ -1,9 +1,11 @@
 body {
   display: flex;
   justify-content: center;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: auto;
 }
 body .container {
   background-color: rgba(54, 57, 61, 0.5529411765);
@@ -37,6 +39,8 @@ body .container .leftbox h1 {
 body .container .leftbox .inputs {
   display: flex;
   flex-direction: column;
+  height: auto;
+  width: auto;
   margin-top: 14px;
 }
 body .container .leftbox .inputs input[type=username],
@@ -102,7 +106,10 @@ body .container .rightbox {
   justify-content: center;
 }
 body .container .rightbox .text {
-  width: 50vh;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
 }
 body .container .rightbox form {
   opacity: 0.98;

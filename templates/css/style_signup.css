@@ -15,19 +15,25 @@ body form {
   overflow: hidden;
 }
 body h1 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
   padding: 15px;
 }
 body .inputs {
   display: flex;
   flex-direction: column;
   margin-top: 14px;
+  height: auto;
+  width: auto;
 }
 body .inputs input[type=firstname],
 body .inputs input[type=lastname],
 body .inputs input[type=username],
 body .inputs input[type=email],
 body .inputs input[type=password] {
-  padding: 12px;
+  padding: 11px;
   border: none;
   border-radius: 5px;
   background-color: gray;
@@ -61,7 +67,7 @@ body .inputs input[type=password]:focus {
   border-color: rgba(70, 71, 71, 0.2);
 }
 body button {
-  padding: 13px 30px;
+  padding: 13px;
   border-radius: 5px;
   margin: 1vw;
   border: none;
@@ -71,12 +77,21 @@ body button {
   outline: none;
   cursor: pointer;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: auto;
 }
 body button:hover {
   background-color: #fe5526;
 }
 body .log {
   margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
 }
 body .log a span {
   color: rgba(254, 85, 38, 0.9019607843);
