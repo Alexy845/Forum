@@ -262,24 +262,24 @@ body {
   height: 30vw;
   width: 65vw;
   position: relative;
-  overflow-y: scroll;
 }
-.content .content_bot .cb_right .title {
+.content .content_bot .cb_right .post {
   position: inherit;
-  margin: 0 0 0 60px;
-  top: 0;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: auto;
-  width: auto;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  align-items: baseline;
 }
-.content .content_bot .cb_right .title p {
-  font-size: 20px;
+.content .content_bot .cb_right .post p {
+  font-size: auto;
   font-weight: 60;
-  margin: 0 0 0 0;
-  padding: 50px;
+}
+.content .content_bot .cb_right .post h2 {
+  font-size: auto;
+  font-weight: 500;
 }
 .content .content_bot .cb_left {
   background-color: rgba(54, 57, 61, 0.5529411765);

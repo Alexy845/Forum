@@ -18,6 +18,8 @@ func main() {
 	http.HandleFunc("/writing", page.Writing)
 	http.HandleFunc("/logout", page.Logout)
 	http.HandleFunc("/profile", page.Profile)
+	http.HandleFunc("/content", page.Content)
+	http.HandleFunc("/addcomment", page.RAddComment)
 	port := "8080"
 	fmt.Println("Startup Server on port " + port)
 	err := http.ListenAndServe(":"+port, nil)

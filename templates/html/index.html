@@ -54,10 +54,16 @@
         </div>
         <div class="cb_right">
             {{ range .Posts}}
-            <div class="title">
-                    <h2>{{ .Titre }}</h2>
-                    <p>{{ .Contenu }}</p>
-                    <p> {{ .Auteur.Username }}</p>
+            <div class="post">
+                <div class="title">
+                    <h2><a href="/content?id={{ .Id }}">{{ .Titre }}</a></h2>
+                </div>
+                <div class="autor">
+                    <p>{{ .Auteur.Username }}</p>
+                </div>
+                <div class="date">
+                    <p> {{ .Date }}</p>
+                </div>
             </div>
             {{ end }}
         </div>
