@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="templates/css/style_index.css">
+    <link rel="stylesheet" href="templates/css/style_scrollbar.css">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <title>Forum</title>
+</head>
+<body>
+<div class="header" oneclick="window.location.href='index.html'">
+    <h2><a href="/">Forum</a></h2>
+    <div class="header_middle">
+        <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+    </div>
+    <div class="header_right">
+        {{ if eq .Connected false }}
+            <div class="login">
+                <a href="/login">Connexion</a>
+            </div>
+        {{ else }}
+            <div class="logout">
+                <a href="/logout">Déconnexion</a>
+            </div>
+            <div class="profil">
+                <a href="/profile"><img src="/templates/image/profil.jpg"></a>
+            </div>
+        {{ end }}
+    </div>
+</div>
+
+<div class="navbar">
+    <div class="catbar">
+        <div class="cat"><a href="/">Category 1</a></div>
+        <div class="cat"><a href="/">Category 2</a></div>
+        <div class="cat"><a href="/">Category 3</a></div>
+    </div>
+</div>
+<div class="content">
+    <div class="content_top">
+        <h2>{{ .Post.Titre}}</h2>
+    </div>
+    <div class="content_bot">
+        <div class="cb_left">
+            <div class="post">
+                <div class="content">
+                    <h2>{{ .Post.Contenu }}</h2>
+                </div>
+                <div class="autor">
+                    <p>{{ .Post.Auteur.Username }}</p>
+                </div>
+                <div class="date">
+                    <p> {{ .Post.Date }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="cb_right">
+            <div class="comments">
+                {{ range .Comments }}
+                    <div class="comment">
+                        <div class="content">
+                            <h2>{{ .Contenu }}</h2>
+                        </div>
+                        <div class="autor">
+                            <p>{{ .Auteur.Username }}</p>
+                        </div>
+                        <div class="date">
+                            <p> {{ .Date }}</p>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+        {{ if eq .Connected true }}
+            <h2>Écrire un commentaire</h2>
+            <form action="/addcomment" method="post">
+                <input type="text" autocomplete="false" name="Comment">
+                <input type="hidden" name="post" value="{{ .Post.Id }}">
+                <input type="submit" value="Envoyer">
+            </form>
+        {{ else }}
+            <p>Vous devez être connecté pour poster un commentaire</p>
+        {{ end }}
+    </div>
+</div>
+</body>
+</html>

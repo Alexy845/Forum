@@ -13,11 +13,13 @@ func GetPost(id uuid.UUID) structs.Post {
 		log.Fatal()
 	}
 	post := structs.Post{}
+	user := uuid.UUID{}
 	for req.Next() {
-		err = req.Scan(&post.Id, &post.Auteur, &post.Contenu, &post.Titre, &post.Date, &post.Likes)
+		err = req.Scan(&post.Id, &user, &post.Contenu, &post.Titre, &post.Date, &post.Likes)
 		if err != nil {
 			log.Fatal(err)
 		}
+		post.Auteur = GetUser(user)
 	}
 	defer func(req *sql.Rows) {
 		err := req.Close()
