@@ -10,14 +10,14 @@ import (
 )
 
 func AddUser(pseudo string, prenom string, nom string, mdp string, email string) uuid.UUID {
-	sqL := "INSERT INTO User (Id, Pseudo, Prenom, Nom, Date_membre, MDP, Email) values (?, ?, ?, ?, ?, ?, ?)"
+	sqL := "INSERT INTO User (Id, Pseudo, Prenom, Nom, Date_membre, MDP, Email, Avatar) values (?, ?, ?, ?, ?, ?, ?, ?)"
 	req, err := DB.Prepare(sqL)
 	if err != nil {
 		fmt.Println("AddUser1")
 		log.Fatal(err)
 	}
 	id := uuid2.CreateUUID()
-	_, err = req.Exec(id, pseudo, prenom, nom, time.Now().Format("2006-01-02 15:04:05"), hash.Hash(mdp), email)
+	_, err = req.Exec(id, pseudo, prenom, nom, time.Now().Format("2006-01-02 15:04:05"), hash.Hash(mdp), email, "/templates/image/profil.png")
 	if err != nil {
 		fmt.Println("AddUser2")
 		log.Fatal(err)

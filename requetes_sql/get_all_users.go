@@ -9,7 +9,7 @@ import (
 )
 
 func GetallUsers() []structs.User {
-	req, err := DB.Query("SELECT id, pseudo, prenom, nom, date_membre, mdp, email FROM User")
+	req, err := DB.Query("SELECT id, pseudo, prenom, nom, date_membre, mdp, email, Avatar FROM User")
 	if err != nil {
 		fmt.Println("Getall1")
 		log.Fatal(err)
@@ -17,7 +17,7 @@ func GetallUsers() []structs.User {
 	users := []structs.User{}
 	for req.Next() {
 		user := structs.User{}
-		err = req.Scan(&user.Id, &user.Username, &user.FirstName, &user.LastName, &user.CreationDate, &user.Password, &user.Email)
+		err = req.Scan(&user.Id, &user.Username, &user.FirstName, &user.LastName, &user.CreationDate, &user.Password, &user.Email, &user.Avatar)
 		if err != nil {
 			fmt.Println("Getall2")
 			log.Fatal(err)

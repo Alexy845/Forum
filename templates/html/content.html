@@ -26,7 +26,7 @@
                 <a href="/logout">Déconnexion</a>
             </div>
             <div class="profil">
-                <a href="/profile"><img src="/templates/image/profil.jpg"></a>
+                <a href="/profile"><img src="{{ .User.Avatar }}"></a>
             </div>
         {{ end }}
     </div>
@@ -55,6 +55,9 @@
                 <div class="date">
                     <p> {{ .Post.Date }}</p>
                 </div>
+                <div class="like">
+                    <p>{{ .Post.Likes }}</p>
+                </div>
             </div>
         </div>
         <div class="cb_right">
@@ -81,6 +84,10 @@
                 <input type="hidden" name="post" value="{{ .Post.Id }}">
                 <input type="submit" value="Envoyer">
             </form>
+                <form action="/like" method="post">
+                    <input type="hidden" name="like" value="{{ .Post.Id }}">
+                    <input type="submit" value="Like">
+                </form>
         {{ else }}
             <p>Vous devez être connecté pour poster un commentaire</p>
         {{ end }}

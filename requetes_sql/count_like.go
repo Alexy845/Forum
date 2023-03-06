@@ -2,24 +2,21 @@ package requetes_sql
 
 import (
 	"database/sql"
-	"forum/structs"
 	uuid "github.com/satori/go.uuid"
 	"log"
 )
 
-func GetLike(user uuid.UUID, post uuid.UUID) structs.Like {
-	req, err := DB.Query("SELECT Id FROM Like WHERE User = ? and Post = ?", user, post)
+func CountLike(id uuid.UUID) int {
+	req, err := DB.Query("SELECT COUNT(*) FROM Like WHERE Post = ?", id)
 	if err != nil {
 		log.Fatal()
 	}
-	like := structs.Like{}
+	i := 0
 	for req.Next() {
-		err = req.Scan(&like.Id)
+		err = req.Scan(&i)
 		if err != nil {
 			log.Fatal(err)
 		}
-		like.User = GetUser(user)
-		like.Post = GetPost(post)
 	}
 	defer func(req *sql.Rows) {
 		err := req.Close()
@@ -27,5 +24,5 @@ func GetLike(user uuid.UUID, post uuid.UUID) structs.Like {
 			log.Fatal(err)
 		}
 	}(req)
-	return like
+	return i
 }

@@ -20,6 +20,9 @@ func main() {
 	http.HandleFunc("/profile", page.Profile)
 	http.HandleFunc("/content", page.Content)
 	http.HandleFunc("/addcomment", page.RAddComment)
+	http.HandleFunc("/modify", page.Modify)
+	http.HandleFunc("/modify_content", page.ModifyContent)
+	http.HandleFunc("/like", page.Like)
 	port := "8080"
 	fmt.Println("Startup Server on port " + port)
 	err := http.ListenAndServe(":"+port, nil)

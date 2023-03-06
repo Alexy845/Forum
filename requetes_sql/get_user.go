@@ -9,14 +9,14 @@ import (
 )
 
 func GetUser(id uuid.UUID) structs.User {
-	req, err := DB.Query("SELECT id, pseudo, prenom, nom, date_membre, mdp, email FROM User where Id = ?", id)
+	req, err := DB.Query("SELECT id, pseudo, prenom, nom, date_membre, mdp, email, Avatar FROM User where Id = ?", id)
 	if err != nil {
 		fmt.Println("GetUser1")
 		log.Fatal(err)
 	}
 	user := structs.User{}
 	for req.Next() {
-		err = req.Scan(&user.Id, &user.Username, &user.FirstName, &user.LastName, &user.CreationDate, &user.Password, &user.Email)
+		err = req.Scan(&user.Id, &user.Username, &user.FirstName, &user.LastName, &user.CreationDate, &user.Password, &user.Email, &user.Avatar)
 		if err != nil {
 			fmt.Println("GetUser2")
 			log.Fatal(err)
