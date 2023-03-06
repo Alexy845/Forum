@@ -22,12 +22,12 @@ body .content .content_bot .cb_right {
   justify-content: space-between;
 }
 body .content .content_bot .cb_right .com .comment {
-  background-color: rgba(236, 236, 236, 0.0823529412);
+  background-color: rgba(236, 236, 236, 0.0549019608);
   height: 22vh;
-  border-radius: 20px;
+  border-radius: 18px;
   margin: 10px;
   padding: 3px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.0549019608);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.0705882353);
 }
 body .content .content_bot .cb_right .com .comment p {
   font-weight: 300;
