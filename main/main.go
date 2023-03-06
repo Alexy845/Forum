@@ -21,6 +21,7 @@ func main() {
 	http.HandleFunc("/content", page.Content)
 	http.HandleFunc("/addcomment", page.RAddComment)
 	http.HandleFunc("/modify", page.Modify)
+	http.HandleFunc("/modify_content", page.ModifyContent)
 	port := "8080"
 	fmt.Println("Startup Server on port " + port)
 	err := http.ListenAndServe(":"+port, nil)
