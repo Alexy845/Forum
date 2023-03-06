@@ -1,20 +1,159 @@
 body {
-  background-color: var(--gre);
   display: flex;
-  overflow: hidden;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
   flex-direction: column;
-  overflow-y: hidden;
-}
-
-.user {
-  background-color: var(--ony);
-  width: 82%;
-  min-height: 40vw;
   height: auto;
-  display: inline;
-  margin: 14vh auto 10vh auto;
-  display: inline-block;
-  white-space: normal;
+  width: auto;
+}
+body .user {
+  background-color: rgba(54, 57, 61, 0.5529411765);
+  margin-top: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 92vw;
+}
+body .user .information {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 70vh;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 92vw;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+body .user .information .leftbox {
+  display: flex;
+  width: 70vh;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+body .user .information .leftbox img {
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+body .user .information .leftbox .name {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+body .user .information .rightbox {
+  width: 60vh;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+body .user .information .rightbox h2 {
+  background-color: gray;
+  margin: 10px auto;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+body .user .information .rightbox input.btn {
+  display: flex;
+  float: left;
+  height: 5vh;
+  width: 20vh;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7647058824);
+  background-color: rgba(254, 85, 38, 0.8117647059);
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+}
+body .user .information .rightbox input.btn:hover {
+  background-color: #fe5526;
+}
+body .user .mdp {
+  opacity: 0.98;
+  display: flex;
+  flex-direction: row;
+}
+body .user .mdp h2 {
+  margin-top: 25px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+body .user .mdp .inputs {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: auto;
+  margin-top: 14px;
+  margin-left: 10px;
+  border-spacing: 5px;
+  padding: auto 10px;
+}
+body .user .mdp .inputs input[type=password] {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(191, 190, 189, 0.1137254902);
+  outline: none;
+  margin-bottom: 1.4vw;
+  opacity: 0.5;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+body .user .mdp .inputs input[type=password]::placeholder {
+  color: var(--silv);
+  padding: 10px;
+}
+body .user .mdp .inputs input[type=password]:hover {
+  box-shadow: 0 0 0.2px 0 #000000;
+  background-color: rgba(236, 236, 236, 0.4196078431);
+}
+body .user .mdp .inputs input[type=password]:hover::placeholder {
+  color: var(--gre);
+}
+body .user .mdp button {
+  height: 6vh;
+  width: 18vh;
+  border-radius: 5px;
+  margin: 15px auto;
+  border: none;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7647058824);
+  background-color: rgba(37, 175, 2, 0.699);
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  justify-content: center;
+}
+body .user .mdp button:hover {
+  background-color: rgba(37, 175, 2, 0.855);
 }
 
 /*# sourceMappingURL=style_profile.css.map */
