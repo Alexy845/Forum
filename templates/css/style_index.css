@@ -20,7 +20,7 @@ body {
   justify-content: space-around;
   align-content: space-between;
   flex-wrap: wrap;
-  position: absolute;
+  position: fixed;
   top: 0;
   padding: 0 auto;
 }
