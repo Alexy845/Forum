@@ -1,0 +1,12 @@
+:root {
+    --body-background-color: var(--gre);
+}
+
+@media(prefers-color-scheme: light) {
+    :root {
+        --body-background-color: var(--whi);
+    }
+}
+body{
+    background-color: var(--body-background-color);
+}
