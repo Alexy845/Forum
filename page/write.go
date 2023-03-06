@@ -1,16 +1,18 @@
 package page
 
 import (
+	_const "forum/const"
 	"forum/requetes_sql"
 	"forum/structs"
 	uuid "github.com/satori/go.uuid"
 	"html/template"
 	"log"
 	"net/http"
+	"path/filepath"
 )
 
 func Write(w http.ResponseWriter, r *http.Request) {
-	tmp, err := template.ParseFiles("templates/html/writePost.html")
+	tmp, err := template.ParseFiles(filepath.Join(_const.HtmlDir, "writePost.html"))
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -1,6 +1,7 @@
 package page
 
 import (
+	_const "forum/const"
 	"forum/requetes_sql"
 	"forum/structs"
 	uuid "github.com/satori/go.uuid"
@@ -10,10 +11,11 @@ import (
 	"mime/multipart"
 	"net/http"
 	"os"
+	"path/filepath"
 )
 
 func ModifyContent(w http.ResponseWriter, r *http.Request) {
-	tmp := template.Must(template.ParseFiles("templates/html/modify_content.html"))
+	tmp := template.Must(template.ParseFiles(filepath.Join(_const.HtmlDir, "modify_content.html")))
 	cookie, err := r.Cookie("session")
 	if err == nil {
 		id := uuid.Must(uuid.FromString(cookie.Value))
@@ -33,9 +35,9 @@ func ModifyContent(w http.ResponseWriter, r *http.Request) {
 						log.Fatal(err)
 					}
 				}(file)
-				_, err := os.Stat("templates/image/avatars/" + id.String())
+				_, err := os.Stat(_const.TemplatesDir + "/image/avatars/" + id.String())
 				if err != nil {
-					err := os.Mkdir("templates/image/avatars/"+id.String(), 0755)
+					err := os.Mkdir(_const.TemplatesDir+"/image/avatars/"+id.String(), 0755)
 					if err != nil {
 						log.Fatal("Create folder : ", err)
 					}
@@ -45,7 +47,7 @@ func ModifyContent(w http.ResponseWriter, r *http.Request) {
 						log.Fatal("Remove folder : ", err)
 					}
 				}
-				avatar = "templates/image/avatars/" + id.String() + "/" + fileheader.Filename
+				avatar = _const.TemplatesDir + "/image/avatars/" + id.String() + "/" + fileheader.Filename
 				out, err := os.Create(avatar)
 				if err != nil {
 					log.Fatal("Create file : ", err)
