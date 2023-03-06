@@ -26,7 +26,7 @@
                 <a href="/logout"><strong>Logout</strong></a>
             </div>
             <div class="profil">
-                <a href="/profile"><img src="/templates/image/profil.jpg"></a>
+                <a href="/profile"><img src="{{ .User.Avatar }}"></a>
             </div>
         {{ end }}
     </div>
@@ -34,7 +34,7 @@
 <div class="user">
     <div class="information">
         <div class="image">
-            <img src="/templates/image/profil.jpg">
+            <img src="{{ .User.Avatar }}" alt="">
         </div>
         <div class="name">
             <h2>{{ .User.Username }}</h2>

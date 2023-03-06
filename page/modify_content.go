@@ -5,8 +5,11 @@ import (
 	"forum/structs"
 	uuid "github.com/satori/go.uuid"
 	"html/template"
+	"io"
 	"log"
+	"mime/multipart"
 	"net/http"
+	"os"
 )
 
 func ModifyContent(w http.ResponseWriter, r *http.Request) {
@@ -21,6 +24,37 @@ func ModifyContent(w http.ResponseWriter, r *http.Request) {
 			email := r.FormValue("Email")
 			prenom := r.FormValue("Prenom")
 			nom := r.FormValue("Nom")
+			file, fileheader, _ := r.FormFile("avatar")
+			avatar := structs.Datas.User.Avatar
+			if file != nil {
+				defer func(file multipart.File) {
+					err := file.Close()
+					if err != nil {
+						log.Fatal(err)
+					}
+				}(file)
+				_, err := os.Stat("templates/image/avatars/" + id.String())
+				if err != nil {
+					err := os.Mkdir("templates/image/avatars/"+id.String(), 0755)
+					if err != nil {
+						log.Fatal("Create folder : ", err)
+					}
+				} else {
+					err := os.Remove(structs.Datas.User.Avatar)
+					if err != nil {
+						log.Fatal("Remove folder : ", err)
+					}
+				}
+				avatar = "templates/image/avatars/" + id.String() + "/" + fileheader.Filename
+				out, err := os.Create(avatar)
+				if err != nil {
+					log.Fatal("Create file : ", err)
+				}
+				_, err = io.Copy(out, file)
+				if err != nil {
+					log.Fatal(err)
+				}
+			}
 			if pseudo == "" {
 				pseudo = structs.Datas.User.Username
 			}
@@ -33,7 +67,7 @@ func ModifyContent(w http.ResponseWriter, r *http.Request) {
 			if nom == "" {
 				nom = structs.Datas.User.LastName
 			}
-			requetes_sql.UpdateUser(id, pseudo, email, prenom, nom)
+			requetes_sql.UpdateUser(id, pseudo, email, prenom, nom, avatar)
 			http.Redirect(w, r, "/profile", http.StatusSeeOther)
 		}
 	} else {

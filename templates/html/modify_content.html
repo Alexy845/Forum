@@ -7,7 +7,7 @@
 <body>
 <div>
     <h1>Forum</h1>
-    <form action="/modify_content" method="post">
+    <form action="/modify_content" method="post" enctype="multipart/form-data">
         <label>
             <input type="text" name="Pseudo" placeholder="Pseudo">
         </label>
@@ -19,6 +19,9 @@
         </label>
         <label>
             <input type="text" name="Email" placeholder="Email">
+        </label>
+        <label>
+            <input type="file" name="avatar" placeholder="avatar">
         </label>
         <input type="submit" name="submit" value="Submit">
     </form>
