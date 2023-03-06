@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="templates/css/style_content.css">
     <link rel="stylesheet" href="templates/css/style_index.css">
     <link rel="stylesheet" href="templates/css/style_scrollbar.css">
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
@@ -19,11 +20,11 @@
     <div class="header_right">
         {{ if eq .Connected false }}
             <div class="login">
-                <a href="/login">Connexion</a>
+                <a href="/login">Connection</a>
             </div>
         {{ else }}
             <div class="logout">
-                <a href="/logout">Déconnexion</a>
+                <a href="/logout">Logout</a>
             </div>
             <div class="profil">
                 <a href="/profile"><img src="{{ .User.Avatar }}"></a>
@@ -32,13 +33,7 @@
     </div>
 </div>
 
-<div class="navbar">
-    <div class="catbar">
-        <div class="cat"><a href="/">Category 1</a></div>
-        <div class="cat"><a href="/">Category 2</a></div>
-        <div class="cat"><a href="/">Category 3</a></div>
-    </div>
-</div>
+
 <div class="content">
     <div class="content_top">
         <h2>{{ .Post.Titre}}</h2>
@@ -46,9 +41,6 @@
     <div class="content_bot">
         <div class="cb_left">
             <div class="post">
-                <div class="content">
-                    <h2>{{ .Post.Contenu }}</h2>
-                </div>
                 <div class="autor">
                     <p>{{ .Post.Auteur.Username }}</p>
                 </div>
@@ -61,37 +53,47 @@
             </div>
         </div>
         <div class="cb_right">
-            <div class="comments">
+            <div class="com">
                 {{ range .Comments }}
                     <div class="comment">
                         <div class="content">
-                            <h2>{{ .Contenu }}</h2>
+                            <h2>- {{ .Contenu }}</h2>
                         </div>
-                        <div class="autor">
-                            <p>{{ .Auteur.Username }}</p>
-                        </div>
-                        <div class="date">
-                            <p> {{ .Date }}</p>
+                        <div class="postAuthor">
+                            <div class="autor">
+                                <p>{{ .Auteur.Username }}</p>
+                            </div>
+                            <div class="date">
+                                <p> {{ .Date }}</p>
+                            </div>
                         </div>
                     </div>
                 {{ end }}
             </div>
         </div>
-        {{ if eq .Connected true }}
-            <h2>Écrire un commentaire</h2>
-            <form action="/addcomment" method="post">
-                <input type="text" autocomplete="false" name="Comment">
-                <input type="hidden" name="post" value="{{ .Post.Id }}">
-                <input type="submit" value="Envoyer">
-            </form>
-                <form action="/like" method="post">
-                    <input type="hidden" name="like" value="{{ .Post.Id }}">
-                    <input type="submit" value="Like">
-                </form>
-        {{ else }}
-            <p>Vous devez être connecté pour poster un commentaire</p>
-        {{ end }}
     </div>
+</div>
+{{ if eq .Connected true }}
+<div class="commentary">
+    <div class="writeComment">
+        <h2>Écrire un commentaire :</h2>
+        <form action="/addcomment" method="post">
+            <input type="text" autocomplete="false" name="Comment" placeholder="Comment">
+            <input type="hidden" name="post" value="{{ .Post.Id }}">
+            <input type="submit" value="Envoyer">
+        </form>
+    </div>
+    <div class="like">
+        <form action="/like" method="post">
+            <i class='bx bxs-like'></i>
+            <input type="hidden" name="like" value="{{ .Post.Id }}">
+            <input type="submit" value="Like">
+        </form>
+        <p>{{ .Post.Likes }}</p>
+    </div>
+{{ else }}
+    <p>Vous devez être connecté pour poster un commentaire</p>
+{{ end }}
 </div>
 </body>
 </html>
