@@ -19,9 +19,12 @@
         width: auto;
 
         form {
+            background-color: #36393d8d;
+            padding: 22px;
+            margin-top: -5px;
 
             .inputTitle {
-                padding-left: 15px;
+                padding-left: 10px;
 
                 .title {
                     border: 1px solid rgba(73, 78, 81, 0.616);
@@ -76,7 +79,7 @@
                         box-shadow: 0 0 0.2px 0 #000000;
                         background-color: var(--silv);
                         color: var(--ony);
-                        padding: 1px;
+                        padding: 7px;
                         outline: none;
                     }
                 }
