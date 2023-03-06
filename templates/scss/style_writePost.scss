@@ -1,0 +1,21 @@
+.content {
+    height: 100%;
+
+    .content_top {
+        display: flex;
+        justify-content: center;
+
+        h2 {
+            font-weight: 400;
+        }
+    }
+
+    .content_bot {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        height: auto;
+        width: auto;
+    }
+}
+

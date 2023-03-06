@@ -1,0 +1,19 @@
+.content {
+  height: 100%;
+}
+.content .content_top {
+  display: flex;
+  justify-content: center;
+}
+.content .content_top h2 {
+  font-weight: 400;
+}
+.content .content_bot {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: auto;
+  width: auto;
+}
+
+/*# sourceMappingURL=style_writePost.css.map */

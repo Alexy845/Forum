@@ -83,7 +83,7 @@ body {
                     color: #ececec;
                     border-radius: 20px;
                     height: 5.5vh;
-                    width: 16vh;
+                    width: 13vh;
                     display: flex;
                     flex-direction: row;
                     align-items: center;
@@ -91,7 +91,7 @@ body {
                     margin: 20px;
                     box-shadow: 0px 1px 8px 0px #00000037;
                     font-size: 14px;
-                    font-weight: 100;
+                    font-weight: 500;
     
                     &:hover {
                         color: #ffffff;
@@ -305,32 +305,107 @@ body {
             box-shadow: 3px 5px 20px 0px #00000052;
             color: var(--whi);
             display: flex;
-            align-items: center;
-            flex-direction: row;
+            align-items: stretch;
+            flex-direction: column;
             margin-left: 10px;
             height: 30vw;
             width: 65vw;
             position: relative;
+            justify-content: space-evenly;
 
-            .post {
-                position: inherit;
+            .contentHead {
                 display: flex;
-                flex-direction: row;
-                justify-content: space-around;
+                flex-direction: column;
+                flex-wrap: wrap;
                 height: 100%;
                 width: 100%;
-                top: 0;
-                align-items: baseline;               
 
-                p {
-                    font-size: auto;
-                    font-weight: 60;
-                }
+                .hAll {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: baseline;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    padding: 10px 0;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                    background-color: #36393d67;
+                    border-bottom: 0.5px solid #ececec45;
+                    font-size: 16px;
 
-                h2 {
-                    font-size: auto;
-                    font-weight: 500;
-                }
+                    .hPost {
+                        display: flex;
+                        float: left;
+                    }
+    
+                    .hUser {
+                        display: flex;
+                        float: left;
+                    }
+    
+                    .hDate {
+                        display: flex;
+                        float: right;
+                    }
+
+                }                
+
+                .post {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: baseline;
+
+                    .cPost {
+                        float: left;
+                        width: 33.33%;
+                        display: flex;
+                        flex-direction: column;
+                        align-content: center;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                        justify-content: space-evenly;
+
+                        p {
+                            display: flex;
+                            font-weight: 600;
+                            font-size: 18px;
+                            font-style: italic;
+                        }
+
+                    }
+    
+                    .cAutor {
+                        width: 33.33%;
+                        display: flex;
+                        flex-direction: column;
+                        align-content: space-around;
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
+                        align-items: flex-start;
+
+                        p {
+                            font-weight: 350;
+                            font-size: 16px;
+                        }
+                    }
+    
+                    .cDate {
+                        float: right;
+                        display: flex;
+                        flex-direction: column;
+                        align-content: center;
+                        flex-wrap: wrap;
+                        align-items: flex-start;
+                        justify-content: space-around;
+
+                        p {
+                            font-weight: 350;
+                            font-size: 16px;
+                        }
+                    }
+
+                }               
 
             }
 
