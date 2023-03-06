@@ -1,15 +1,17 @@
 package page
 
 import (
+	_const "forum/const"
 	"forum/requetes_sql"
 	"forum/structs"
 	uuid "github.com/satori/go.uuid"
 	"html/template"
 	"net/http"
+	"path/filepath"
 )
 
 func Profile(w http.ResponseWriter, r *http.Request) {
-	tmp := template.Must(template.ParseFiles("templates/html/profile.html"))
+	tmp := template.Must(template.ParseFiles(filepath.Join(_const.HtmlDir, "profile.html")))
 	cookie, err := r.Cookie("session")
 	if err == nil {
 		id := uuid.Must(uuid.FromString(cookie.Value))

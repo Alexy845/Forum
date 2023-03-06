@@ -2,15 +2,17 @@ package page
 
 import (
 	"fmt"
+	_const "forum/const"
 	"forum/cookies"
 	"forum/requetes_sql"
 	"html/template"
 	"log"
 	"net/http"
+	"path/filepath"
 )
 
 func Signup(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("./templates/html/signup.html"))
+	tmpl := template.Must(template.ParseFiles(filepath.Join(_const.HtmlDir, "signup.html")))
 
 	switch r.Method {
 	case "GET":

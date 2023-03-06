@@ -1,0 +1,3 @@
+TEMPLATES_DIR=/home/ahliko/Ynov/forum/templates
+HTML_DIR=/home/ahliko/Ynov/forum/html
+DATABASE_DIR=/home/ahliko/Ynov/forum/DB_Base.sqlite
