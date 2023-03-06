@@ -1,7 +1,6 @@
 package _const
 
-import "os"
-
-var TemplatesDir = os.Getenv("TEMPLATES_DIR")
-var HtmlDir = os.Getenv("HTML_DIR")
-var Database = os.Getenv("DATABASE_DIR")
+var TemplatesDir = "/home/ahliko/Ynov/forum/templates"
+var HtmlDir = "/home/ahliko/Ynov/forum/templates/html"
+var Database = "/home/ahliko/Ynov/forum/DB_Base.sqlite"
+var Root = "/home/ahliko/Ynov/forum"

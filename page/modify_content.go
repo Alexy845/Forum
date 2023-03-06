@@ -35,20 +35,20 @@ func ModifyContent(w http.ResponseWriter, r *http.Request) {
 						log.Fatal(err)
 					}
 				}(file)
-				_, err := os.Stat(_const.TemplatesDir + "/image/avatars/" + id.String())
+				_, err := os.Stat(_const.Root + "/templates/image/avatars/" + id.String())
 				if err != nil {
-					err := os.Mkdir(_const.TemplatesDir+"/image/avatars/"+id.String(), 0755)
+					err := os.Mkdir(_const.Root+"/templates/image/avatars/"+id.String(), 0755)
 					if err != nil {
 						log.Fatal("Create folder : ", err)
 					}
 				} else {
-					err := os.Remove(structs.Datas.User.Avatar)
+					err := os.Remove(_const.Root + structs.Datas.User.Avatar)
 					if err != nil {
 						log.Fatal("Remove folder : ", err)
 					}
 				}
-				avatar = _const.TemplatesDir + "/image/avatars/" + id.String() + "/" + fileheader.Filename
-				out, err := os.Create(avatar)
+				avatar = "/templates/image/avatars/" + id.String() + "/" + fileheader.Filename
+				out, err := os.Create(_const.Root + avatar)
 				if err != nil {
 					log.Fatal("Create file : ", err)
 				}
