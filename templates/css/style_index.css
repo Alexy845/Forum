@@ -201,6 +201,16 @@ body {
   font-weight: 60;
   margin: 0 0 0 0;
 }
+.content .content_top .not_connected {
+  margin: 0 35% 0 40%;
+  height: auto;
+  width: auto;
+}
+.content .content_top .not_connected p {
+  font-size: 20px;
+  font-weight: 60;
+  margin: 0 0 0 0;
+}
 .content .content_top .new_discution {
   height: 5vh;
   width: 19vh;

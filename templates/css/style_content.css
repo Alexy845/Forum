@@ -1,6 +1,24 @@
 body {
   overflow-y: scroll;
 }
+body .errorPost {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+body .errorPost p {
+  display: flex;
+  margin-top: 3vh;
+  font-weight: 380;
+  font-style: oblique;
+  font-size: 17px;
+}
+body .errorPost p i {
+  font-size: 25px;
+  margin-right: 10px;
+  color: #fe5526;
+}
 body .content {
   padding: 0;
   margin-top: 10vh;

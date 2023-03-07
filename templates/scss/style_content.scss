@@ -1,9 +1,31 @@
 body {
     overflow-y: scroll;
 
+    .errorPost {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: center;
+
+            p {
+                display: flex;
+                margin-top: 3vh;
+                font-weight: 380;
+                font-style: oblique;
+                font-size: 17px;
+
+                i {
+                    font-size: 25px;
+                    margin-right: 10px;
+                    color: #fe5526;
+                }
+            }
+        }
+
     .content {
         padding: 0;
         margin-top: 10vh;
+
 
         .content_top {
             display: flex;
@@ -67,6 +89,7 @@ body {
                             align-content: flex-end;
                             margin-right: 22px;
                         }
+
                     }
                 }
             }

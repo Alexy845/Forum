@@ -91,9 +91,11 @@
         </form>
         <p>{{ .Post.Likes }}</p>
     </div>
-{{ else }}
-    <p>Vous devez être connecté pour poster un commentaire</p>
-{{ end }}
+    {{ else }}
+    <div class="errorPost">
+        <p><i class='bx bx-error-circle'></i>You must be logged in to post a comment !</p>
+    {{ end }}
+    </div>
 </div>
 </body>
 </html>
