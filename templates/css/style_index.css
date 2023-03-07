@@ -24,12 +24,6 @@ body {
   top: 0;
   padding: 0 auto;
 }
-.header h2 {
-  margin: 40px;
-  font-size: auto;
-  height: auto;
-  width: auto;
-}
 .header .header_right {
   padding-right: 30px;
   display: flex;
@@ -110,6 +104,27 @@ body {
 .header .header_right .profil a img:hover {
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.435);
   transition: 0.2s;
+}
+.header .logo {
+  display: flex;
+  flex-direction: row;
+  height: 9vh;
+  width: auto;
+  justify-content: flex-end;
+  margin: 0px auto;
+  padding: 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  cursor: pointer;
+}
+.header .logo img {
+  height: 19vh;
+  width: 19vh;
+  margin-top: 2vh;
+}
+.header .logo h2 {
+  margin-left: -5vh;
 }
 .header .header_middle {
   position: inherit;
