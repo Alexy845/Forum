@@ -57,14 +57,14 @@
                 {{ range .Comments }}
                     <div class="comment">
                         <div class="content">
-                            <h2>- {{ .Contenu }}</h2>
+                            <h2> {{ .Contenu }}</h2>
                         </div>
                         <div class="postAuthor">
                             <div class="autor">
-                                <p>{{ .Auteur.Username }}</p>
+                                <p><i class='bx bx-user' ></i> {{ .Auteur.Username }}</p>
                             </div>
                             <div class="date">
-                                <p> {{ .Date }}</p>
+                                <p><i class='bx bx-time-five'></i> {{ .Date }}</p>
                             </div>
                         </div>
                     </div>
