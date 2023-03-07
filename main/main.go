@@ -2,13 +2,14 @@ package main
 
 import (
 	"fmt"
+	_const "forum/const"
 	page "forum/page"
 	"log"
 	"net/http"
 )
 
 func main() {
-	http.Handle("/templates/", http.StripPrefix("/templates/", http.FileServer(http.Dir("./templates"))))
+	http.Handle("/templates/", http.StripPrefix("/templates/", http.FileServer(http.Dir(_const.TemplatesDir))))
 	http.Handle("/dist/", http.StripPrefix("/dist/", http.FileServer(http.Dir("./dist"))))
 	http.HandleFunc("/", page.Index)
 	http.HandleFunc("/login", page.LoginPage)
