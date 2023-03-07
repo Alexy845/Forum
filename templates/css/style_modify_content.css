@@ -1,0 +1,100 @@
+body {
+  overflow: hidden;
+}
+body form {
+  background-color: var(--ony);
+  opacity: 0.98;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 15vh auto;
+  padding: 16vh 10vh 20vh 10vh;
+  overflow: hidden;
+}
+body h1 {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  padding: 15px;
+}
+body .inputs {
+  display: flex;
+  flex-direction: column;
+  margin-top: 14px;
+  height: auto;
+  width: auto;
+}
+body .inputs input[type=text] {
+  padding: 11px;
+  border: none;
+  border-radius: 5px;
+  background-color: gray;
+  outline: none;
+  margin-bottom: 10px;
+  opacity: 0.5;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+body .inputs input[type=text]::placeholder {
+  color: #000000;
+}
+body .inputs input[type=text]:hover {
+  opacity: 0.65;
+}
+body .inputs input[type=text]:focus {
+  opacity: 0.68;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: rgba(70, 71, 71, 0.2);
+}
+body .avatar {
+  flex-direction: row;
+  padding: 13px;
+  border-radius: 5px;
+  margin: 1vw;
+  border: none;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7647058824);
+  background-color: rgba(37, 175, 2, 0.699);
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+}
+body .avatar img {
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+body .avatar:hover {
+  background-color: rgba(37, 175, 2, 0.855);
+}
+body .button {
+  padding: 13px;
+  border-radius: 5px;
+  margin: 1vw;
+  border: none;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.7647058824);
+  background-color: rgba(254, 85, 38, 0.9019607843);
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+}
+body .button:hover {
+  background-color: #fe5526;
+}
+
+/*# sourceMappingURL=style_modify_content.css.map */
