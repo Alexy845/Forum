@@ -34,44 +34,44 @@
 </div>
 <div class="user">
     <div class="information">
-        <div class="image">
-            <img src="{{ .User.Avatar }}" alt="">
+        <div class="leftbox">
+            <div class="image">
+                <img src="{{ .User.Avatar }}" alt="">
+            </div>
+            <div class="name">
+                <h2>{{ .User.Username }}</h2>
+            </div>
         </div>
-        <div class="name">
-            <h2>{{ .User.Username }}</h2>
+        <div class="rightbox">
+            <div class="prenom">
+                <h1>First Name :</h1>
+                <h2>{{ .User.FirstName }}</h2>
+            </div>
+            <div class="nom">
+                <h1>Last Name :</h1>
+                <h2>{{ .User.LastName }}</h2>
+            </div>
+            <div class="email">
+                <h1>Email :</h1>
+                <h2>{{ .User.Email }}</h2>
+            </div>
+            <div class="date">
+                <h1>Creation Date :</h1>
+                <h2>{{ .User.CreationDate }}</h2>
+            </div>
+            <form action="/modify_content">
+                <input type="submit" name="submit" value="Modify Informations" class="btn">
+            </form>
         </div>
-        <div class="prenom">
-            <h2>{{ .User.FirstName }}</h2>
-        </div>
-        <div class="nom">
-            <h2>{{ .User.LastName }}</h2>
-        </div>
-        <div class="email">
-            <h2>{{ .User.Email }}</h2>
-        </div>
-        <div class="date">
-            <h2>{{ .User.CreationDate }}</h2>
-        </div>
-        <form action="/modify_content">
-            <button type="submit" class="button">Modify Informations</button>
-        </form>
     </div>
     <form action="/modify" method="post" class="mdp">
-        <div class="mdp1">
-            <h2>Change your password</h2>
-        </div>
-        <div class="mdp2">
-            <input type="password" name="password_old" placeholder="Password" class="password" autocomplete="off">
-        </div>
-        <div class="mdp3">
-            <input type="password" name="password_new" placeholder="Password" class="password" autocomplete="off">
-        </div>
-        <div class="mdp4">
-            <input type="password" name="password_confirm" placeholder="Password" class="password" autocomplete="off">
-        </div>
-        <div class="mdp5">
+            <h2>Change your password ?</h2>
+            <div class="inputs">
+                <input type="password" name="password_old" placeholder="Old password" class="password" autocomplete="off">
+                <input type="password" name="password_new" placeholder="New password" class="password" autocomplete="off">
+                <input type="password" name="password_confirm" placeholder="Confirm password" class="password" autocomplete="off">
+            </div>
             <button type="submit" class="button">Change</button>
-        </div>
     </form>
 </div>
 </body>
