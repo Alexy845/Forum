@@ -1,7 +1,6 @@
 package page
 
 import (
-	"fmt"
 	_const "forum/const"
 	"forum/requetes_sql"
 	"forum/structs"
@@ -21,7 +20,6 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		structs.Datas.Connected = true
 	}
 	structs.Datas.Posts = requetes_sql.GetAllPosts()
-	fmt.Println(filepath.Join(_const.HtmlDir, "/index.html"))
 	err = t.Execute(w, structs.Datas)
 	if err != nil {
 		log.Fatal(err)
