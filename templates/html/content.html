@@ -45,6 +45,9 @@
     <div class="content_bot">
         <div class="cb_left">
             <div class="post">
+                <div class="content-post">
+                    <p>{{ .Post.Contenu }}</p>
+                </div>
                 <div class="autor">
                     <p>{{ .Post.Auteur.Username }}</p>
                 </div>
@@ -54,6 +57,23 @@
                 <div class="like">
                     <p>{{ .Post.Likes }}</p>
                 </div>
+                {{ if eq .Post.Auteur.Id .User.Id }}
+                    <div class="modify-comment">
+                        <form action="/update" method="post">
+                            <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
+                            <input type="hidden" name="title-post" value="{{ .Post.Titre }}">
+                            <input type="hidden" name="Type" value="post">
+                            <input type="submit" value="Modifier le Post">
+                        </form>
+                    </div>
+                    <div class="delete-comment">
+                        <form action="/delete" method="post">
+                            <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
+                            <input type="hidden" name="Type" value="post">
+                            <input type="submit" value="Supprimer le Post">
+                        </form>
+                    </div>
+                {{ end }}
             </div>
         </div>
         <div class="cb_right">

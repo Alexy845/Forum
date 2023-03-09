@@ -8,10 +8,10 @@
 {{ if .EditPost }}
     <div class="post">
         <form action="/edit" method="post">
-            <input type="hidden" name="id" value="{{ .Post.Id }}">
+            <input type="hidden" name="id-post" value="{{ .Post.Id }}">
             <input type="text" name="title" value="{{ .Post.Titre }}">
             <input type="text" name="content" value="{{ .Post.Contenu }}">
-            <input type="hidden" name="Type" value="comment">
+            <input type="hidden" name="Type" value="post">
             <input type="submit" value="Edit">
         </form>
     </div>

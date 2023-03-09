@@ -73,8 +73,9 @@ func ModifyContent(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/profile", http.StatusSeeOther)
 		}
 	} else {
+		structs.Datas.User = structs.User{}
+		structs.Datas.Connected = false
 		http.Redirect(w, r, "/login", http.StatusSeeOther)
-		return
 	}
 	err = tmp.Execute(w, structs.Datas)
 	if err != nil {

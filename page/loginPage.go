@@ -2,6 +2,7 @@ package page
 
 import (
 	_const "forum/const"
+	"forum/structs"
 	"html/template"
 	"log"
 	"net/http"
@@ -13,8 +14,11 @@ func LoginPage(w http.ResponseWriter, r *http.Request) {
 	_, err := r.Cookie("session")
 	if err == nil {
 		http.Redirect(w, r, "/", http.StatusSeeOther)
+	} else {
+		structs.Datas.User = structs.User{}
+		structs.Datas.Connected = false
 	}
-	err = tmpl.Execute(w, nil)
+	err = tmpl.Execute(w, structs.Datas)
 	if err != nil {
 		log.Fatal(err)
 	}

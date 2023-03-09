@@ -1,19 +1,14 @@
 package page
 
 import (
-	"fmt"
-	_const "forum/const"
 	"forum/requetes_sql"
 	"forum/structs"
 	uuid "github.com/satori/go.uuid"
-	"html/template"
 	"log"
 	"net/http"
-	"path/filepath"
 )
 
-func Update(w http.ResponseWriter, r *http.Request) {
-	tmp := template.Must(template.ParseFiles(filepath.Join(_const.HtmlDir, "update.html")))
+func Delete(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		cookie, err := r.Cookie("session")
 		if err == nil {
@@ -26,40 +21,33 @@ func Update(w http.ResponseWriter, r *http.Request) {
 					log.Fatal(err)
 				}
 				structs.Datas.Post = requetes_sql.GetPost(idPost)
-				idComment, err := uuid.FromString(r.FormValue("comment-update"))
+				idComment, err := uuid.FromString(r.FormValue("delete-comment"))
 				if err != nil {
 					log.Fatal(err)
 				}
-				structs.Datas.Comment = requetes_sql.GetComment(idComment)
+				requetes_sql.DeleteComment(idComment)
 				if structs.Datas.Comment.Auteur.Id != id {
-					http.Redirect(w, r, "/", http.StatusSeeOther)
-				} else {
-					structs.Datas.EditPost = false
+					http.Redirect(w, r, "/content?id="+structs.Datas.Post.Id.String(), http.StatusSeeOther)
 				}
 			} else if r.FormValue("Type") == "post" {
 				idPost, err := uuid.FromString(r.FormValue("id-post"))
 				if err != nil {
 					log.Fatal(err)
 				}
-				structs.Datas.Post = requetes_sql.GetPost(idPost)
-				if structs.Datas.Post.Auteur.Id != id {
-					http.Redirect(w, r, "/content?id="+structs.Datas.Post.Id.String(), http.StatusSeeOther)
-				} else {
-					structs.Datas.EditPost = true
+				if structs.Datas.Post.Auteur.Id == id {
+					requetes_sql.DeletePost(idPost)
+					http.Redirect(w, r, "/", http.StatusSeeOther)
 				}
+				http.Redirect(w, r, "/content?id="+structs.Datas.Post.Id.String(), http.StatusSeeOther)
 			} else {
-				fmt.Println("ERROR")
+				http.Redirect(w, r, "/", http.StatusSeeOther)
 			}
 		} else {
-			structs.Datas.User = structs.User{}
+			structs.Datas.Connected = false
 			structs.Datas.Connected = false
 			http.Redirect(w, r, "/login", http.StatusSeeOther)
 		}
 	} else if r.Method == "GET" {
 		http.Redirect(w, r, "/", http.StatusSeeOther)
-	}
-	err := tmp.Execute(w, structs.Datas)
-	if err != nil {
-		log.Fatal(err)
 	}
 }

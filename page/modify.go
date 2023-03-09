@@ -22,6 +22,10 @@ func Modify(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 		}
+	} else {
+		structs.Datas.User = structs.User{}
+		structs.Datas.Connected = false
+		http.Redirect(w, r, "/login", http.StatusSeeOther)
 	}
 	http.Redirect(w, r, "/profile", http.StatusSeeOther)
 }

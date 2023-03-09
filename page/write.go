@@ -19,10 +19,13 @@ func Write(w http.ResponseWriter, r *http.Request) {
 
 	cookie, err := r.Cookie("session")
 	if err != nil {
-		log.Fatal(err)
+		structs.Datas.User = structs.User{}
+		structs.Datas.Connected = false
+		http.Redirect(w, r, "/login", http.StatusSeeOther)
+	} else {
+		id := uuid.Must(uuid.FromString(cookie.Value))
+		structs.Datas.User = requetes_sql.GetUser(id)
 	}
-	id := uuid.Must(uuid.FromString(cookie.Value))
-	structs.Datas.User = requetes_sql.GetUser(id)
 	err = tmp.Execute(w, structs.Datas)
 	if err != nil {
 		log.Fatal(err)

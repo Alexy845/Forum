@@ -18,10 +18,13 @@ func Content(w http.ResponseWriter, r *http.Request) {
 		id := uuid.Must(uuid.FromString(cookie.Value))
 		structs.Datas.User = requetes_sql.GetUser(id)
 		structs.Datas.Connected = true
+	} else {
+		structs.Datas.Connected = false
+		structs.Datas.Connected = false
 	}
 	idPost, err := uuid.FromString(r.URL.Query().Get("id"))
 	if err != nil {
-		log.Fatal(err)
+		http.Redirect(w, r, "/", http.StatusSeeOther) // TODO: redirect to 404 page
 	}
 	structs.Datas.Post = requetes_sql.GetPost(idPost)
 	structs.Datas.Comments = requetes_sql.GetAllComment(idPost)

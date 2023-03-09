@@ -13,7 +13,10 @@ import (
 
 func Signup(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles(filepath.Join(_const.HtmlDir, "signup.html")))
-
+	_, err := r.Cookie("session")
+	if err == nil {
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	}
 	switch r.Method {
 	case "GET":
 	case "POST":
@@ -34,7 +37,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-	err := tmpl.Execute(w, nil)
+	err = tmpl.Execute(w, nil)
 	if err != nil {
 		log.Fatal(err)
 	}

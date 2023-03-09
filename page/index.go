@@ -18,6 +18,9 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		id := uuid.Must(uuid.FromString(cookie.Value))
 		structs.Datas.User = requetes_sql.GetUser(id)
 		structs.Datas.Connected = true
+	} else {
+		structs.Datas.User = structs.User{}
+		structs.Datas.Connected = false
 	}
 	structs.Datas.Posts = requetes_sql.GetAllPosts()
 	err = t.Execute(w, structs.Datas)

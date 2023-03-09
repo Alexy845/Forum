@@ -20,18 +20,18 @@ func Edit(w http.ResponseWriter, r *http.Request) {
 			structs.Datas.User = requetes_sql.GetUser(id)
 			structs.Datas.Connected = true
 			if r.FormValue("Type") == "comment" {
-				id, err := uuid.FromString(r.FormValue("id"))
+				idComment, err := uuid.FromString(r.FormValue("id"))
 				if err != nil {
 					log.Fatal(err)
 				}
-				requetes_sql.UpdateComment(id, r.FormValue("content"))
+				requetes_sql.UpdateComment(idComment, r.FormValue("content"))
 			} else if r.FormValue("Type") == "post" {
-				id, err := uuid.FromString(r.FormValue("id"))
-				if err != nil {
-					log.Fatal(err)
-				}
-				requetes_sql.UpdatePost(id, r.FormValue("title"), r.FormValue("content"))
+				requetes_sql.UpdatePost(idPost, r.FormValue("title"), r.FormValue("content"))
 			}
+		} else {
+			structs.Datas.User = structs.User{}
+			structs.Datas.Connected = false
+			http.Redirect(w, r, "/login", http.StatusSeeOther)
 		}
 		http.Redirect(w, r, "/content?id="+idPost.String(), http.StatusSeeOther)
 	} else {

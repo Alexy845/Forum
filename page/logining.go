@@ -9,8 +9,13 @@ import (
 )
 
 func Logining(w http.ResponseWriter, r *http.Request) {
+	_, err := r.Cookie("session")
+	if err == nil {
+		http.Redirect(w, r, "/", http.StatusSeeOther)
+	}
 	switch r.Method {
 	case "GET":
+		http.Redirect(w, r, "/", http.StatusSeeOther)
 	case "POST":
 		username := r.FormValue("username")
 		password := r.FormValue("password")
