@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="templates/css/style_profile.css">
     <link rel="stylesheet" href="templates/css/style_scrollbar.css">
     <link rel="stylesheet" href="templates/css/style_theme.css">
+    <link rel="icon" href="/templates/image/logo/logoBO.jpg">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <title>Forum</title>
 </head>
 <body>
@@ -22,59 +24,47 @@
     <div class="header_right">
         {{ if eq .Connected false }}
             <div class="login">
-                <a href="/login"><strong>Connection</strong></a>
+                <a href="/login">Connection</a>
             </div>
         {{ else }}
             <div class="logout">
-                <a href="/logout"><strong>Logout</strong></a>
+                <a href="/logout"><i class='bx bx-power-off'></i></a>
             </div>
             <div class="profil">
                 <a href="/profile"><img src="{{ .User.Avatar }}"></a>
+                <p>{{ .User.Username }}</p>
             </div>
         {{ end }}
     </div>
 </div>
-<div class="user">
-    <div class="information">
-        <div class="leftbox">
-            <div class="image">
-                <img src="{{ .User.Avatar }}" alt="">
+<div class="UserProfile">
+    <div class="contentAll">
+        <div class="contentTop">
+            <div class="Banner">
             </div>
-            <div class="name">
-                <h2>{{ .User.Username }}</h2>
+            <div class="Avatar">
+                <img src="{{ .User.Avatar }}">
+                <p>{{ .User.Username }}</p>
             </div>
         </div>
-        <div class="rightbox">
-            <div class="prenom">
-                <h1>First Name :</h1>
-                <h2>{{ .User.FirstName }}</h2>
+        <div class="modify">
+            <a href="/modify_content">Edit Profile<i class='bx bx-edit-alt' ></i></a>
+        </div>
+        <div class="contentBot">
+            <div class="information">
+                <div class="textInfo">
+                    <p>First Name</p>
+                    <p>Last Name</p>
+                    <p>Email</p>
+                </div>
+                <div class="info">
+                    <p>{{ .User.FirstName }}</p>
+                    <p>{{ .User.LastName }}</p>
+                    <p>{{ .User.Email }}</p>
+                </div>
             </div>
-            <div class="nom">
-                <h1>Last Name :</h1>
-                <h2>{{ .User.LastName }}</h2>
-            </div>
-            <div class="email">
-                <h1>Email :</h1>
-                <h2>{{ .User.Email }}</h2>
-            </div>
-            <div class="date">
-                <h1>Creation Date :</h1>
-                <h2>{{ .User.CreationDate }}</h2>
-            </div>
-            <form action="/modify_content">
-                <input type="submit" name="submit" value="Modify Informations" class="btn">
-            </form>
         </div>
     </div>
-    <form action="/modify" method="post" class="mdp">
-            <h2>Change your password ?</h2>
-            <div class="inputs">
-                <input type="password" name="password_old" placeholder="Old password" class="password" autocomplete="off">
-                <input type="password" name="password_new" placeholder="New password" class="password" autocomplete="off">
-                <input type="password" name="password_confirm" placeholder="Confirm password" class="password" autocomplete="off">
-            </div>
-            <button type="submit" class="button">Change</button>
-    </form>
 </div>
 </body>
 </html>
