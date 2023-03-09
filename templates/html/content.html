@@ -36,8 +36,8 @@
         {{ end }}
     </div>
 </div>
-
-
+{{ $post := .Post }}
+{{ $user := .User }}
 <div class="content">
     <div class="content_top">
         <h2>{{ .Post.Titre}}</h2>
@@ -71,6 +71,24 @@
                                 <p><i class='bx bx-time-five'></i> {{ .Date }}</p>
                             </div>
                         </div>
+                        {{ if eq .Auteur.Id $.User.Id }}
+                        <div class="modify-comment">
+                            <form action="/update" method="post">
+                                <input type="hidden" name="comment-update" value="{{ .Id }}">
+                                <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
+                                <input type="hidden" name="Type" value="comment">
+                                <input type="submit" value="Modifier le commentaire">
+                            </form>
+                        </div>
+                        <div class="delete-comment">
+                            <form action="/delete" method="post">
+                                <input type="hidden" name="delete-comment" value="{{ .Id }}">
+                                <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
+                                <input type="hidden" name="Type" value="comment">
+                                <input type="submit" value="Supprimer le commentaire">
+                            </form>
+                        </div>
+                        {{ end }}
                     </div>
                 {{ end }}
             </div>

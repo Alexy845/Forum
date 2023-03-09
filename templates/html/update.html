@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forum</title>
+</head>
+<body>
+{{ if .EditPost }}
+    <div class="post">
+        <form action="/edit" method="post">
+            <input type="hidden" name="id" value="{{ .Post.Id }}">
+            <input type="text" name="title" value="{{ .Post.Titre }}">
+            <input type="text" name="content" value="{{ .Post.Contenu }}">
+            <input type="hidden" name="Type" value="comment">
+            <input type="submit" value="Edit">
+        </form>
+    </div>
+{{ else }}
+    <div class="comment">
+        <form action="/edit" method="post">
+            <input type="hidden" name="id-post" value="{{ .Post.Id }}">
+            <input type="hidden" name="id" value="{{ .Comment.Id }}">
+            <input type="text" name="content" value="">
+            <input type="hidden" name="Type" value="comment">
+            <input type="submit" value="Comment">
+        </form>
+    </div>
+{{ end }}
+</body>
+</html>

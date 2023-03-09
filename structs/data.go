@@ -6,6 +6,8 @@ type Data struct {
 	Connected bool
 	Post      Post
 	Comments  []Comment
+	Comment   Comment
+	EditPost  bool
 }
 
 var Datas = &Data{
@@ -13,4 +15,7 @@ var Datas = &Data{
 	User:      User{},
 	Connected: false,
 	Post:      Post{},
+	Comments:  []Comment{},
+	Comment:   Comment{},
+	EditPost:  false,
 }
