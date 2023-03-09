@@ -2,29 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/css/style_login.css">
+    <link rel="stylesheet" href="templates/css/style_scrollbar.css">
+    <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="templates/css/style_index.css">
     <link rel="stylesheet" href="templates/css/style_theme.css">
+    <link rel="stylesheet" href="templates/css/style_modify_content.css">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <title>Forum</title>
 </head>
 <body>
+    <div class="header" oneclick="window.location.href='index.html'">
+        <h2><a href="/">Forum</a></h2>
+        <div class="header_middle">
+            <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+        </div>
+        <div class="header_right">
+            {{ if eq .Connected false }}
+                <div class="login">
+                    <a href="/login"><strong>Connection</strong></a>
+                </div>
+            {{ else }}
+                <div class="logout">
+                    <a href="/logout"><strong>Logout</strong></a>
+                </div>
+                <div class="profil">
+                    <a href="/profile"><img src="{{ .User.Avatar }}"></a>
+                </div>
+            {{ end }}
+        </div>
+    </div>
 <div>
-    <h1>Forum</h1>
     <form action="/modify_content" method="post" enctype="multipart/form-data">
-        <label>
+        <h1>Modify-Informations</h1>
+        <div class="inputs">
             <input type="text" name="Pseudo" placeholder="Pseudo">
-        </label>
-        <label>
             <input type="text" name="Prenom" placeholder="Prenom">
-        </label>
-        <label>
             <input type="text" name="Nom" placeholder="Nom">
-        </label>
-        <label>
             <input type="text" name="Email" placeholder="Email">
-        </label>
-        <label>
+        </div> 
+        <div class="avatar">
+            <div class="image">
+                <img src="{{ .User.Avatar }}" alt="">
+            </div>
             <input type="file" name="avatar" placeholder="avatar">
-        </label>
-        <input type="submit" name="submit" value="Submit">
+        </div>
+        <button type="submit" name="submit" value="Submit" class="button">Submit</button>
     </form>
 </div>
 </body>
