@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="templates/css/style.css">
     <link rel="stylesheet" href="templates/css/style_index.css">
     <link rel="stylesheet" href="templates/css/style_scrollbar.css">
+    <link rel="icon" href="/templates/image/logo/logoBO.jpg">
     <link rel="stylesheet" href="templates/css/style_theme.css">
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <title>Forum</title>
 </head>
 <body>
 <div class="header" oneclick="window.location.href='index.html'">
-    <h2><a href="/">Forum</a></h2>
+    <div class="logo" onclick="window.location.href='/'">
+        <img href="/" src="/templates/image/logo/logoO.png" alt=""><h2><a href="/">Forum</a></h2>
+    </div>
     <div class="header_middle">
         <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
     </div>
@@ -57,13 +60,13 @@
             <div class="contentHead">
                 <div class="hAll">
                     <div class="hPost">
-                        <p class="head">Post</p>
+                        <p class="head"><i class='bx bx-comment-detail'></i> Post</p>
                     </div>
                     <div class="hUser">
-                        <p class="head">User</p>
+                        <p class="head"><i class='bx bx-user' ></i> User</p>
                     </div>
                     <div class="hDate">
-                        <p class="head">Date</p>
+                        <p class="head"><i class='bx bx-time-five'></i> Date</p>
                     </div>
                 </div>
                 {{ range .Posts}}

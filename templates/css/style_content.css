@@ -1,6 +1,24 @@
 body {
   overflow-y: scroll;
 }
+body .errorPost {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+body .errorPost p {
+  display: flex;
+  margin-top: 3vh;
+  font-weight: 380;
+  font-style: oblique;
+  font-size: 17px;
+}
+body .errorPost p i {
+  font-size: 25px;
+  margin-right: 10px;
+  color: #fe5526;
+}
 body .content {
   padding: 0;
   margin-top: 10vh;
@@ -23,9 +41,9 @@ body .content .content_bot .cb_right {
 }
 body .content .content_bot .cb_right .com .comment {
   background-color: rgba(236, 236, 236, 0.0549019608);
-  height: 22vh;
+  height: auto;
   border-radius: 18px;
-  margin: 10px;
+  margin: 12px;
   padding: 3px;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.0705882353);
 }
@@ -39,7 +57,8 @@ body .content .content_bot .cb_right .com .comment .content {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-left: 10px;
+  margin: 26px 12px 10px 12px;
+  line-break: anywhere;
 }
 body .content .content_bot .cb_right .com .comment .content h2 {
   font-weight: 390;
@@ -54,6 +73,14 @@ body .content .content_bot .cb_right .com .comment .postAuthor {
   flex-wrap: wrap;
   align-content: flex-end;
   margin-right: 22px;
+  margin-bottom: 8px;
+}
+body .content .content_bot .cb_right .com .comment .postAuthor p i {
+  font-size: 15px;
+  margin-right: 3px;
+}
+body .content .content_bot .cb_right .com .comment .postAuthor .autor {
+  margin-bottom: 2px;
 }
 body .commentary {
   display: flex;

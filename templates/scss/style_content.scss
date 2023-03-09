@@ -1,9 +1,31 @@
 body {
     overflow-y: scroll;
 
+    .errorPost {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: center;
+
+            p {
+                display: flex;
+                margin-top: 3vh;
+                font-weight: 380;
+                font-style: oblique;
+                font-size: 17px;
+
+                i {
+                    font-size: 25px;
+                    margin-right: 10px;
+                    color: #fe5526;
+                }
+            }
+        }
+
     .content {
         padding: 0;
         margin-top: 10vh;
+
 
         .content_top {
             display: flex;
@@ -31,11 +53,12 @@ body {
 
                     .comment {
                         background-color: #ececec0e;
-                        height: 22vh;
+                        height: auto;
                         border-radius: 18px;
-                        margin: 10px;
+                        margin: 12px;
                         padding: 3px;
                         box-shadow: 0px 1px 3px 0px #00000012;
+                        
 
                         p {
                             font-weight: 300;
@@ -48,7 +71,8 @@ body {
                             flex-direction: row;
                             flex-wrap: wrap;
                             justify-content: flex-start;
-                            margin-left: 10px;
+                            margin: 26px 12px 10px 12px;
+                            line-break: anywhere;
 
                             h2 {
                                 font-weight: 390;
@@ -66,7 +90,21 @@ body {
                             flex-wrap: wrap;
                             align-content: flex-end;
                             margin-right: 22px;
+                            margin-bottom: 8px;
+
+                            p {
+
+                                i {
+                                    font-size: 15px;
+                                    margin-right: 3px;
+                                }
+                            }
+
+                            .autor {
+                                margin-bottom: 2px;
+                            }
                         }
+
                     }
                 }
             }
