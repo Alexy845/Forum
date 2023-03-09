@@ -14,7 +14,8 @@
 <body>
 <div class="header" oneclick="window.location.href='index.html'">
     <div class="logo" onclick="window.location.href='/'">
-        <img href="/" src="/templates/image/logo/logoO.png" alt=""><h2><a href="/">Forum</a></h2>
+        <img href="/" src="/templates/image/logo/logoO.png" alt="">
+        <h2><a href="/">Forum</a></h2>
     </div>
     <div class="header_middle">
         <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
@@ -63,7 +64,7 @@
                         </div>
                         <div class="postAuthor">
                             <div class="autor">
-                                <p><i class='bx bx-user' ></i> {{ .Auteur.Username }}</p>
+                                <p><i class='bx bx-user'></i> {{ .Auteur.Username }}</p>
                             </div>
                             <div class="date">
                                 <p><i class='bx bx-time-five'></i> {{ .Date }}</p>
@@ -87,16 +88,15 @@
     </div>
     <div class="like">
         <form action="/like" method="post">
-            <i class='bx bxs-like'></i>
+            <button type="submit" value="Like"><i class='bx bxs-like'></i></button>
             <input type="hidden" name="like" value="{{ .Post.Id }}">
-            <input type="submit" value="Like">
         </form>
         <p>{{ .Post.Likes }}</p>
     </div>
     {{ else }}
     <div class="errorPost">
         <p><i class='bx bx-error-circle'></i>You must be logged in to post a comment !</p>
-    {{ end }}
+        {{ end }}
     </div>
 </div>
 </body>
