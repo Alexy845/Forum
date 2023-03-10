@@ -18,9 +18,9 @@
 
 <br>
 
-You can't find enough information about the future concerts of your favorite artists or musical groups?
+Do you want to exchange different topics or even ask questions online with users all over the world?
 
-This is where our great Groupie-tracker web page comes into play
+Now with Forum you can 👍
 
 <br>
 
@@ -58,15 +58,16 @@ This is where our great Groupie-tracker web page comes into play
 
 - Different search filters.
 
-To simplify your search go to the search bar by clicking on the magnifying glass and access the different filters with the filter arrow. 
+To simplify your research, to find a subject that interests you, click in the bar on the left offering you different categories. You can also filter your searches by publication dates, by title as well as by user by clicking on the different filtering options available above all posts.
 
-- Many Bands and their informations.
+- Posts.
 
-Possibility to show the informations of many bands/artist contains in our api to saw their futur concert, locations and many other think.
+You have the possibility to post your own posts, to modify them as well as to delete them.
 
-- Concert informations.
+- Profile.
 
-Be informed of all the latest events of your favorite musical artists with the prices their different locations but also the possibility to access our online ticketing.
+You can see your own profile as well as the profile of different users.
+
 <br>
 <br>
 
