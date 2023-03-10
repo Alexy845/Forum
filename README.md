@@ -58,7 +58,7 @@ Now with Forum you can 👍
 
 - Different search filters.
 
-To simplify your research, to find a subject that interests you, click in the bar on the left offering you different categories. You can also filter your searches by publication dates, by title as well as by user by clicking on the different filtering options available above all posts.
+To simplify your research, to find a subject that interests you, click in the left bar offering you different categories. You can also filter your searches by publication dates, by title as well as by user by clicking on the different filtering options available above all the posts or simply type in the search bar the keywords you want.
 
 - Posts.
 
