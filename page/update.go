@@ -32,7 +32,7 @@ func Update(w http.ResponseWriter, r *http.Request) {
 				}
 				structs.Datas.Comment = requetes_sql.GetComment(idComment)
 				if structs.Datas.Comment.Auteur.Id != id {
-					http.Redirect(w, r, "/", http.StatusSeeOther)
+					http.Redirect(w, r, "/", http.StatusSeeOther) // TODO : Redirect to 404 Page
 				} else {
 					structs.Datas.EditPost = false
 				}
@@ -56,7 +56,7 @@ func Update(w http.ResponseWriter, r *http.Request) {
 			http.Redirect(w, r, "/login", http.StatusSeeOther)
 		}
 	} else if r.Method == "GET" {
-		http.Redirect(w, r, "/", http.StatusSeeOther)
+		http.Redirect(w, r, "/", http.StatusSeeOther) // TODO : Redirect to 404 Page
 	}
 	err := tmp.Execute(w, structs.Datas)
 	if err != nil {
