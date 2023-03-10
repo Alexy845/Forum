@@ -10,7 +10,7 @@ import (
 
 func Like(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
-		http.Redirect(w, r, "/", http.StatusSeeOther) // TODO : Redirect to 404 Page
+		http.Redirect(w, r, "/404", http.StatusSeeOther)
 	} else {
 		id_post, err := uuid.FromString(r.FormValue("like"))
 		if err != nil {

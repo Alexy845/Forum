@@ -27,6 +27,7 @@ func main() {
 	http.HandleFunc("/update", page.Update)
 	http.HandleFunc("/edit", page.Edit)
 	http.HandleFunc("/delete", page.Delete)
+	http.HandleFunc("/404", page.Page404)
 	port := "8080"
 	fmt.Println("Startup Server on port " + port)
 	err := http.ListenAndServe(":"+port, nil)

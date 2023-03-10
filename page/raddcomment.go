@@ -11,7 +11,7 @@ import (
 
 func RAddComment(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
-		http.Redirect(w, r, "/", http.StatusSeeOther) // TODO : Redirect to 404 Page
+		http.Redirect(w, r, "/404", http.StatusSeeOther)
 	} else {
 		cookie, err := r.Cookie("session")
 		if err == nil {
