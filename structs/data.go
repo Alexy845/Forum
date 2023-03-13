@@ -8,6 +8,7 @@ type Data struct {
 	Comments  []Comment
 	Comment   Comment
 	EditPost  bool
+	Result    bool
 }
 
 var Datas = &Data{
@@ -18,4 +19,5 @@ var Datas = &Data{
 	Comments:  []Comment{},
 	Comment:   Comment{},
 	EditPost:  false,
+	Result:    false,
 }

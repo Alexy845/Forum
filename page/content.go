@@ -24,7 +24,7 @@ func Content(w http.ResponseWriter, r *http.Request) {
 	}
 	idPost, err := uuid.FromString(r.URL.Query().Get("id"))
 	if err != nil {
-		http.Redirect(w, r, "/", http.StatusSeeOther) // TODO: redirect to 404 page
+		http.Redirect(w, r, "/404", http.StatusSeeOther)
 	}
 	structs.Datas.Post = requetes_sql.GetPost(idPost)
 	structs.Datas.Comments = requetes_sql.GetAllComment(idPost)

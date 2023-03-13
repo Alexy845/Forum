@@ -15,11 +15,14 @@
 <body>
 <div class="header" oneclick="window.location.href='index.html'">
     <div class="logo" onclick="window.location.href='/'">
-        <img href="/" src="/templates/image/logo/logoO.png" alt=""><h2><a href="/">Forum</a></h2>
+        <img href="/" src="/templates/image/logo/logoO.png" alt="">
+        <h2><a href="/">Forum</a></h2>
     </div>
-    <div class="header_middle">
-        <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
-    </div>
+    <form method="get" action="/search">
+        <div class="header_middle">
+            <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+        </div>
+    </form>
     <div class="header_right">
         {{ if eq .Connected false }}
             <div class="login">
@@ -63,30 +66,30 @@
                         <p class="head"><i class='bx bx-comment-detail'></i> Post</p>
                     </div>
                     <div class="hUser">
-                        <p class="head"><i class='bx bx-user' ></i> User</p>
+                        <p class="head"><i class='bx bx-user'></i> User</p>
                     </div>
                     <div class="hDate">
                         <p class="head"><i class='bx bx-time-five'></i> Date</p>
                     </div>
                 </div>
                 {{ range .Posts}}
-                <div class="post">
-                    <div class="cPost">
-                        <div class="title">
-                            <p><a href="/content?id={{ .Id }}">{{ .Titre }}</a></p>
+                    <div class="post">
+                        <div class="cPost">
+                            <div class="title">
+                                <p><a href="/content?id={{ .Id }}">{{ .Titre }}</a></p>
+                            </div>
+                        </div>
+                        <div class="cAutor">
+                            <div class="autor">
+                                <p>{{ .Auteur.Username }}</p>
+                            </div>
+                        </div>
+                        <div class="cDate">
+                            <div class="date">
+                                <p> {{ .Date }}</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="cAutor">
-                        <div class="autor">
-                            <p>{{ .Auteur.Username }}</p>
-                        </div>
-                    </div>
-                    <div class="cDate">
-                        <div class="date">
-                            <p> {{ .Date }}</p>
-                        </div>
-                    </div>
-                </div>
                 {{ end }}
             </div>
         </div>

@@ -8,11 +8,11 @@ import (
 	"net/http"
 )
 
-func Like(w http.ResponseWriter, r *http.Request) {
+func Dislike(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
-		http.Redirect(w, r, "/404", http.StatusSeeOther)
+		http.Redirect(w, r, "/", http.StatusSeeOther)
 	} else {
-		id_post, err := uuid.FromString(r.FormValue("like"))
+		id_post, err := uuid.FromString(r.FormValue("dislike"))
 		if err != nil {
 			log.Fatal(err)
 		}

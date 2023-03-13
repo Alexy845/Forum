@@ -15,7 +15,7 @@ func Logining(w http.ResponseWriter, r *http.Request) {
 	}
 	switch r.Method {
 	case "GET":
-		http.Redirect(w, r, "/", http.StatusSeeOther)
+		http.Redirect(w, r, "/404", http.StatusSeeOther)
 	case "POST":
 		username := r.FormValue("username")
 		password := r.FormValue("password")

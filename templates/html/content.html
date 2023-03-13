@@ -132,6 +132,13 @@
         </form>
         <p>{{ .Post.Likes }}</p>
     </div>
+    <div class="dislike">
+        <form action="/dislike" method="post">
+            <button type="submit" value="Dislike"><i class='bx bxs-like'></i></button>
+            <input type="hidden" name="dislike" value="{{ .Post.Id }}">
+        </form>
+        <p>{{ .Post.Dislikes }}</p>
+    </div>
     {{ else }}
     <div class="errorPost">
         <p><i class='bx bx-error-circle'></i>You must be logged in to post a comment !</p>
