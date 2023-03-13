@@ -15,21 +15,24 @@
 </head>
 <body>
     <div class="header" oneclick="window.location.href='index.html'">
-        <h2><a href="/">Forum</a></h2>
+        <div class="logo" onclick="window.location.href='/'">
+            <img href="/" src="/templates/image/logo/logoO.png" alt=""><h2><a href="/">Forum</a></h2>
+          </div>
         <div class="header_middle">
             <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
         </div>
         <div class="header_right">
             {{ if eq .Connected false }}
                 <div class="login">
-                    <a href="/login"><strong>Connection</strong></a>
+                    <a href="/login">Connection</a>
                 </div>
             {{ else }}
                 <div class="logout">
-                    <a href="/logout"><strong>Logout</strong></a>
+                    <a href="/logout"><i class='bx bx-power-off'></i></a>
                 </div>
                 <div class="profil">
                     <a href="/profile"><img src="{{ .User.Avatar }}"></a>
+                    <p>{{ .User.Username }}</p>
                 </div>
             {{ end }}
         </div>

@@ -25,7 +25,7 @@ body {
   padding: 0 auto;
 }
 .header .header_right {
-  padding-right: 30px;
+  padding-right: 5vh;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -41,16 +41,16 @@ body {
   background-color: rgba(254, 85, 38, 0.9019607843);
   color: #ececec;
   border-radius: 20px;
-  height: 5vh;
-  width: 12vh;
+  height: auto;
+  width: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 0 30px 0 30px;
+  margin: 0 5vh 0 30px;
   box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.2156862745);
-  font-size: 15px;
-  padding: 0 auto;
+  padding: 3px;
+  font-size: 25px;
   transition: 0.2s;
   font-weight: 500;
 }
@@ -58,7 +58,7 @@ body {
   color: #ffffff;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.334);
   transition: 0.1s;
-  font-size: 14.8px;
+  font-size: 26.2px;
   background-color: #fe5526;
 }
 .header .header_right .login {
@@ -89,17 +89,23 @@ body {
 }
 .header .header_right .profil {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   height: auto;
   width: auto;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.header .header_right .profil p {
+  font-weight: 350;
+  font-size: 16px;
 }
 .header .header_right .profil a img {
-  padding: 0 auto;
   border-radius: 50%;
   height: 6vh;
   width: 6vh;
   box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.2156862745);
   margin-right: 1vh;
+  margin-left: 3vh;
 }
 .header .header_right .profil a img:hover {
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.435);

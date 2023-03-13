@@ -1,5 +1,5 @@
 # **Forum**
-*Contributors: Daubresse Alexy, Guillemot Killian, Jacolot Marine*
+*Contributors: Guillemot Killian, Jacolot Marine, Daubresse Alexy*
 
 <br>
 
@@ -14,17 +14,17 @@
 
 <br>
 
-## **📖 Why Forum**
+## **📖 Why Forum ?**
 
 <br>
 
-You can't find enough information on the internet for your answers?
+Do you want to exchange different topics or even ask questions online with users all over the world?
 
-This is where our great Forum web page comes into play
+Now with Forum you can 👍
 
 <br>
 
-**Groupie-Tracker is made for you**
+**Forum is made for you**
 
 <br>
 
@@ -44,12 +44,11 @@ This is where our great Forum web page comes into play
 
 1. Clone our repository
 2. Go to repository folder
-3. Run : **[ *go run ./main/main.go* ]**
+3. Run : **[ *go run .\main\main.go* ]**
 4. Access [ http://127.0.0.1:8080 ] on a web browser
 5. Create your account
 6. Connect yourself
-7. Do your own research
-8. Make your own comments
+7. Do your own researchs and discutions
 
 <br>
 
@@ -57,21 +56,19 @@ This is where our great Forum web page comes into play
 
 <br>
 
-To simplify your search, go to the search bar and mark what you think is relevant.
+- Different search filters.
 
-- Many tapes and their information.
+To simplify your research, to find a subject that interests you, click in the left bar offering you different categories. You can also filter your searches by publication dates, by title as well as by user by clicking on the different filtering options available above all the posts or simply type in the search bar the keywords you want.
 
-Possibility to show the categories/ message contained in our database to find your happiness.
+- Posts.
 
-- Interactions.
+You have the possibility to post your own posts, to modify them as well as to delete them.
 
-You have access in addition to the comments, you can also make comments or like the comments that were useful to you :).
+- Profile.
+
+You can see your own profile as well as the profile of different users.
+
 <br>
 <br>
 
 **Now you know everything.**
-
-Why browse the web when you have Forum ?
-
-
-## **Make your life easier! 😉**

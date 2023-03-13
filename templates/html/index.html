@@ -30,10 +30,11 @@
             </div>
         {{ else }}
             <div class="logout">
-                <a href="/logout">Logout</a>
+                <a href="/logout"><i class='bx bx-power-off'></i></a>
             </div>
             <div class="profil">
                 <a href="/profile"><img src="{{ .User.Avatar }}"></a>
+                <p>{{ .User.Username }}</p>
             </div>
         {{ end }}
     </div>
