@@ -29,6 +29,7 @@ func Content(w http.ResponseWriter, r *http.Request) {
 	structs.Datas.Post = requetes_sql.GetPost(idPost)
 	structs.Datas.Comments = requetes_sql.GetAllComment(idPost)
 	structs.Datas.Post.Likes = requetes_sql.CountLike(idPost)
+	structs.Datas.Post.Dislikes = requetes_sql.CountDislike(idPost)
 	err = tmp.Execute(w, structs.Datas)
 	if err != nil {
 		log.Fatal(err)

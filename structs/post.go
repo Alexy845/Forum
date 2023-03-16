@@ -5,10 +5,11 @@ import (
 )
 
 type Post struct {
-	Id      uuid.UUID
-	Auteur  User
-	Titre   string
-	Contenu string
-	Date    string
-	Likes   int
+	Id       uuid.UUID
+	Auteur   User
+	Titre    string
+	Contenu  string
+	Date     string
+	Likes    int
+	Dislikes int
 }
