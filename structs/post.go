@@ -12,4 +12,5 @@ type Post struct {
 	Date     string
 	Likes    int
 	Dislikes int
+	Category Category
 }
