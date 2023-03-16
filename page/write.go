@@ -25,6 +25,7 @@ func Write(w http.ResponseWriter, r *http.Request) {
 	} else {
 		id := uuid.Must(uuid.FromString(cookie.Value))
 		structs.Datas.User = requetes_sql.GetUser(id)
+		structs.Datas.Categories = requetes_sql.GetAllCategory()
 	}
 	err = tmp.Execute(w, structs.Datas)
 	if err != nil {

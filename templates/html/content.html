@@ -59,6 +59,12 @@
                 <div class="like">
                     <p>{{ .Post.Likes }}</p>
                 </div>
+                <div class="dislike">
+                    <p>{{ .Post.Dislikes }}</p>
+                </div>
+                <div class="category">
+                    <p>{{ .Post.Category.Name }}</p>
+                </div>
                 {{ if eq .Post.Auteur.Id .User.Id }}
                     <div class="modify-comment">
                         <form action="/update" method="post">
@@ -132,7 +138,6 @@
             <button type="submit" value="Like"><i class='bx bxs-like'></i></button>
             <input type="hidden" name="like" value="{{ .Post.Id }}">
         </form>
-        <p>{{ .Post.Likes }}</p>
     </div>
     <div class="dislike">
         <form action="/dislike" method="post">
