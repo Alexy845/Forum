@@ -12,6 +12,10 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/" {
+		http.Redirect(w, r, "/404", http.StatusSeeOther)
+		return
+	}
 	t, _ := template.ParseFiles(filepath.Join(_const.HtmlDir, "/index.html"))
 	cookie, err := r.Cookie("session")
 	if err == nil {
