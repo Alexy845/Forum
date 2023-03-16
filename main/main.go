@@ -29,6 +29,7 @@ func main() {
 	http.HandleFunc("/delete", page.Delete)
 	http.HandleFunc("/404", page.Page404)
 	http.HandleFunc("/search", page.Search)
+	http.HandleFunc("/category", page.Category)
 	port := "8080"
 	fmt.Println("Startup Server on port " + port)
 	err := http.ListenAndServe(":"+port, nil)
