@@ -27,6 +27,9 @@ func Content(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/404", http.StatusSeeOther)
 	}
 	structs.Datas.Post = requetes_sql.GetPost(idPost)
+	if structs.Datas.Post.Id == uuid.Nil {
+		http.Redirect(w, r, "/404", http.StatusSeeOther)
+	}
 	structs.Datas.Comments = requetes_sql.GetAllComment(idPost)
 	structs.Datas.Post.Likes = requetes_sql.CountLike(idPost)
 	structs.Datas.Post.Dislikes = requetes_sql.CountDislike(idPost)
