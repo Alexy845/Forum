@@ -23,6 +23,9 @@ func Search(w http.ResponseWriter, r *http.Request) {
 			structs.Datas.Posts = append(structs.Datas.Posts, j)
 		}
 	}
+	for _, i := range requetes_sql.SearchPostByCategory(input) {
+		structs.Datas.Posts = append(structs.Datas.Posts, i)
+	}
 	if len(structs.Datas.Posts) > 0 {
 		structs.Datas.Result = true
 	}
