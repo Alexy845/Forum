@@ -47,6 +47,38 @@
             <div class="not_connected">
                 <p>You are not connected</p>
             </div>
+            <div class="Filtering">
+                <form method="post" action="/">
+                    <div class="filter_categories">
+                        <p>Filter by category</p>
+                        <label for="category"></label><select name="category" id="category">
+                            <option value="all">All</option>
+                            {{ range .Categories }}
+                                <option value="{{ .Id }}">{{ .Name }}</option>
+                            {{ end }}
+                        </select>
+                    </div>
+                    <div class="filter_posts">
+                        <p>Filter by posts</p>
+                        <label for="posts"></label><select name="posts" id="posts">
+                            <option value="all">All</option>
+                            <option value="last">Last</option>
+                            <option value="old">Old</option>
+                        </select>
+                    </div>
+                    <div class="filter_liked">
+                        <p>Filter by liked</p>
+                        <label for="liked"></label><select name="liked" id="liked">
+                            <option value="all">All</option>
+                            <option value="liked">Most Likes</option>
+                            <option value="not_liked">Most Dislikes</option>
+                        </select>
+                    </div>
+                    <div class="filter_submit">
+                        <input type="submit" value="Filter">
+                    </div>
+                </form>
+            </div>
         {{ else }}
             <div class="hi">
                 <p>Hello {{ .User.Username }}</p>
