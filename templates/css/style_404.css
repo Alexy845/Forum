@@ -1,0 +1,23 @@
+body {
+  background-color: #45494C;
+  overflow: hidden;
+}
+body .error_container {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  margin-top: 3vh;
+}
+body .error_container .error {
+  height: 45vw;
+  width: 50vw;
+  background-image: url(../image/404/404.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+body .error_container .redirect {
+  margin-bottom: 10vh;
+}
+
+/*# sourceMappingURL=style_404.css.map */

@@ -2,16 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="templates/css/style_index.css">
+    <link rel="stylesheet" href="templates/css/style_scrollbar.css">
+    <link rel="icon" href="/templates/image/logo/logoBO.jpg">
+    <link rel="stylesheet" href="templates/css/style_theme.css">
+    <link rel="stylesheet" href="templates/css/style_404.css">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <title>Forum</title>
 </head>
 <body>
-<div class="404">
-    <h1>Error 404 : Page not found</h1>
-</div>
-<div class="redirect">
-    <form method="get" action="/">
-        <input type="submit" value="Return Home Page">
-    </form>
-</div>
+    <div class="header" oneclick="window.location.href='index.html'">
+        <div class="logo" onclick="window.location.href='/'">
+            <img href="/" src="/templates/image/logo/logoO.png" alt="">
+            <h2><a href="/">Forum</a></h2>
+        </div>
+        <div class="header_middle">
+            <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+        </div>
+        <div class="header_right">
+            {{ if eq .Connected false }}
+                <div class="login">
+                    <a href="/login">Connection</a>
+                </div>
+            {{ else }}
+                <div class="logout">
+                    <a href="/logout"><i class='bx bx-power-off'></i></a>
+                </div>
+                <div class="profil">
+                    <a href="/profile"><img src="{{ .User.Avatar }}"></a>
+                    <p>{{ .User.Username }}</p>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+    <div class="error_container">
+        <div class="error">
+        </div>
+        <div class="redirect">
+            <form method="get" action="/">
+                <input type="submit" value="Return Home Page">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
