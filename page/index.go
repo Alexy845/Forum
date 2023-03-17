@@ -26,7 +26,15 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		structs.Datas.User = structs.User{}
 		structs.Datas.Connected = false
 	}
-	structs.Datas.Posts = requetes_sql.GetAllPosts()
+	if r.Method == "POST" {
+		category := r.FormValue("category")
+		posts := r.FormValue("posts")
+		liked := r.FormValue("liked")
+		structs.Datas.Posts = requetes_sql.FilterPostByCategory(category, posts, liked)
+	} else {
+		structs.Datas.Posts = requetes_sql.GetAllPosts()
+	}
+	structs.Datas.Categories = requetes_sql.GetAllCategory()
 	err = t.Execute(w, structs.Datas)
 	if err != nil {
 		log.Fatal(err)

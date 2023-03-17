@@ -10,6 +10,7 @@ type Data struct {
 	EditPost   bool
 	Result     bool
 	Categories []Category
+	Filter     bool
 }
 
 var Datas = &Data{
@@ -22,4 +23,5 @@ var Datas = &Data{
 	EditPost:   false,
 	Result:     false,
 	Categories: []Category{},
+	Filter:     false,
 }

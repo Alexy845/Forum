@@ -24,6 +24,7 @@ func main() {
 	http.HandleFunc("/modify", page.Modify)
 	http.HandleFunc("/modify_content", page.ModifyContent)
 	http.HandleFunc("/like", page.Like)
+	http.HandleFunc("/dislike", page.Dislike)
 	http.HandleFunc("/update", page.Update)
 	http.HandleFunc("/edit", page.Edit)
 	http.HandleFunc("/delete", page.Delete)
