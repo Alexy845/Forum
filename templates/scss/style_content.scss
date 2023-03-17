@@ -36,7 +36,8 @@ body {
 
             h2 {
                 font-weight: 500;
-                font-size: 26px;
+                font-size: 30px;
+                font-variant: small-caps;
             }
 
         }
@@ -271,6 +272,14 @@ body {
                                 color: #fe5526;
                             }
         
+                        }
+
+                        &:focus {
+                            color: #fe5526;
+                            
+                            i {
+                                color: #fe5526;
+                            }
                         }
         
                     }

@@ -33,7 +33,8 @@ body .content .content_top {
 }
 body .content .content_top h2 {
   font-weight: 500;
-  font-size: 26px;
+  font-size: 30px;
+  font-variant: small-caps;
 }
 body .content .content_bot .cb_right {
   display: flex;
@@ -203,6 +204,12 @@ body .commentary .display .interact .like button i {
 }
 body .commentary .display .interact .like button i:hover {
   transition: 0.3s;
+  color: #fe5526;
+}
+body .commentary .display .interact .like button:focus {
+  color: #fe5526;
+}
+body .commentary .display .interact .like button:focus i {
   color: #fe5526;
 }
 body .commentary .display .interact .like input {
