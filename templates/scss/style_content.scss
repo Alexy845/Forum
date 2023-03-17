@@ -25,7 +25,7 @@ body {
     .content {
         padding: 0;
         margin-top: 10vh;
-
+        display: inline-grid;
 
         .content_top {
             display: flex;
@@ -84,13 +84,9 @@ body {
                         }
 
                         .postAuthor {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
-                            flex-wrap: wrap;
-                            align-content: flex-end;
+                            display: block;
                             margin-right: 22px;
-                            margin-bottom: 8px;
+                            float: right;
 
                             p {
 
@@ -103,10 +99,63 @@ body {
                             .autor {
                                 margin-bottom: 2px;
                             }
+
+                        }
+
+                        .comment-interaction {
+                            display: -webkit-inline-box;
+                            margin: 1vh 1vh 3vh 2vh;
+
+                            .modify-comment {
+
+                                button {
+                                    background-color: transparent;
+                                    border: none;
+                                    margin-right: 2vh;
+
+                                    i {
+                                        font-size: 18px;
+                                        cursor: pointer;
+                                        color: #fe5526e6;
+
+                                        &:hover {
+                                            color: #fe5526;
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
+                            .delete-comment {
+
+                                button {
+                                    background-color: transparent;
+                                    border: none;
+                                    margin-right: 2vh;
+
+                                    i {
+                                        font-size: 18px;
+                                        cursor: pointer;
+                                        color: #fe5526e6;
+
+                                        &:hover {
+                                            color: #fe5526;
+                                        }
+
+                                    }
+
+                                }
+
+                            }
+
                         }
 
                     }
+
                 }
+
             }
 
         }    
@@ -114,112 +163,173 @@ body {
     }
 
     .commentary {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        justify-items: stretch;
 
-        .writeComment {
+        .display {
             display: flex;
-            flex-direction: column;
+            flex-direction: row-reverse;
             flex-wrap: wrap;
-            margin-left: 30vh;
+            justify-content: space-around;
 
-            h2 {
-                font-weight: 500;
-                font-size: 18px;
-                margin-bottom: 8px;
-            }
-
-            form {
-                input[type="text"] {
-                    border: 1px solid rgba(73, 78, 81, 0.616);
-                    border-radius: 5px;
-                    background-color: #bfbebd1d;
-                    color: var(--silv);
-                    margin-bottom: 5px;
-                    width: 45vw;
-                    height: 5vh;
-                    box-shadow: inset 0 0 2px 0px rgba(0, 0, 0, 0.144);
-                    transition: 0.2s;
-                    outline: none;
+            .writeComment {
+                display: flex;
+                flex-direction: column;
+    
+                h2 {
+                    font-weight: 500;
+                    font-size: 18px;
+                    margin-bottom: 8px;
+                }
+    
+                form {
+                    input[type="text"] {
+                        border: 1px solid rgba(73, 78, 81, 0.616);
+                        border-radius: 5px;
+                        background-color: #bfbebd1d;
+                        color: var(--silv);
+                        margin-bottom: 5px;
+                        width: 45vw;
+                        height: 5vh;
+                        box-shadow: inset 0 0 2px 0px rgba(0, 0, 0, 0.144);
+                        transition: 0.2s;
+                        outline: none;
+            
+                        &:hover {
+                            box-shadow: 0 0 0.2px 0 #000000;
+                            background-color: #ececec25;
+                        }
+            
+                        &:focus {
+                            box-shadow: 0 0 0.2px 0 #000000;
+                            background-color: var(--silv);
+                            color: var(--ony);
+                            padding: 1px;
+                            outline: none;
+                        }
         
-                    &:hover {
-                        box-shadow: 0 0 0.2px 0 #000000;
-                        background-color: #ececec25;
+                    }
+            
+                    input[type="submit"] {
+                        background-color: #fe5526e6;
+                        color: #ececec;
+                        border-radius: 20px;
+                        border: none;
+                        height: 5vh;
+                        width: 12vh;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+                        margin: 0 30px 0 30px;
+                        box-shadow: 0px 1px 8px 0px #00000037;
+                        font-size: 15px;
+                        transition: 0.2s;
+                        font-weight: 500;
+                        margin-top: 8px;
+                        cursor: pointer;
+                
+                        &:hover {
+                            color: #ffffff;
+                            box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.334);
+                            transition: 0.1s;
+                            font-size: 14.8px;
+                            background-color: #fe5526;
+                        }
+                
+                    }
+                
+                }
+            }
+    
+            .interact {
+                display: -webkit-box;
+    
+                .like {
+                    display: flex;
+                    flex-direction: row;
+                    align-content: flex-start;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    height: auto;
+                    width: auto;
+        
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        height: auto;
+                        width: auto;
+        
+                        i {
+                            display: initial;
+                            cursor: pointer;
+                            color: #ecececb1;
+                            font-size: 24px;
+            
+                            &:hover {
+                                transition: 0.3s;
+                                color: #fe5526;
+                            }
+        
+                        }
+        
                     }
         
-                    &:focus {
-                        box-shadow: 0 0 0.2px 0 #000000;
-                        background-color: var(--silv);
-                        color: var(--ony);
-                        padding: 1px;
-                        outline: none;
+                    input {
+                        display: none;
+                    }
+        
+                    p {
+                        font-size: 18px;
+                        font-weight: 350;
+                        margin-left: 6px;
                     }
     
                 }
         
-                input[type="submit"] {
-                    background-color: #fe5526e6;
-                    color: #ececec;
-                    border-radius: 20px;
-                    border: none;
-                    height: 5vh;
-                    width: 12vh;
+                .dislike {
+                    margin-left: 5vh;
                     display: flex;
                     flex-direction: row;
+                    align-content: flex-start;
+                    flex-wrap: wrap;
                     align-items: center;
-                    justify-content: center;
-                    margin: 0 30px 0 30px;
-                    box-shadow: 0px 1px 8px 0px #00000037;
-                    font-size: 15px;
-                    transition: 0.2s;
-                    font-weight: 500;
-                    margin-top: 8px;
-                    cursor: pointer;
-            
-                    &:hover {
-                        color: #ffffff;
-                        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.334);
-                        transition: 0.1s;
-                        font-size: 14.8px;
-                        background-color: #fe5526;
-                    }
-            
-                }
-            
-            }
-        }
+                    
+                    button {
+                        background-color: transparent;
+                        border: none;
         
-        .like {
-            margin-left: 10vh;
-            display: flex;
-            flex-direction: row;
-            align-content: flex-start;
-            flex-wrap: wrap;
-            align-items: center;
-
-            i {
-                display: initial;
-                cursor: pointer;
-                color: #fe5526e6;
-                font-size: 26px;
-
-                &:hover {
-                    color: #fe5526;
+                        i {
+                            display: initial;
+                            cursor: pointer;
+                            color: #ecececb1;
+                            font-size: 24px;
+            
+                            &:hover {
+                                transition: 0.3s;
+                                color: #fe5526;
+                            }
+        
+                        }
+        
+                    }
+        
+                    input {
+                        display: none;
+                    }
+        
+                    p {
+                        font-size: 18px;
+                        font-weight: 350;
+                        margin-left: 6px;
+                    }
+    
                 }
-            }
-
-            input {
-                display: none;
-            }
-
-            p {
-                font-size: 18px;
-                font-weight: 350;
-                margin-left: 6px;
+    
             }
         }
+
+               
 
     }
 

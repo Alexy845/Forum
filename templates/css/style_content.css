@@ -22,6 +22,7 @@ body .errorPost p i {
 body .content {
   padding: 0;
   margin-top: 10vh;
+  display: inline-grid;
 }
 body .content .content_top {
   display: flex;
@@ -67,13 +68,9 @@ body .content .content_bot .cb_right .com .comment .content h2 {
   font-style: normal;
 }
 body .content .content_bot .cb_right .com .comment .postAuthor {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  align-content: flex-end;
+  display: block;
   margin-right: 22px;
-  margin-bottom: 8px;
+  float: right;
 }
 body .content .content_bot .cb_right .com .comment .postAuthor p i {
   font-size: 15px;
@@ -82,24 +79,56 @@ body .content .content_bot .cb_right .com .comment .postAuthor p i {
 body .content .content_bot .cb_right .com .comment .postAuthor .autor {
   margin-bottom: 2px;
 }
-body .commentary {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+body .content .content_bot .cb_right .com .comment .comment-interaction {
+  display: -webkit-inline-box;
+  margin: 1vh 1vh 3vh 2vh;
 }
-body .commentary .writeComment {
+body .content .content_bot .cb_right .com .comment .comment-interaction .modify-comment button {
+  background-color: transparent;
+  border: none;
+  margin-right: 2vh;
+}
+body .content .content_bot .cb_right .com .comment .comment-interaction .modify-comment button i {
+  font-size: 18px;
+  cursor: pointer;
+  color: rgba(254, 85, 38, 0.9019607843);
+}
+body .content .content_bot .cb_right .com .comment .comment-interaction .modify-comment button i:hover {
+  color: #fe5526;
+}
+body .content .content_bot .cb_right .com .comment .comment-interaction .delete-comment button {
+  background-color: transparent;
+  border: none;
+  margin-right: 2vh;
+}
+body .content .content_bot .cb_right .com .comment .comment-interaction .delete-comment button i {
+  font-size: 18px;
+  cursor: pointer;
+  color: rgba(254, 85, 38, 0.9019607843);
+}
+body .content .content_bot .cb_right .com .comment .comment-interaction .delete-comment button i:hover {
+  color: #fe5526;
+}
+body .commentary {
+  display: grid;
+  justify-items: stretch;
+}
+body .commentary .display {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+body .commentary .display .writeComment {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  margin-left: 30vh;
 }
-body .commentary .writeComment h2 {
+body .commentary .display .writeComment h2 {
   font-weight: 500;
   font-size: 18px;
   margin-bottom: 8px;
 }
-body .commentary .writeComment form input[type=text] {
+body .commentary .display .writeComment form input[type=text] {
   border: 1px solid rgba(73, 78, 81, 0.616);
   border-radius: 5px;
   background-color: rgba(191, 190, 189, 0.1137254902);
@@ -111,18 +140,18 @@ body .commentary .writeComment form input[type=text] {
   transition: 0.2s;
   outline: none;
 }
-body .commentary .writeComment form input[type=text]:hover {
+body .commentary .display .writeComment form input[type=text]:hover {
   box-shadow: 0 0 0.2px 0 #000000;
   background-color: rgba(236, 236, 236, 0.1450980392);
 }
-body .commentary .writeComment form input[type=text]:focus {
+body .commentary .display .writeComment form input[type=text]:focus {
   box-shadow: 0 0 0.2px 0 #000000;
   background-color: var(--silv);
   color: var(--ony);
   padding: 1px;
   outline: none;
 }
-body .commentary .writeComment form input[type=submit] {
+body .commentary .display .writeComment form input[type=submit] {
   background-color: rgba(254, 85, 38, 0.9019607843);
   color: #ececec;
   border-radius: 20px;
@@ -141,34 +170,75 @@ body .commentary .writeComment form input[type=submit] {
   margin-top: 8px;
   cursor: pointer;
 }
-body .commentary .writeComment form input[type=submit]:hover {
+body .commentary .display .writeComment form input[type=submit]:hover {
   color: #ffffff;
   box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.334);
   transition: 0.1s;
   font-size: 14.8px;
   background-color: #fe5526;
 }
-body .commentary .like {
-  margin-left: 10vh;
+body .commentary .display .interact {
+  display: -webkit-box;
+}
+body .commentary .display .interact .like {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  height: auto;
+  width: auto;
+}
+body .commentary .display .interact .like button {
+  background-color: transparent;
+  border: none;
+  height: auto;
+  width: auto;
+}
+body .commentary .display .interact .like button i {
+  display: initial;
+  cursor: pointer;
+  color: rgba(236, 236, 236, 0.6941176471);
+  font-size: 24px;
+}
+body .commentary .display .interact .like button i:hover {
+  transition: 0.3s;
+  color: #fe5526;
+}
+body .commentary .display .interact .like input {
+  display: none;
+}
+body .commentary .display .interact .like p {
+  font-size: 18px;
+  font-weight: 350;
+  margin-left: 6px;
+}
+body .commentary .display .interact .dislike {
+  margin-left: 5vh;
   display: flex;
   flex-direction: row;
   align-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
 }
-body .commentary .like i {
+body .commentary .display .interact .dislike button {
+  background-color: transparent;
+  border: none;
+}
+body .commentary .display .interact .dislike button i {
   display: initial;
   cursor: pointer;
-  color: rgba(254, 85, 38, 0.9019607843);
-  font-size: 26px;
+  color: rgba(236, 236, 236, 0.6941176471);
+  font-size: 24px;
 }
-body .commentary .like i:hover {
+body .commentary .display .interact .dislike button i:hover {
+  transition: 0.3s;
   color: #fe5526;
 }
-body .commentary .like input {
+body .commentary .display .interact .dislike input {
   display: none;
 }
-body .commentary .like p {
+body .commentary .display .interact .dislike p {
   font-size: 18px;
   font-weight: 350;
   margin-left: 6px;
