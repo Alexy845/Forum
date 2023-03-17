@@ -74,19 +74,17 @@
                     <p>{{ .Post.Category.Name }}</p>
                 </div>
                 {{ if eq .Post.Auteur.Id .User.Id }}
-                    <div class="modify-comment">
+                    <div class="modify-delete">
                         <form action="/update" method="post">
                             <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
                             <input type="hidden" name="title-post" value="{{ .Post.Titre }}">
                             <input type="hidden" name="Type" value="post">
-                            <input type="submit" value="Modifier le Post">
+                            <button type="submit" value="Modify"><i class='bx bx-edit-alt' ></i></button>
                         </form>
-                    </div>
-                    <div class="delete-comment">
                         <form action="/delete" method="post">
                             <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
                             <input type="hidden" name="Type" value="post">
-                            <i class='bx bx-edit-alt'></i>
+                            <button type="submit" value="Delete"><i class='bx bx-trash' ></i></button>
                         </form>
                     </div>
                 {{ end }}

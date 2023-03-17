@@ -38,7 +38,7 @@ body .UserProfile .contentAll .contentTop {
 body .UserProfile .contentAll .contentTop .Banner {
   width: 90%;
   height: 90%;
-  background-color: rgba(254, 85, 38, 0.8352941176);
+  background-color: rgba(73, 78, 81, 0.5098039216);
   border-radius: 20px;
 }
 body .UserProfile .contentAll .contentTop .Avatar {

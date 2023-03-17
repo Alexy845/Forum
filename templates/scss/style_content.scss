@@ -163,7 +163,7 @@ body {
 
                 .post {
                     display: grid;
-                    grid-template-rows: 6vh 5vh 8vh 6vh 6vh 6vh;
+                    grid-template-rows: 6vh 5vh 8vh 6vh 6vh 6vh 6vh;
                     align-items: center;
                     justify-items: start;
 
@@ -229,6 +229,34 @@ body {
 
                         i {
                             width: fit-content;
+                        }
+
+                    }
+
+                    .modify-delete {
+                        cursor: pointer;
+                        display: grid;
+                        grid-template-columns: 6vh 6vh;
+                        padding: 2vh 0 0 9vh;
+                        
+                        form {
+
+                            button {
+                                background-color: transparent;
+                                border: none;
+
+                                i {
+                                    color: #fe5526e6;
+                                    font-size: 18px;
+        
+                                    &:hover {
+                                        color: #fe5526;
+                                    }
+    
+                                }
+                                
+                            }
+
                         }
 
                     }
@@ -358,6 +386,7 @@ body {
                             i {
                                 color: #fe5526;
                             }
+
                         }
         
                     }
@@ -414,6 +443,7 @@ body {
                 }
     
             }
+
         }
 
                

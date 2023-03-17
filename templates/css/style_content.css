@@ -112,7 +112,7 @@ body .content .content_bot .cb_right .com .comment .comment-interaction .delete-
 }
 body .content .content_bot .cb_left .post {
   display: grid;
-  grid-template-rows: 6vh 5vh 8vh 6vh 6vh 6vh;
+  grid-template-rows: 6vh 5vh 8vh 6vh 6vh 6vh 6vh;
   align-items: center;
   justify-items: start;
 }
@@ -163,6 +163,23 @@ body .content .content_bot .cb_left .post .category {
 }
 body .content .content_bot .cb_left .post .category i {
   width: fit-content;
+}
+body .content .content_bot .cb_left .post .modify-delete {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 6vh 6vh;
+  padding: 2vh 0 0 9vh;
+}
+body .content .content_bot .cb_left .post .modify-delete form button {
+  background-color: transparent;
+  border: none;
+}
+body .content .content_bot .cb_left .post .modify-delete form button i {
+  color: rgba(254, 85, 38, 0.9019607843);
+  font-size: 18px;
+}
+body .content .content_bot .cb_left .post .modify-delete form button i:hover {
+  color: #fe5526;
 }
 body .commentary {
   display: grid;
