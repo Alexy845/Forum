@@ -274,6 +274,48 @@ body {
   color: #fe5526;
   transition: 0.2s;
 }
+.content .content_top .new_cat {
+  height: 5vh;
+  width: 21vh;
+  border: 2px solid rgba(254, 85, 38, 0.8117647059);
+  border-radius: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto 4vh auto 10px;
+  z-index: 1;
+  flex-direction: column;
+}
+.content .content_top .new_cat:hover {
+  border: 2px solid #fe5526;
+  transition: 0.2s;
+}
+.content .content_top .new_cat a {
+  color: rgba(254, 85, 38, 0.8117647059);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  font-weight: 500;
+}
+.content .content_top .new_cat a:hover {
+  color: #fe5526;
+  transition: 0.2s;
+}
+.content .content_top .new_cat i {
+  color: rgba(254, 85, 38, 0.8117647059);
+  margin-right: 10px;
+  font-size: 18px;
+  z-index: 0;
+}
+.content .content_top .new_cat i:hover {
+  color: #fe5526;
+  transition: 0.2s;
+}
 .content .content_bot {
   display: flex;
   flex-direction: row;
