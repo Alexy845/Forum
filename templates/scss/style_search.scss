@@ -1,0 +1,52 @@
+body {
+
+    .posts {
+        display: grid;
+        grid-template-rows: 1fr;
+        margin: 7vw;
+        margin-top: 13vh;
+        grid-gap: 3vh;
+
+        .post {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 1vw;
+            background-color: #ececec18;
+            border-radius: 8px;
+            padding: 1vw 1vw 1vw 3vw;
+            justify-items: stretch;
+
+            .post_title {
+                color: #fe5526e6;
+                font-size: 1.5vw;
+                font-weight: 600;
+                text-align: center;
+                margin-top: 1vw;
+            }
+
+            .cPost {
+
+                .title {
+
+                    a {
+                        color: #fe5526e6;
+                        font-style: italic;
+                        font-weight: 600;
+                        font-size: large;
+                        text-decoration: underline;
+
+                        &:hover {
+                            color: #fe5526;
+                        } 
+
+                    }
+
+                }
+                
+            }
+
+        }
+
+    }
+
+}

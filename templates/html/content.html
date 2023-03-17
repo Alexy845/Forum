@@ -19,9 +19,11 @@
         <img href="/" src="/templates/image/logo/logoO.png" alt="">
         <h2><a href="/">Forum</a></h2>
     </div>
-    <div class="header_middle">
-        <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
-    </div>
+    <form method="get" action="/search">
+        <div class="header_middle">
+            <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+        </div>
+    </form>
     <div class="header_right">
         {{ if eq .Connected false }}
             <div class="login">
@@ -48,21 +50,27 @@
         <div class="cb_left">
             <div class="post">
                 <div class="content-post">
+                    <i class='bx bx-detail' ></i>
                     <p>{{ .Post.Contenu }}</p>
                 </div>
                 <div class="autor">
+                    <i class='bx bx-user'></i>
                     <p>{{ .Post.Auteur.Username }}</p>
                 </div>
                 <div class="date">
+                    <i class='bx bx-time-five'></i>
                     <p> {{ .Post.Date }}</p>
                 </div>
                 <div class="like">
+                    <i class='bx bxs-like'></i>
                     <p>{{ .Post.Likes }}</p>
                 </div>
                 <div class="dislike">
+                    <i class='bx bxs-dislike'></i>
                     <p>{{ .Post.Dislikes }}</p>
                 </div>
                 <div class="category">
+                    <i class='bx bx-list-ol' ></i>
                     <p>{{ .Post.Category.Name }}</p>
                 </div>
                 {{ if eq .Post.Auteur.Id .User.Id }}
@@ -78,7 +86,7 @@
                         <form action="/delete" method="post">
                             <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
                             <input type="hidden" name="Type" value="post">
-                            <input type="submit" value="Supprimer le Post">
+                            <i class='bx bx-edit-alt'></i>
                         </form>
                     </div>
                 {{ end }}
@@ -100,21 +108,23 @@
                             </div>
                         </div>
                         {{ if eq .Auteur.Id $.User.Id }}
-                        <div class="modify-comment">
-                            <form action="/update" method="post">
-                                <input type="hidden" name="comment-update" value="{{ .Id }}">
-                                <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
-                                <input type="hidden" name="Type" value="comment">
-                                <input type="submit" value="Modifier le commentaire">
-                            </form>
-                        </div>
-                        <div class="delete-comment">
-                            <form action="/delete" method="post">
-                                <input type="hidden" name="delete-comment" value="{{ .Id }}">
-                                <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
-                                <input type="hidden" name="Type" value="comment">
-                                <input type="submit" value="Supprimer le commentaire">
-                            </form>
+                        <div class="comment-interaction">
+                            <div class="modify-comment">
+                                <form action="/update" method="post">
+                                    <input type="hidden" name="comment-update" value="{{ .Id }}">
+                                    <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
+                                    <input type="hidden" name="Type" value="comment">
+                                    <button type="submit" value="Modify"><i class='bx bx-edit-alt' ></i></button>
+                                </form>
+                            </div>
+                            <div class="delete-comment">
+                                <form action="/delete" method="post">
+                                    <input type="hidden" name="delete-comment" value="{{ .Id }}">
+                                    <input type="hidden" name="id-post" value="{{ $.Post.Id }}">
+                                    <input type="hidden" name="Type" value="comment">
+                                    <button type="submit" value="Delete"><i class='bx bx-trash' ></i></button>
+                                </form>
+                            </div>
                         </div>
                         {{ end }}
                     </div>
@@ -125,26 +135,31 @@
 </div>
 {{ if eq .Connected true }}
 <div class="commentary">
-    <div class="writeComment">
-        <h2>Écrire un commentaire :</h2>
-        <form action="/addcomment" method="post">
-            <input type="text" autocomplete="false" name="Comment" placeholder="Comment">
-            <input type="hidden" name="post" value="{{ .Post.Id }}">
-            <input type="submit" value="Envoyer">
-        </form>
-    </div>
-    <div class="like">
-        <form action="/like" method="post">
-            <button type="submit" value="Like"><i class='bx bxs-like'></i></button>
-            <input type="hidden" name="like" value="{{ .Post.Id }}">
-        </form>
-    </div>
-    <div class="dislike">
-        <form action="/dislike" method="post">
-            <button type="submit" value="Dislike"><i class='bx bxs-like'></i></button>
-            <input type="hidden" name="dislike" value="{{ .Post.Id }}">
-        </form>
-        <p>{{ .Post.Dislikes }}</p>
+    <div class="display">
+        <div class="writeComment">
+            <h2>Écrire un commentaire :</h2>
+            <form action="/addcomment" method="post">
+                <input type="text" autocomplete="false" name="Comment" placeholder="Comment">
+                <input type="hidden" name="post" value="{{ .Post.Id }}">
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
+        <div class="interact">
+            <div class="like">
+                <form action="/like" method="post">
+                    <button type="submit" value="Like"><i class='bx bxs-like'></i></button>
+                    <input type="hidden" name="like" value="{{ .Post.Id }}">
+                </form>
+                <p>{{ .Post.Likes }}</p>
+            </div>
+            <div class="dislike">
+                <form action="/dislike" method="post">
+                    <button type="submit" value="Dislike"><i class='bx bxs-dislike'></i></button>
+                    <input type="hidden" name="dislike" value="{{ .Post.Id }}">
+                </form>
+                <p>{{ .Post.Dislikes }}</p>
+            </div>
+        </div>
     </div>
     {{ else }}
     <div class="errorPost">
