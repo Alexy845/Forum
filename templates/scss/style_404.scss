@@ -19,6 +19,23 @@ body {
 
         .redirect {
             margin-bottom: 10vh;
+
+            form {
+
+                input {
+
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    color: #fe5526e6;
+
+                    &:hover {
+                        color: #fe5526;
+                    }
+                }
+                
+            }
+            
         }
 
     }

@@ -19,5 +19,14 @@ body .error_container .error {
 body .error_container .redirect {
   margin-bottom: 10vh;
 }
+body .error_container .redirect form input {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgba(254, 85, 38, 0.9019607843);
+}
+body .error_container .redirect form input:hover {
+  color: #fe5526;
+}
 
 /*# sourceMappingURL=style_404.css.map */
