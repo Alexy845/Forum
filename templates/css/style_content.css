@@ -110,6 +110,60 @@ body .content .content_bot .cb_right .com .comment .comment-interaction .delete-
 body .content .content_bot .cb_right .com .comment .comment-interaction .delete-comment button i:hover {
   color: #fe5526;
 }
+body .content .content_bot .cb_left .post {
+  display: grid;
+  grid-template-rows: 6vh 5vh 8vh 6vh 6vh 6vh;
+  align-items: center;
+  justify-items: start;
+}
+body .content .content_bot .cb_left .post .content-post {
+  display: grid;
+  grid-template-columns: 5vh 2fr;
+  padding: 7px 2vh 7px 2vh;
+}
+body .content .content_bot .cb_left .post .content-post i {
+  width: fit-content;
+}
+body .content .content_bot .cb_left .post .autor {
+  display: grid;
+  grid-template-columns: 5vh 2fr;
+  padding: 7px 2vh 7px 2vh;
+}
+body .content .content_bot .cb_left .post .autor i {
+  width: fit-content;
+}
+body .content .content_bot .cb_left .post .date {
+  display: grid;
+  grid-template-columns: 5vh 2fr;
+  padding: 7px 2vh 7px 2vh;
+}
+body .content .content_bot .cb_left .post .date i {
+  width: fit-content;
+}
+body .content .content_bot .cb_left .post .like {
+  display: grid;
+  grid-template-columns: 5vh 2fr;
+  padding: 7px 2vh 7px 2vh;
+}
+body .content .content_bot .cb_left .post .like i {
+  width: fit-content;
+}
+body .content .content_bot .cb_left .post .dislike {
+  display: grid;
+  grid-template-columns: 5vh 2fr;
+  padding: 7px 2vh 7px 2vh;
+}
+body .content .content_bot .cb_left .post .dislike i {
+  width: fit-content;
+}
+body .content .content_bot .cb_left .post .category {
+  display: grid;
+  grid-template-columns: 5vh 2fr;
+  padding: 7px 2vh 7px 2vh;
+}
+body .content .content_bot .cb_left .post .category i {
+  width: fit-content;
+}
 body .commentary {
   display: grid;
   justify-items: stretch;

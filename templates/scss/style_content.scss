@@ -159,6 +159,84 @@ body {
 
             }
 
+            .cb_left {
+
+                .post {
+                    display: grid;
+                    grid-template-rows: 6vh 5vh 8vh 6vh 6vh 6vh;
+                    align-items: center;
+                    justify-items: start;
+
+                    .content-post {
+                        display: grid;
+                        grid-template-columns: 5vh 2fr;
+                        padding: 7px 2vh 7px 2vh;
+
+                        i {
+                            width: fit-content;
+                        }
+
+                    }
+
+                    .autor {
+                        display: grid;
+                        grid-template-columns: 5vh 2fr;
+                        padding: 7px 2vh 7px 2vh;
+
+                        i {
+                            width: fit-content;
+                        }
+
+                    }
+
+                    .date {
+                        display: grid;
+                        grid-template-columns: 5vh 2fr;
+                        padding: 7px 2vh 7px 2vh;
+
+                        i {
+                            width: fit-content;
+                        }
+
+                    }
+
+                    .like {
+                        display: grid;
+                        grid-template-columns: 5vh 2fr;
+                        padding: 7px 2vh 7px 2vh;
+
+                        i {
+                            width: fit-content;
+                        }
+
+                    }
+
+                    .dislike {
+                        display: grid;
+                        grid-template-columns: 5vh 2fr;
+                        padding: 7px 2vh 7px 2vh;
+
+                        i {
+                            width: fit-content;
+                        }
+
+                    }
+
+                    .category {
+                        display: grid;
+                        grid-template-columns: 5vh 2fr;
+                        padding: 7px 2vh 7px 2vh;
+
+                        i {
+                            width: fit-content;
+                        }
+
+                    }
+
+                }
+
+            }
+
         }    
     
     }

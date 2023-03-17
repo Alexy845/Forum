@@ -50,21 +50,27 @@
         <div class="cb_left">
             <div class="post">
                 <div class="content-post">
+                    <i class='bx bx-detail' ></i>
                     <p>{{ .Post.Contenu }}</p>
                 </div>
                 <div class="autor">
+                    <i class='bx bx-user'></i>
                     <p>{{ .Post.Auteur.Username }}</p>
                 </div>
                 <div class="date">
+                    <i class='bx bx-time-five'></i>
                     <p> {{ .Post.Date }}</p>
                 </div>
                 <div class="like">
+                    <i class='bx bxs-like'></i>
                     <p>{{ .Post.Likes }}</p>
                 </div>
                 <div class="dislike">
+                    <i class='bx bxs-dislike'></i>
                     <p>{{ .Post.Dislikes }}</p>
                 </div>
                 <div class="category">
+                    <i class='bx bx-list-ol' ></i>
                     <p>{{ .Post.Category.Name }}</p>
                 </div>
                 {{ if eq .Post.Auteur.Id .User.Id }}
