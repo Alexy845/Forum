@@ -345,35 +345,210 @@ body {
   width: 100%;
 }
 .content .content_bot .cb_right .contentHead .hAll {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   align-items: baseline;
-  flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 12px;
   margin-bottom: 10px;
   font-weight: 600;
   background-color: rgba(54, 57, 61, 0.4039215686);
   border-bottom: 0.5px solid rgba(236, 236, 236, 0.2705882353);
   font-size: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 .content .content_bot .cb_right .contentHead .hAll .hPost {
   display: flex;
   float: left;
 }
+.content .content_bot .cb_right .contentHead .hAll .hCategory {
+  display: flex;
+  float: right;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 200px;
+  margin: 0 10%;
+}
+.content .content_bot .cb_right .contentHead .hAll .hCategory select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 127px;
+  height: 35px;
+  float: right;
+  margin: 5px 0px 5px 5px;
+  padding: 0px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  line-height: 1.75;
+  color: rgba(54, 57, 61, 0.8235294118);
+  background-color: rgba(236, 236, 236, 0.2117647059);
+  background-image: none;
+  border: none;
+  -ms-word-break: normal;
+  word-break: normal;
+  cursor: pointer;
+}
+.content .content_bot .cb_right .contentHead .hAll .hCategory select::-ms-expand {
+  display: none;
+}
+.content .content_bot .cb_right .contentHead .hAll .hCategory select option {
+  color: rgba(54, 57, 61, 0.8862745098);
+  background-color: rgba(236, 236, 236, 0.0823529412);
+}
+.content .content_bot .cb_right .contentHead .hAll .hCategory::after {
+  content: "<>";
+  font: 17px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 19px;
+  position: relative;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #999;
+}
 .content .content_bot .cb_right .contentHead .hAll .hUser {
   display: flex;
   float: left;
 }
+.content .content_bot .cb_right .contentHead .hAll .hLiked {
+  display: flex;
+  float: right;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 200px;
+  margin: 0 10%;
+}
+.content .content_bot .cb_right .contentHead .hAll .hLiked select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 106px;
+  height: 35px;
+  float: right;
+  margin: 5px 0px 5px 5px;
+  padding: 0px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  line-height: 1.75;
+  color: rgba(54, 57, 61, 0.8235294118);
+  background-color: rgba(236, 236, 236, 0.2117647059);
+  background-image: none;
+  border: none;
+  -ms-word-break: normal;
+  word-break: normal;
+  cursor: pointer;
+}
+.content .content_bot .cb_right .contentHead .hAll .hLiked select::-ms-expand {
+  display: none;
+}
+.content .content_bot .cb_right .contentHead .hAll .hLiked select option {
+  color: rgba(54, 57, 61, 0.8862745098);
+  background-color: rgba(236, 236, 236, 0.0823529412);
+}
+.content .content_bot .cb_right .contentHead .hAll .hLiked::after {
+  content: "<>";
+  font: 17px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 19px;
+  position: relative;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #999;
+}
 .content .content_bot .cb_right .contentHead .hAll .hDate {
   display: flex;
   float: right;
-}
-.content .content_bot .cb_right .contentHead .post {
-  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  float: right;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 200px;
+  margin: 0 10%;
+}
+.content .content_bot .cb_right .contentHead .hAll .hDate select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 106px;
+  height: 35px;
+  float: right;
+  margin: 5px 0px 5px 5px;
+  padding: 0px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  line-height: 1.75;
+  color: rgba(54, 57, 61, 0.8235294118);
+  background-color: rgba(236, 236, 236, 0.2117647059);
+  background-image: none;
+  border: none;
+  -ms-word-break: normal;
+  word-break: normal;
+  cursor: pointer;
+}
+.content .content_bot .cb_right .contentHead .hAll .hDate select option {
+  color: rgba(54, 57, 61, 0.8862745098);
+  background-color: rgba(236, 236, 236, 0.0823529412);
+}
+.content .content_bot .cb_right .contentHead .hAll .hDate select::-ms-expand {
+  display: none;
+}
+.content .content_bot .cb_right .contentHead .hAll .hDate::after {
+  content: "<>";
+  font: 17px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 19px;
+  position: relative;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #999;
+}
+.content .content_bot .cb_right .contentHead .hAll .filter_submit input {
+  display: flex;
+  float: right;
+  margin: 0 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0 10px;
+  background-color: #fe5526;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.75;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+.content .content_bot .cb_right .contentHead .hAll .filter_submit input:hover {
+  background-color: rgba(254, 85, 38, 0.8117647059);
+}
+.content .content_bot .cb_right .contentHead .post {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: baseline;
+  padding: 1vh;
 }
 .content .content_bot .cb_right .contentHead .post .cPost {
   float: left;
@@ -390,6 +565,14 @@ body {
   font-weight: 600;
   font-size: 18px;
   font-style: italic;
+}
+.content .content_bot .cb_right .contentHead .post .cPost p a {
+  color: rgba(254, 85, 38, 0.8117647059);
+  text-decoration: underline;
+  font-style: italic;
+}
+.content .content_bot .cb_right .contentHead .post .cPost p a:hover {
+  color: #fe5526;
 }
 .content .content_bot .cb_right .contentHead .post .cAutor {
   width: 33.33%;

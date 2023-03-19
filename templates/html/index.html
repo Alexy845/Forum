@@ -85,33 +85,7 @@
             </div>
             <div class="Filtering">
                 <form method="post" action="/">
-                    <div class="filter_categories">
-                        <p>Filter by category</p>
-                        <label for="category"></label><select name="category" id="category">
-                            <option value="all">All</option>
-                            {{ range .Categories }}
-                                <option value="{{ .Id }}">{{ .Name }}</option>
-                            {{ end }}
-                        </select>
-                    </div>
-                    <div class="filter_posts">
-                        <p>Filter by posts</p>
-                        <label for="posts"></label><select name="posts" id="posts">
-                            <option value="all">All</option>
-                            <option value="last">Last</option>
-                            <option value="old">Old</option>
-                        </select>
-                    </div>
-                    <div class="filter_liked">
-                        <p>Filter by liked</p>
-                        <label for="liked"></label><select name="liked" id="liked">
-                            <option value="all">All</option>
-                            <option value="liked">Most Likes</option>
-                            <option value="not_liked">Most Dislikes</option>
-                        </select>
-                    </div>
-                    <div class="filter_submit">
-                        <input type="submit" value="Filter">
+                    <div class="filter_categories"> 
                     </div>
                 </form>
             </div>
@@ -131,9 +105,9 @@
     </div>
     <div class="content_bot">
         <div class="cb_left">
-            <div class="cat"><a href="/">Category 1</a></div>
-            <div class="cat"><a href="/">Category 2</a></div>
-            <div class="cat"><a href="/">Category 3</a></div>
+            <div class="cat"><a href="/">General</a></div>
+            <div class="cat"><a href="/">Sport</a></div>
+            <div class="cat"><a href="/">Linux</a></div>
         </div>
         <div class="cb_right">
             <div class="contentHead">
@@ -141,11 +115,38 @@
                     <div class="hPost">
                         <p class="head"><i class='bx bx-comment-detail'></i> Post</p>
                     </div>
+                    <div class="hCategory">
+                        <i class='bx bx-list-ol'></i><label for="category"></label><select name="category" id="category">
+                            <option selected> Filter by category </option>
+                            <option value="all">All</option>
+                            {{ range .Categories }}
+                                <option value="{{ .Id }}">{{ .Name }}</option>
+                            {{ end }}
+                        </select>
+                    </div>
                     <div class="hUser">
                         <p class="head"><i class='bx bx-user'></i> User</p>
                     </div>
+                    <div class="hLiked">
+                        <i class='bx bx-like' ></i>
+                        <label for="liked"></label><select name="liked" id="liked">
+                            <option selected> Filter by liked </option>
+                            <option value="all">All</option>
+                            <option value="liked">Most Likes</option>
+                            <option value="not_liked">Most Dislikes</option>
+                        </select>
+                    </div>
                     <div class="hDate">
-                        <p class="head"><i class='bx bx-time-five'></i> Date</p>
+                        <i class='bx bx-time-five'></i>
+                        <label for="posts"></label><select name="posts" id="posts">
+                            <option selected> Filter by date </option>
+                            <option value="all">All</option>
+                            <option value="last">Last</option>
+                            <option value="old">Old</option>
+                        </select>
+                    </div>
+                    <div class="filter_submit">
+                        <input type="submit" value="Filter">
                     </div>
                 </div>
                 {{ range .Posts}}
@@ -155,9 +156,19 @@
                                 <p><a href="/content?id={{ .Id }}">{{ .Titre }}</a></p>
                             </div>
                         </div>
+                        <div class="cCategory">
+                            <div class="category">
+                                <p></p>
+                            </div>
+                        </div>
                         <div class="cAutor">
                             <div class="autor">
                                 <p>{{ .Auteur.Username }}</p>
+                            </div>
+                        </div>
+                        <div class="cLike">
+                            <div class="like">
+                                <p></p>
                             </div>
                         </div>
                         <div class="cDate">
