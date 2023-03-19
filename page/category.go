@@ -26,7 +26,7 @@ func Category(w http.ResponseWriter, r *http.Request) {
 		requetes_sql.AddCategory(r.FormValue("category"))
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	}
-	err = tmp.Execute(w, nil)
+	err = tmp.Execute(w, structs.Datas)
 	if err != nil {
 		log.Fatal(err)
 	}
