@@ -16,5 +16,28 @@ body .post input {
   margin: 3vh;
   padding: 2vh 4vh 2vh 4vh;
 }
+body .comment {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  padding-top: 30vh;
+}
+body .comment a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .comment input {
+  display: grid;
+  grid-template-rows: 1ft 1ft 1ft;
+  background-color: rgba(236, 236, 236, 0.1058823529);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  margin: 3vh;
+  padding: 2vh 4vh 2vh 4vh;
+}
 
 /*# sourceMappingURL=style_update.css.map */

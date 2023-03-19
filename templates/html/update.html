@@ -55,6 +55,7 @@
 {{ else }}
     <div class="comment">
         <form action="/edit" method="post">
+            <a>Modify comment</a>
             <input type="hidden" name="id-post" value="{{ .Post.Id }}">
             <input type="hidden" name="id" value="{{ .Comment.Id }}">
             <input type="text" name="content" value="">
