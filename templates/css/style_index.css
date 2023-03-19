@@ -618,4 +618,10 @@ body {
   overflow-y: scroll;
 }
 
+.cat input {
+  background-color: unset;
+    border: none;
+}
+
+
 /*# sourceMappingURL=style_index.css.map */
