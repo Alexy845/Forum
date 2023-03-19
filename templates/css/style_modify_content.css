@@ -8,7 +8,7 @@ body form {
   justify-content: space-evenly;
   margin: 15vh auto;
   padding: 16vh 10vh 20vh 10vh;
-  z-index: -1;
+
   position: relative;
 }
 body .inputs {
