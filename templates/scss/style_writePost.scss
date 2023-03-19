@@ -124,8 +124,25 @@
                 font-weight: 400;
             }
 
-            .categories {
-                
+        .categories {
+                display: flex;
+                margin: 0.5rem;
+
+
+                input {
+                    margin: 0 0.5rem 0 0.5rem;
+                    color: #fe5526;
+                    background-color: #fe5526;
+                }
+
+                label {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color: #ececec;
+                    
+
+                }
+
             }
 
         }

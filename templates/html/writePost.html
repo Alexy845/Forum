@@ -50,10 +50,12 @@
             <div class="inputContent">
                 <input type="text" name="Content" placeholder="Content" class="content" autocomplete="off">
             </div>
+            <p>Categories :</p>
             <div class="categories">
                 {{ range .Categories }}
-                    <input type="radio" name="Category" value="{{ .Id }}" id="{{ .Id }}">
-                    <label for="{{ .Id }}">{{ .Name }}</label>
+                    <input type="radio" name="Category" value="{{ .Id }}" id="{{ .Id }}" class="one">
+                    <label for="{{ .Id }}"class="btn">{{ .Name }}</label>
+                    <div class="check"></div>
                 {{ end }}
             </div>
             <div class="inputSubmit">
