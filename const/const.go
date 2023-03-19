@@ -7,5 +7,5 @@ package _const
 
 var TemplatesDir = "templates"
 var HtmlDir = "templates/html/"
-var Database = "DB_Base.sqlite"
+var Database = "DB_Base.db"
 var Root = ""
