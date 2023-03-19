@@ -102,5 +102,19 @@
   font-size: 16px;
   font-weight: 400;
 }
+.content .content_bot form .categories {
+  display: flex;
+  margin: 0.5rem;
+}
+.content .content_bot form .categories input {
+  margin: 0 0.5rem 0 0.5rem;
+  color: #fe5526;
+  background-color: #fe5526;
+}
+.content .content_bot form .categories label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ececec;
+}
 
 /*# sourceMappingURL=style_writePost.css.map */
