@@ -23,7 +23,7 @@ func Category(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "/login", http.StatusSeeOther)
 	}
 	if r.Method == "POST" {
-		requetes_sql.AddCategory(r.FormValue("category"))
+		requetes_sql.AddCategory(r.FormValue("Category"))
 		http.Redirect(w, r, "/", http.StatusSeeOther)
 	}
 	err = tmp.Execute(w, structs.Datas)
