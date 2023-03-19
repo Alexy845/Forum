@@ -2,14 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="templates/css/style_index.css">
+    <link rel="stylesheet" href="templates/css/style_scrollbar.css">
+    <link rel="stylesheet" href="templates/css/style_category.css">
+    <link rel="stylesheet" href="templates/css/style_theme.css">
+    <link rel="icon" href="/templates/image/logo/logoBO.jpg">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <title>Forum</title>
 </head>
 <body>
-<div class="Category">
-    <form action="/category" method="post">
-        <input type="text" name="category" placeholder="Category">
-        <input type="submit" name="submit" value="Create">
-    </form>
+<div class="header" oneclick="window.location.href='index.html'">
+    <div class="logo" onclick="window.location.href='/'">
+        <img href="/" src="/templates/image/logo/logoO.png" alt=""><h2><a href="/">Forum</a></h2>
+    </div>
+    <div class="header_middle">
+        <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+    </div>
+    <div class="header_right">
+        {{ if eq .Connected false }}
+            <div class="login">
+                <a href="/login">Connection</a>
+            </div>
+        {{ else }}
+            <div class="logout">
+                <a href="/logout"><i class='bx bx-power-off'></i></a>
+            </div>
+            <div class="profil">
+                <a href="/profile"><img src="{{ .User.Avatar }}"></a>
+                <p>{{ .User.Username }}</p>
+            </div>
+        {{ end }}
+    </div>
 </div>
-</body>
-</html>
+<div class="content">
+    <div class="content_top">
+        <h2>Do You want to write new Category {{ .User.Username }} ?</h2>
+    </div>
+    <div class="Category">
+        <form action="/category" method="post">
+            <div class="inputCategory">
+                <a>New Category :</a>
+                <input type="text" name="Category" placeholder="Category" class="category" autocomplete="off">
+                <input type="submit" value="Create" class="submit">
+            </div>
+        </form>
+    </div>
+</div>
