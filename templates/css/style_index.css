@@ -521,6 +521,9 @@ body {
   padding: 0 0 2px;
   border-bottom: 1px solid #999;
 }
+.content .content_bot .cb_right .contentHead .hAll .filter_submit {
+  grid-column: 5;
+}
 .content .content_bot .cb_right .contentHead .hAll .filter_submit input {
   display: flex;
   float: right;
