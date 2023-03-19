@@ -47,6 +47,7 @@ body .content .content_bot .cb_right .com .comment {
   border-radius: 18px;
   margin: 12px;
   padding: 3px;
+  display: flow-root;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.0705882353);
 }
 body .content .content_bot .cb_right .com .comment p {
