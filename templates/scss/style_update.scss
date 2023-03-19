@@ -1,0 +1,23 @@
+body {
+
+    .post {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        padding-top: 30vh;
+
+        input {
+            display: grid;
+            grid-template-rows: 1ft 1ft 1ft;
+            background-color: #ececec1b;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            margin: 3vh;
+            padding: 2vh 4vh 2vh 4vh;
+
+        }
+    }
+}

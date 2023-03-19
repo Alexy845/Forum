@@ -2,14 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="templates/css/style.css">
+    <link rel="stylesheet" href="templates/css/style_update.css">
+    <link rel="stylesheet" href="templates/css/style_index.css">
+    <link rel="stylesheet" href="templates/css/style_scrollbar.css">
+    <link rel="icon" href="/templates/image/logo/logoBO.jpg">
+    <link rel="stylesheet" href="templates/css/style_theme.css">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
     <title>Forum</title>
 </head>
 <body>
+    <div class="header" oneclick="window.location.href='index.html'">
+        <div class="logo" onclick="window.location.href='/'">
+            <img href="/" src="/templates/image/logo/logoO.png" alt="">
+            <h2><a href="/">Forum</a></h2>
+        </div>
+        <form method="get" action="/search">
+            <div class="header_middle">
+                <input type="text" name="search" placeholder="Search" class="search" autocomplete="off">
+            </div>
+        </form>
+        <div class="header_right">
+            {{ if eq .Connected false }}
+                <div class="login">
+                    <a href="/login">Connection</a>
+                </div>
+            {{ else }}
+                <div class="logout">
+                    <a href="/logout"><i class='bx bx-power-off'></i></a>
+                </div>
+                <div class="profil">
+                    <a href="/profile"><img src="{{ .User.Avatar }}"></a>
+                    <p>{{ .User.Username }}</p>
+                </div>
+            {{ end }}
+        </div>
+    </div>
 {{ if .EditPost }}
     <div class="post">
         <form action="/edit" method="post">
             <input type="hidden" name="id-post" value="{{ .Post.Id }}">
+            <a>Modify title</a>
             <input type="text" name="title" value="{{ .Post.Titre }}">
+            <a>Modify content</a>
             <input type="text" name="content" value="{{ .Post.Contenu }}">
             <input type="hidden" name="Type" value="post">
             <input type="submit" value="Edit">
